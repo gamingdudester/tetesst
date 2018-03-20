@@ -7,7 +7,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 
 // Here we load the config.json file that contains our token and our prefix values. 
-const config = process.env.prefix;
+string commandPrefix = process.env.prefix;
 const playerlist = require("./playerlist.json");
 // config.token contains the bot's token
 // config.prefix contains the message prefix.
@@ -51,7 +51,7 @@ client.on("message", async message => {
   // e.g. if we have the message "+say Is this the real life?" , we'll get the following:
   // command = say
   // args = ["Is", "this", "the", "real", "life?"]
-  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+  const args = message.content.slice(commandPrefix.length).trim().split(/ +/g);
   const norgs = message.content.split(/ +/g);
   const command = args.shift().toLowerCase();
   const nommand = norgs.shift().toLowerCase();
@@ -94,7 +94,7 @@ if (~nommand.indexOf("tib"))
   {
       const m = await message.channel.send("Lol they said ass");
   }
-  if(message.content.indexOf(config.prefix) !== 0) return;
+  if(message.content.indexOf(commandPrefix) !== 0) return;
  
  if(command === "lenny") 
  {
