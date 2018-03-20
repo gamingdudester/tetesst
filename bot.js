@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+/*const Discord = require("discord.js");
 const client = new Discord.Client();
 
 const config = require("./config.json");
@@ -10,7 +10,8 @@ client.on("ready", () => {
   client.user.setGame(`on ${client.guilds.size} servers`);
 });
 
-client.on("message", async message => {
+client.on("message", async message => 
+{
   // This event will run on every single message received, from any channel or DM.
   if(message.content.indexOf(config.prefix) !== 0) return;
   
@@ -21,4 +22,21 @@ client.on("message", async message => {
 }
 
 
+client.login(process.env.BOT_TOKEN);
+*/
+
+const Discord = require('discord.js');
+const client = new Discord.Client();
+
+client.on('ready', () => {
+    console.log('I am ready!');
+});
+
+client.on('message', message => {
+    if (message.content === 'ping') {
+    	message.reply('pong');
+  	}
+});
+
+// THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
