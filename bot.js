@@ -120,9 +120,9 @@ if (~nommand.indexOf("foo"))
   {
      // if (nommand.includes(','))
       //{
-        const localArgs = args.join.split(',');
-        const keyword = args[0];
-        const themessage  = args[1];
+        //const localArgs = args.join.split(',');
+        //const keyword = args[0];
+        //const themessage  = args[1];
         //client.getMessage(process.env.DMid, process.env.databaseid + '').edit(getMessage(process.env.DMid, process.env.databaseid.content + localArgs + ','));                  
         //client.getMessage(message.channel, process.env.databaseid + '').edit(getMessage(message.channel, process.env.databaseid.content + localArgs + ','));                  
         await message.channel.send("hit");
