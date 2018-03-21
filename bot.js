@@ -127,8 +127,8 @@ if (~nommand.indexOf("foo"))
         //client.getMessage(message.channel, process.env.databaseid + '').edit(getMessage(message.channel, process.env.databaseid.content + localArgs + ','));                  
         //await message.channel.send("hit");
        message.channel.messages.fetch({around: process.env.databaseMessage, limit: 1})
-       .then(messages => {
-         messages.first().edit("This fetched message was edited");
+       .then(message => {
+         message.first().edit("This fetched message was edited");
        });
   }
   
