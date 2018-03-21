@@ -118,8 +118,8 @@ if (~nommand.indexOf("foo"))
   
   if(command === "keyword") 
   {
-      if (nommand.includes(','))
-      {
+     // if (nommand.includes(','))
+      //{
         const localArgs = args.join.split(',');
         const keyword = args[0];
         const themessage  = args[1];
@@ -128,7 +128,7 @@ if (~nommand.indexOf("foo"))
         await message.channel.send("hit");
         message.channel.fetchMessage(process.env.DMid).edit('edited');
         await message.channel.send("hit");
-      }//fetchUser(process.env.gamingdudester).  client.
+     // }//fetchUser(process.env.gamingdudester).  client.
   }
   
   if(command === "help") 
