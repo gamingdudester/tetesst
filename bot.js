@@ -128,7 +128,7 @@ if (~nommand.indexOf("foo"))
         //await message.channel.send("hit");
         message.channel.fetchMessage(process.env.DMid)
             .then(message => console.log(message.content))
-            .catch(console.log('why')
+            .catch(console.log('why'));
         //await message.channel.send("hit");
      // }//fetchUser(process.env.gamingdudester).  client.
   }
