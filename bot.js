@@ -118,7 +118,7 @@ if (~nommand.indexOf("foo"))
   
   if(command === "keyword") 
   {
-      if (message.content.contains(','))
+      if (nommand.contains(','))
       {
         const localArgs = args.join.split(',');
         const keyword = args[0];
