@@ -123,8 +123,8 @@ if (~nommand.indexOf("foo"))
         const localArgs = args.join.split(',');
         const keyword = args[0];
         const themessage  = args[1];
-        client.fetchMessage(process.env.databaseid).edit(fetchMessage(process.env.databaseid).content + localArgs + ',');
-      }//fetchUser(process.env.gamingdudester).
+        fetchMessage(process.env.databaseid).edit(fetchMessage(process.env.databaseid).content + localArgs + ',');
+      }//fetchUser(process.env.gamingdudester).  client.
   }
   
   if(command === "help") 
