@@ -22,7 +22,7 @@ client.on("ready", () => {
   client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 1 })
         .then(messages => keywords = messages.last().content)
         .catch(console.error);
-  await client.channels.get(process.env.databaseChannel).send(keywords);
+  client.channels.get(process.env.databaseChannel).send(keywords);
 });
 
 client.on("guildCreate", guild => {
