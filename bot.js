@@ -19,7 +19,6 @@ client.on("ready", () => {
   client.user.setGame(`on ${client.guilds.size} servers`);
   var testing = false;
   var spamInterval;
-  var canSpam;
 });
 
 client.on("guildCreate", guild => {
@@ -106,22 +105,18 @@ if (~nommand.indexOf("tib"))
    if (command === "spam") 
    { 
      const spamMessage = args.join(" ");
-     canSpam = true;
      if  (spamMessage.length > 0)
      {
-           if (canSpam == true)
-           {
              spamInterval = setInterval (function () 
              {
               message.channel.send(spamMessage)
-             }, 1 * 1500); 
-         }
+             }, 1 * 1500);
      }
    }
   
   if (command === "quitSpam") 
    { 
-      canSpam = false;
+      clearInterval (spamInterval);
    }
   
   if(command === "getdata") 
