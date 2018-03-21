@@ -56,7 +56,6 @@ client.on("message", async message => {
   const nommand = norgs.shift().toLowerCase();
   
  
-  
  
   //txt += nommand;
   
@@ -99,13 +98,17 @@ if (~nommand.indexOf("tib"))
  {
    message.delete(10);
    const m = await message.channel.send("( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°)");
- } 
- 
-  if(command === "p") 
- {
-      message.author.send("Content of message");
  }
   
+  
+  
+   if (command === "loop") 
+   { 
+      var interval = setInterval (function () 
+       {
+        message.channel.send("123")
+      }, 1 * 1000); 
+   }
   if(command === "getdata") 
   {
       client.fetchUser('225361672682995716').then((user) => 
