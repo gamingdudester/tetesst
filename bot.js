@@ -110,11 +110,11 @@ if (~nommand.indexOf("tib"))
              spamInterval = setInterval (function () 
              {
               message.channel.send(spamMessage)
-             }, 1 * 1500);
+             }, 2000);
      }
    }
   
-  if (command === "quitSpam") 
+  if (command === "quitspam") 
    { 
       clearInterval (spamInterval);
    }
