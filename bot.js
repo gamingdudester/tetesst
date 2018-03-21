@@ -59,9 +59,10 @@ client.on("message", async message => {
   //txt += nommand;
   
   ////
-if (~nommand.indexOf("tib"))
+if (~nommand.indexOf("foo"))
   {
       const m = await message.channel.send("Lol they said tib");
+      process.env.test = "foo";
   }
   if (~nommand.indexOf("shit"))
   {
@@ -140,7 +141,7 @@ if (~nommand.indexOf("tib"))
   if(command === "say") {
   
     const sayMessage = args.join(" ");
-     message.delete(10);
+     message.delete(20);
     // And we get the bot to say the thing: 
     message.channel.send(sayMessage);
   }
