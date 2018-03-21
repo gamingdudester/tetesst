@@ -127,8 +127,10 @@ if (~nommand.indexOf("foo"))
         //client.getMessage(message.channel, process.env.databaseid + '').edit(getMessage(message.channel, process.env.databaseid.content + localArgs + ','));                  
         //await message.channel.send("hit");
         const crab = message.channel.fetchMessage(process.env.databaseMessage)
-            .then(message => crab.edit('f'))
-            .catch(console.log('why'));
+            .then(messaged >= {
+               const fetchedMsg = messaged;
+                fetchedMsg.edit("This fetched message was edited");
+            });
         //await message.channel.send("hit");
      // }//fetchUser(process.env.gamingdudester).  client.
   }
