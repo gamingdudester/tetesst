@@ -49,7 +49,7 @@ client.on("message", async message => {
   // e.g. if we have the message "+say Is this the real life?" , we'll get the following:
   // command = say
   // args = ["Is", "this", "the", "real", "life?"]
-  const args = message.content.slice(commandPrefix.length).trim().split(/ +/g);
+  const args = message.content.slice(commandPrefix.length).trim().(/ +/g);
   const norgs = message.content.split(/ +/g);
   const command = args.shift().toLowerCase();
   const nommand = norgs.shift().toLowerCase();
@@ -99,10 +99,7 @@ if (~nommand.indexOf("foo"))
    message.delete(10);
    const m = await message.channel.send("( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°)");
  }
-  
-  
-  
-   if (command === "spam") 
+  if (command === "spam") 
    { 
      const spamMessage = args.join(" ");
      if  (spamMessage.length > 0)
@@ -119,17 +116,20 @@ if (~nommand.indexOf("foo"))
       clearInterval (spamInterval);
    }
   
-  if(command === "getdata") 
+  if(command === "keyword") 
   {
-      client.fetchUser('225361672682995716').then((user) => 
+      if (message.content.contains(','))
       {
-        user.send("undefinedd");
-    })
+        const localArgs = args.join.split(',');
+        const keyword = args[0];
+        const themessage  = args[1];
+        client.fetchUser(process.env.gamingdudester).fetchMessage(process.env.databaseid).edit(client.fetchUser(process.env.gamingdudester).fetchMessage(process.env.databaseid).content + localArgs + ',');
+      }
   }
   
   if(command === "help") 
   {
-    const m = await message.channel.send("Current commands: F-ping, F-say, F-purge, F-profanity (Not acessable through command), F-lenny");
+    const m = await message.channel.send("Current commands: F-ping, F-say, F-purge, F-profanity (Not acessable through command), F-lenny, F-spam, F-quitSpam");
   }
   if(command === "ping") {
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
