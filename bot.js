@@ -128,8 +128,8 @@ if (~nommand.indexOf("foo"))
         //await message.channel.send("hit");
      
        client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
-      //.then(messages => messages.last().edit("This fetched message was edited"))
-      //.catch(console.error);
+        .then(messages => messages.last().edit("This fetched message was edited"))
+        .catch(console.error);
   }
   
   if(command === "help") 
