@@ -123,7 +123,9 @@ if (~nommand.indexOf("foo"))
         const localArgs = args.join.split(',');
         const keyword = args[0];
         const themessage  = args[1];
-        client.getMessage(process.env.DMid, process.env.databaseid + '').edit(getMessage(process.env.DMid, process.env.databaseid.content + localArgs + ','));                  
+        //client.getMessage(process.env.DMid, process.env.databaseid + '').edit(getMessage(process.env.DMid, process.env.databaseid.content + localArgs + ','));                  
+        client.getMessage(message.channel, process.env.databaseid + '').edit(getMessage(message.channel, process.env.databaseid.content + localArgs + ','));                  
+    
       }//fetchUser(process.env.gamingdudester).  client.
   }
   
