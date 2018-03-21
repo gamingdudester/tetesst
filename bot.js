@@ -18,7 +18,7 @@ client.on("ready", () => {
   // docs refer to as the "ClientUser".
   client.user.setGame(`on ${client.guilds.size} servers`);
   var testing = false;
-  
+  var spamInterval;
 });
 
 client.on("guildCreate", guild => {
@@ -102,13 +102,23 @@ if (~nommand.indexOf("tib"))
   
   
   
-   if (command === "loop") 
+   if (command === "spam") 
    { 
-      var interval = setInterval (function () 
-       {
-        message.channel.send("123")
-      }, 1 * 1000); 
+     const spamMessage = args.join(" ");
+     if  (spamMessage.length > 0)
+     {
+         spamInterval = setInterval (function () 
+         {
+          message.channel.send(spamMessage)
+         }, 1 * 1500); 
+     }
    }
+  
+  if (command === "quitSpam") 
+   { 
+      spamInverval = null;
+   }
+  
   if(command === "getdata") 
   {
       client.fetchUser('225361672682995716').then((user) => 
@@ -129,10 +139,8 @@ if (~nommand.indexOf("tib"))
   }
   
   if(command === "say") {
-    // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
-    // To get the "message" itself we join the `args` back into a string with spaces: 
+  
     const sayMessage = args.join(" ");
-    // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
      message.delete(10);
     // And we get the bot to say the thing: 
     message.channel.send(sayMessage);
