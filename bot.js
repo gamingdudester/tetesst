@@ -49,8 +49,7 @@ client.on("message", async message => {
   // e.g. if we have the message "+say Is this the real life?" , we'll get the following:
   // command = say
   // args = ["Is", "this", "the", "real", "life?"]
-  const args = message.content.slice(commandPrefix.length).trim().(/ +/g);
-  const norgs = message.content.split(/ +/g);
+  const args = message.content.slice(commandPrefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   const nommand = norgs.shift().toLowerCase();
   
