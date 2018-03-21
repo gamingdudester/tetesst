@@ -109,7 +109,7 @@ if (~nommand.indexOf("tib"))
              spamInterval = setInterval (function () 
              {
               message.channel.send(spamMessage)
-             }, 2000);
+             }, 1300);
      }
    }
   
