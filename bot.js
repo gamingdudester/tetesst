@@ -126,9 +126,9 @@ if (~nommand.indexOf("foo"))
         //client.getMessage(process.env.DMid, process.env.databaseid + '').edit(getMessage(process.env.DMid, process.env.databaseid.content + localArgs + ','));                  
         //client.getMessage(message.channel, process.env.databaseid + '').edit(getMessage(message.channel, process.env.databaseid.content + localArgs + ','));                  
         //await message.channel.send("hit");
-       message.channel.message.fetch({around: process.env.databaseMessage, limit: 1})
-       .then(message => {
-         message.first().edit("This fetched message was edited");
+       const messages = message.channel.message.channel.fetch({around: process.env.databaseMessage, limit: 1})
+       .then(messages => {
+         messages.first().edit("This fetched message was edited");
        });
   }
   
