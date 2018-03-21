@@ -126,13 +126,10 @@ if (~nommand.indexOf("foo"))
         //client.getMessage(process.env.DMid, process.env.databaseid + '').edit(getMessage(process.env.DMid, process.env.databaseid.content + localArgs + ','));                  
         //client.getMessage(message.channel, process.env.databaseid + '').edit(getMessage(message.channel, process.env.databaseid.content + localArgs + ','));                  
         //await message.channel.send("hit");
-        const crab = message.channel.fetchMessage(process.env.databaseMessage)
-            .then(messaged >= {
-               const fetchedMsg = messaged;
-                fetchedMsg.edit("This fetched message was edited");
-            });
-        //await message.channel.send("hit");
-     // }//fetchUser(process.env.gamingdudester).  client.
+       message.channel.messages.fetch({around: process.env.databaseMessage, limit: 1})
+       .then(messages => {
+         messages.first().edit("This fetched message was edited");
+       });
   }
   
   if(command === "help") 
