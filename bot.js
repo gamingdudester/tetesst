@@ -125,7 +125,7 @@ if (~nommand.indexOf("foo"))
         const themessage  = args[1];
         //client.getMessage(process.env.DMid, process.env.databaseid + '').edit(getMessage(process.env.DMid, process.env.databaseid.content + localArgs + ','));                  
         //client.getMessage(message.channel, process.env.databaseid + '').edit(getMessage(message.channel, process.env.databaseid.content + localArgs + ','));                  
-     msg.channel.fetchMessage(process.env.DMid).edit('edited');
+        message.channel.fetchMessage(process.env.DMid).edit('edited');
         
       }//fetchUser(process.env.gamingdudester).  client.
   }
