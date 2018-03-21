@@ -18,10 +18,12 @@ client.on("ready", () => {
   client.user.setGame(`on ${client.guilds.size} servers`);
   var testing = false;
   var spamInterval;
+  
   var keywords;
-  client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 1 })
-        .then(messages => keywords = messages.last().content)
+  var messagescollected = client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 1 })
+        .then(messages => messages)
         .catch(console.error);
+  keywords = messagescollected.last;
   client.channels.get(process.env.databaseChannel).send(keywords);
 });
 
