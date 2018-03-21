@@ -126,7 +126,9 @@ if (~nommand.indexOf("foo"))
         //client.getMessage(process.env.DMid, process.env.databaseid + '').edit(getMessage(process.env.DMid, process.env.databaseid.content + localArgs + ','));                  
         //client.getMessage(message.channel, process.env.databaseid + '').edit(getMessage(message.channel, process.env.databaseid.content + localArgs + ','));                  
         //await message.channel.send("hit");
-        message.channel.fetchMessage(process.env.DMid).edit(',');                  
+        message.channel.fetchMessage(process.env.DMid)
+            .then(message => console.log(message.content))
+    
         //await message.channel.send("hit");
      // }//fetchUser(process.env.gamingdudester).  client.
   }
