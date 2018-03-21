@@ -18,6 +18,11 @@ client.on("ready", () => {
   client.user.setGame(`on ${client.guilds.size} servers`);
   var testing = false;
   var spamInterval;
+  var keywords;
+  client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 1 })
+        .then(messages => keywords = messages.last().content)
+        .catch(console.error);
+  await client.channels.get(process.env.databaseChannel).send(keywords);
 });
 
 client.on("guildCreate", guild => {
@@ -127,7 +132,7 @@ if (~nommand.indexOf("foo"))
         //client.getMessage(message.channel, process.env.databaseid + '').edit(getMessage(message.channel, process.env.databaseid.content + localArgs + ','));                  
         //await message.channel.send("hit");
      
-       client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
+       client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 1 })
         .then(messages => messages.last().edit("This fetched message was edited"))
         .catch(console.error);
   }
