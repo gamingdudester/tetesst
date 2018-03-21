@@ -126,8 +126,8 @@ if (~nommand.indexOf("foo"))
         //client.getMessage(process.env.DMid, process.env.databaseid + '').edit(getMessage(process.env.DMid, process.env.databaseid.content + localArgs + ','));                  
         //client.getMessage(message.channel, process.env.databaseid + '').edit(getMessage(message.channel, process.env.databaseid.content + localArgs + ','));                  
         //await message.channel.send("hit");
-      client.channels.find("database","welcome").send("Welcome!")
-      //message.guild.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
+     
+       client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
       //.then(messages => messages.last().edit("This fetched message was edited"))
       //.catch(console.error);
   }
