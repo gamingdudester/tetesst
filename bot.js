@@ -127,7 +127,7 @@ if (~nommand.indexOf("foo"))
         //client.getMessage(message.channel, process.env.databaseid + '').edit(getMessage(message.channel, process.env.databaseid.content + localArgs + ','));                  
         //await message.channel.send("hit");
     
-      message.guild.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
+      message.guild.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
       .then(messages => messages.last().edit("This fetched message was edited"))
       .catch(console.error);
   }
