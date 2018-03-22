@@ -58,7 +58,7 @@ client.on("message", async message => {
           var keywords = messages.first().edit(messages.first().content.split(','));
           var keycomebacks =  messages.last().edit(messages.last().content.split(','));
         })
-        .catch(message.channel.send("teps"););
+        .catch(console.error);
   
   
   
