@@ -46,9 +46,11 @@ client.on("message", async message => {
  
  var testing = false;
   var spamInterval;
-  
+  var keywords;
+  var keycomebacks;
 
-  var keywordstring;
+  var keywordstring = new Array(225);
+  var keycomebacks = new Array(225);
   
     //client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
       //  .then(messages => 
