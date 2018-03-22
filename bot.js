@@ -43,7 +43,7 @@ client.on("message", async message => {
   const command = args.shift().toLowerCase();
   const nommand = norgs.shift().toLowerCase();
   
- 
+ /*
  var testing = false;
   var spamInterval;
   var keywords;
@@ -59,7 +59,6 @@ client.on("message", async message => {
           var keycomebacks =  new Array(messages.last().edit(messages.last().content.split(',&')));
         })
         .catch(console.error);
-   await message.channel.send(keywords[0]);
   
   
   
@@ -71,7 +70,7 @@ client.on("message", async message => {
         message.channel.send(keycomebacks[element]);
     }
 });
-  
+  */
 if (~nommand.indexOf("foo"))
   {
       const m = await message.channel.send("Lol they said tib");
