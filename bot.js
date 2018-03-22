@@ -52,13 +52,13 @@ client.on("message", async message => {
   var keywordstring = new Array(225);
   var keycomebacks = new Array(225);
   
-    //client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
-      //  .then(messages => 
-        //{ 
-          // var keywords = messages.first().edit(messages.first().content.split(','));
-          // var keycomebacks =  messages.last().edit(messages.last().content.split(','));
-        //})
-        //.catch(console.error);
+    client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
+        .then(messages => 
+        { 
+          var keywords = messages.first().edit(messages.first().content.split(','));
+          var keycomebacks =  messages.last().edit(messages.last().content.split(','));
+        })
+        .catch(console.error);
   
   
   
