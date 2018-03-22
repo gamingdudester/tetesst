@@ -19,12 +19,9 @@ client.on("ready", () => {
   var testing = false;
   var spamInterval;
   
-  var keywords;
-  var messagescollected = client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 1 })
-        .then(messages => messages)
-        .catch(console.error);
-  keywords = messagescollected.last;
-  client.channels.get(process.env.databaseChannel).send(keywords);
+  var keywordstring;
+  var[] keywords = new Array(255); 
+  var[] keycomebacks = new Array(255); 
 });
 
 client.on("guildCreate", guild => {
@@ -64,7 +61,13 @@ client.on("message", async message => {
  
  
   //txt += nommand;
-  
+  keywords.forEach(function(element) 
+{
+  if (~nommand.indexOf(element))
+  {
+      
+  }
+});
   ////
 if (~nommand.indexOf("foo"))
   {
@@ -133,10 +136,11 @@ if (~nommand.indexOf("foo"))
         //client.getMessage(process.env.DMid, process.env.databaseid + '').edit(getMessage(process.env.DMid, process.env.databaseid.content + localArgs + ','));                  
         //client.getMessage(message.channel, process.env.databaseid + '').edit(getMessage(message.channel, process.env.databaseid.content + localArgs + ','));                  
         //await message.channel.send("hit");
-     
+     const fam;
        client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 1 })
-        .then(messages => messages.last().edit("This fetched message was edited"))
+        .then(messages => fam = messages.last().content)
         .catch(console.error);
+      await message.channel.send(fam);
   }
   
   if(command === "help") 
