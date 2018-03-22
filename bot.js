@@ -20,8 +20,8 @@ client.on("ready", () => {
   var spamInterval;
   
   var keywordstring;
-  var[] keywords = new Array(255); 
-  var[] keycomebacks = new Array(255); 
+  var keywords = new Array(255); 
+  var keycomebacks = new Array(255); 
 });
 
 client.on("guildCreate", guild => {
