@@ -61,13 +61,13 @@ client.on("message", async message => {
  
  
   //txt += nommand;
-  keywords.forEach(function(element) 
-{
-  if (~nommand.indexOf(element))
-  {
+  //keywords.forEach(function(element) 
+//{
+  //if (~nommand.indexOf(element))
+  //{
       
-  }
-});
+  //}
+//});
   ////
 if (~nommand.indexOf("foo"))
   {
