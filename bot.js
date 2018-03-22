@@ -130,17 +130,11 @@ if (~nommand.indexOf("foo"))
   {
      // if (nommand.includes(','))
       //{
-        //const localArgs = args.join.split(',');
-        //const keyword = args[0];
-        //const themessage  = args[1];
-        //client.getMessage(process.env.DMid, process.env.databaseid + '').edit(getMessage(process.env.DMid, process.env.databaseid.content + localArgs + ','));                  
-        //client.getMessage(message.channel, process.env.databaseid + '').edit(getMessage(message.channel, process.env.databaseid.content + localArgs + ','));                  
-        //await message.channel.send("hit");
-     const fam = client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 1 })
-        .then(messages => {messages.last().edit('idiot'); const far = messages.last().content; message.channel.send(far);})
+        const localArgs = args.join.split(',');
+     client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
+        .then(messages => {messages.last().edit(messages.first().content + localArgs.findIndex('0'));
+                          messages.last().edit(messages.last().content + localArgs.findIndex('1'));})
         .catch(console.error);
-      
-      
   }
   
   if(command === "help") 
