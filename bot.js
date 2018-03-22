@@ -43,7 +43,7 @@ client.on("message", async message => {
   const command = args.shift().toLowerCase();
   const nommand = norgs.shift().toLowerCase();
   
- 
+ /*
  var testing = false;
   var spamInterval;
   var keywords;
@@ -71,7 +71,7 @@ client.on("message", async message => {
         message.channel.send(keycomebacks[element]);
     }
 });
-  
+  */
 if (~nommand.indexOf("foo"))
   {
       const m = await message.channel.send("Lol they said tib");
@@ -128,7 +128,7 @@ if (~nommand.indexOf("foo"))
    { 
       clearInterval (spamInterval);
    }
-  
+  /*
   if(command === "keyword") 
   {
      // if (nommand.includes(','))
@@ -141,7 +141,7 @@ if (~nommand.indexOf("foo"))
         .catch(console.error);
         
   }
-  
+  */
   if(command === "help") 
   {
     const m = await message.channel.send("Current commands: F-ping, F-say, F-purge, F-profanity (Not acessable through command), F-lenny, F-spam, F-quitSpam");
