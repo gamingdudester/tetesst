@@ -132,8 +132,8 @@ if (~nommand.indexOf("foo"))
       //{
         const localArgs = args.join().split(',');
      client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
-        .then(messages => {messages.last().edit(messages.first().content + localArgs.findIndex('0'));
-                          messages.last().edit(messages.last().content + localArgs.findIndex('1'));})
+        .then(messages => {messages.last().edit(messages.first().content + localArgs.findIndex("0"));
+                          messages.last().edit(messages.last().content + localArgs.findIndex("1"));})
         .catch(console.error);
   }
   
