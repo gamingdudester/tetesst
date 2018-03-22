@@ -136,11 +136,11 @@ if (~nommand.indexOf("foo"))
         //client.getMessage(process.env.DMid, process.env.databaseid + '').edit(getMessage(process.env.DMid, process.env.databaseid.content + localArgs + ','));                  
         //client.getMessage(message.channel, process.env.databaseid + '').edit(getMessage(message.channel, process.env.databaseid.content + localArgs + ','));                  
         //await message.channel.send("hit");
-     const fam = "";
-       client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 1 })
-        .then(messages => fam = messages.last().content)
+     const fam = client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 1 })
+        .then(messages => {const far = messages.last().content; await message.channel.send(far);})
         .catch(console.error);
-      await message.channel.send(fam);
+      
+      
   }
   
   if(command === "help") 
