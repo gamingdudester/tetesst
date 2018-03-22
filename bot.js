@@ -43,7 +43,7 @@ client.on("message", async message => {
   const command = args.shift().toLowerCase();
   const nommand = norgs.shift().toLowerCase();
   
- /*
+ 
  var testing = false;
   var spamInterval;
   var keywords;
@@ -71,7 +71,7 @@ client.on("message", async message => {
         message.channel.send(keycomebacks[element]);
     }
 });
-  */
+  
 if (~nommand.indexOf("foo"))
   {
       const m = await message.channel.send("Lol they said tib");
@@ -133,13 +133,13 @@ if (~nommand.indexOf("foo"))
   {
      // if (nommand.includes(','))
       //{
-    /*
+    
         const localArgs = args.join().split(',');
      client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
         .then(messages => {messages.first().edit(messages.first().content + localArgs[0] + ',');
                           messages.last().edit(messages.last().content + localArgs[1] + ',');})
         .catch(console.error);
-        */
+        
   }
   
   if(command === "help") 
