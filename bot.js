@@ -59,7 +59,7 @@ client.on("message", async message => {
           var keycomebacks =  new Array(messages.last().edit(messages.last().content.split(',&')));
         })
         .catch(console.error);
-  
+   await message.channel.send(keywords[0]);
   
   
   
