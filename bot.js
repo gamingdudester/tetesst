@@ -66,7 +66,7 @@ client.on("message", async message => {
   {
     if (~nommand.indexOf(element))
     {
-        await message.channel.send(keycomebacks[element]);
+        message.channel.send(keycomebacks[element]);
     }
 });
   
