@@ -8,6 +8,7 @@ const client = new Discord.Client();
 // Here we load the config.json file that contains our token and our prefix values. 
 const commandPrefix = process.env.prefix;
 
+
 client.on("ready", () => {
   // This event will run if the bot starts, and logs in, successfully.
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
@@ -15,12 +16,15 @@ client.on("ready", () => {
   // docs refer to as the "ClientUser".
   client.user.setGame(`on ${client.guilds.size} servers`);
   
+  
 });
 
+ 
 client.on("guildCreate", guild => {
   // This event triggers when the bot joins a guild.
   console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
   client.user.setGame(`on ${client.guilds.size} servers`);
+  
 });
 
 client.on("guildDelete", guild => {
@@ -32,20 +36,8 @@ client.on("guildDelete", guild => {
 
 
 client.on("message", async message => {
-  // This event will run on every single message received, from any channel or DM.
-  
-  // It's good practice to ignore other bots. This also makes your bot ignore itself
-  // and not get into a spam loop (we call that "botception").
   if(message.author.bot) return;
   
-  // Also good practice to ignore any message that does not start with our prefix, 
-  // which is set in the configuration file.
-  
-  
-  // Here we separate our "command" name, and our "arguments" for the command. 
-  // e.g. if we have the message "+say Is this the real life?" , we'll get the following:
-  // command = say
-  // args = ["Is", "this", "the", "real", "life?"]
   const args = message.content.slice(commandPrefix.length).trim().split(/ +/g);
   const norgs = message.content.split(/ +/g);
   const command = args.shift().toLowerCase();
@@ -55,9 +47,17 @@ client.on("message", async message => {
  var testing = false;
   var spamInterval;
   
+
   var keywordstring;
-  var keywords = new Array(255); 
-  var keycomebacks = new Array(255); 
+  
+    client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
+        .then(messages => 
+        { 
+           var keywords = messages.first().edit(messages.first().content.split(','));
+           var keycomebacks =  messages.last().edit(messages.last().content.split(','));
+        })
+        .catch(console.error);
+  
   
   
   
