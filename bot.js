@@ -14,12 +14,7 @@ client.on("ready", () => {
   // Example of changing the bot's playing game to something useful. `client.user` is what the
   // docs refer to as the "ClientUser".
   client.user.setGame(`on ${client.guilds.size} servers`);
-  var testing = false;
-  var spamInterval;
   
-  var keywordstring;
-  var keywords = new Array(255); 
-  var keycomebacks = new Array(255); 
 });
 
 client.on("guildCreate", guild => {
@@ -57,16 +52,24 @@ client.on("message", async message => {
   const nommand = norgs.shift().toLowerCase();
   
  
- 
+ var testing = false;
+  var spamInterval;
+  
+  var keywordstring;
+  var keywords = new Array(255); 
+  var keycomebacks = new Array(255); 
+  
+  
+  
   //txt += nommand;
-  //keywords.forEach(function(element) 
-//{
-  //if (~nommand.indexOf(element))
-  //{
-      
-  //}
-//});
-  ////
+  keywords.forEach(function(element, i) 
+  {
+    if (~nommand.indexOf(element))
+    {
+        await message.channel.send(keycomebacks[element]);
+    }
+});
+  
 if (~nommand.indexOf("foo"))
   {
       const m = await message.channel.send("Lol they said tib");
