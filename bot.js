@@ -43,7 +43,7 @@ client.on("message", async message => {
   const command = args.shift().toLowerCase();
   const nommand = norgs.shift().toLowerCase();
   
- /*
+ 
  var testing = false;
   var spamInterval;
   var keywords;
@@ -70,7 +70,7 @@ client.on("message", async message => {
         message.channel.send(keycomebacks[element]);
     }
 });
-  */
+  
 if (~nommand.indexOf("foo"))
   {
       const m = await message.channel.send("Lol they said tib");
