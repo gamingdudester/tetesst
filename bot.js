@@ -43,7 +43,7 @@ client.on("message", async message => {
   const command = args.shift().toLowerCase();
   const nommand = norgs.shift().toLowerCase();
   
- /*
+ 
  var testing = false;
   var spamInterval;
   var keywords;
@@ -55,8 +55,8 @@ client.on("message", async message => {
     client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
         .then(messages => 
         { 
-          var keywords = messages.first().edit(messages.first().content.split(','));
-          var keycomebacks =  messages.last().edit(messages.last().content.split(','));
+          var keywords = messages.first().edit(messages.first().content.split(',&'));
+          var keycomebacks =  messages.last().edit(messages.last().content.split(',&'));
         })
         .catch(console.error);
   
@@ -71,7 +71,7 @@ client.on("message", async message => {
         message.channel.send(keycomebacks[element]);
     }
 });
-  */
+  
 if (~nommand.indexOf("foo"))
   {
       const m = await message.channel.send("Lol they said tib");
@@ -128,7 +128,7 @@ if (~nommand.indexOf("foo"))
    { 
       clearInterval (spamInterval);
    }
-  /*
+  
   if(command === "keyword") 
   {
      // if (nommand.includes(','))
@@ -136,12 +136,12 @@ if (~nommand.indexOf("foo"))
     
         const localArgs = args.join().split(',');
      client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
-        .then(messages => {messages.first().edit(messages.first().content + localArgs[0] + ',');
-                          messages.last().edit(messages.last().content + localArgs[1] + ',');})
+        .then(messages => {messages.first().edit(messages.first().content + localArgs[0] + ',&');
+                          messages.last().edit(messages.last().content + localArgs[1] + ',&');})
         .catch(console.error);
         
   }
-  */
+  
   if(command === "help") 
   {
     const m = await message.channel.send("Current commands: F-ping, F-say, F-purge, F-profanity (Not acessable through command), F-lenny, F-spam, F-quitSpam");
@@ -166,7 +166,7 @@ if (~nommand.indexOf("foo"))
     // Please read on Array.some() to understand this bit: 
     // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/some?
     if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.name)) )
-      return message.reply("Sorry, you don't have permissions to use this!");
+      return message.reply("Sorry, you don't have permission to use this!");
     
     // Let's first check if we have a member and if we can kick them!
     // message.mentions.members is a collection of people that have been mentioned, as GuildMembers.
