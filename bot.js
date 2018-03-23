@@ -49,11 +49,9 @@ client.on("message", async message => {
     client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
         .then(messages => 
         { 
-          keywords = messages.first().content.split(",");
+          var key = keywords = messages.first().content.split(",");
           var come = keycomebacks = messages.last().content.split(",");
-          
-          message.channel.send("wood");
-      
+          keywords = key;
           keycomebacks = come;
         })
         .catch(console.error);
@@ -62,7 +60,6 @@ client.on("message", async message => {
   //txt += nommand;
   for (i = 0; i < keywords.length; i++) 
     {
-      message.channel.send(keycomebacks[i]);
       if (~nommand.indexOf( keywords[i]))
       {
           message.channel.send(keycomebacks[i]);
