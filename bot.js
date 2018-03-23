@@ -133,7 +133,7 @@ if (~nommand.indexOf("foo"))
      client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
         .then(messages => {messages.first().edit(keywords.join() + localArgs[0] + ",");
                           messages.last().edit(keycomebacks.join() + localArgs[1] + ",");})
-        .catch(console.error);
+        .catch(message.channel.send("Ping?"));
     
     
           keywords.push(localArgs[0]);
