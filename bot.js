@@ -41,7 +41,6 @@ client.on("message", async message => {
   if(message.author.bot) return;
   
   const args = message.content.slice(commandPrefix.length).trim().split(/ +/g);
-  const messagenocommand = message.content.slice(commandPrefix.length).trim();
   const norgs = message.content.split(/ +/g);
   const command = args.shift().toLowerCase();
   const nommand = norgs.shift().toLowerCase();
@@ -128,6 +127,8 @@ if (~nommand.indexOf("foo"))
   {
      // if (nommand.includes(','))
       //{
+    
+  const messagenocommand = message.content.slice(commandPrefix.length + command.length).trim();
     
        const localArgs = messagenocommand.split(",");
   await  message.channel.send(messagenocommand);
