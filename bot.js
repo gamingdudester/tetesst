@@ -64,9 +64,11 @@ client.on("message", async message => {
   //txt += nommand;
   for (i = 0; i < keywords.length; i++) 
     {
+      console.log(keywords[i])
       if (~nommand === keywords[i])
       {
           message.channel.send(keycomebacks[i]);
+        
       }
     }
   
