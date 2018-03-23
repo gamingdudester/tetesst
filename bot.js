@@ -49,6 +49,7 @@ client.on("message", async message => {
     client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
         .then(messages => 
         { 
+          message.channel.send("wood");
           keywords = messages.first().content.split(",");
           keycomebacks = messages.last().content.split(",");
         })
