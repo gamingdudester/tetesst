@@ -129,8 +129,8 @@ if (~nommand.indexOf("foo"))
      // if (nommand.includes(','))
       //{
     
-       const localArgs = messagenocommand.join().split(",");
-  await  message.channel.send(messagenocommand.join());
+       const localArgs = messagenocommand.split(",");
+  await  message.channel.send(messagenocommand);
      await  message.channel.send(localArgs.join());
      client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
         .then(messages => {messages.first().edit(keywords.join() + localArgs[0] + ",");
