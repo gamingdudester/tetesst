@@ -4,7 +4,6 @@ const Discord = require("discord.js");
 // some might call it `cootchie`. Either way, when you see `client.something`, or `bot.something`,
 // this is what we're refering to. Your client.
 const client = new Discord.Client();
-//
 // Here we load the config.json file that contains our token and our prefix values. 
 const commandPrefix = process.env.prefix;
 
