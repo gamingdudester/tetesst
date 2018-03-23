@@ -35,7 +35,7 @@ client.on("guildDelete", guild => {
   var keycomebacks;
 
   var keywords = ["Banana", "Orange", "Apple", "Mango"];
-  var keycomebacks;
+  var keycomebacks = ["Banana", "Orange", "Apple", "Mango"];
 
 client.on("message", async message => {
   if(message.author.bot) return;
@@ -51,6 +51,9 @@ client.on("message", async message => {
         { 
           var key = keywords = messages.first().content.split(",");
           var come = keycomebacks = messages.last().content.split(",");
+      
+          keywords = key;
+          keycomebacks = come;
         })
         .catch(console.error);
   
