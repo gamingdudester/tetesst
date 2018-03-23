@@ -41,6 +41,7 @@ client.on("message", async message => {
   if(message.author.bot) return;
   
   const args = message.content.slice(commandPrefix.length).trim().split(/ +/g);
+  const messagenocommand = message.content.slice(commandPrefix.length).trim();
   const norgs = message.content.split(/ +/g);
   const command = args.shift().toLowerCase();
   const nommand = norgs.shift().toLowerCase();
@@ -128,8 +129,8 @@ if (~nommand.indexOf("foo"))
      // if (nommand.includes(','))
       //{
     
-       const localArgs = norgs.join().split(",");
-  await  message.channel.send(norgs.join());
+       const localArgs = messagenocommand.join().split(",");
+  await  message.channel.send(messagenocommand.join());
      await  message.channel.send(localArgs.join());
      client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
         .then(messages => {messages.first().edit(keywords.join() + localArgs[0] + ",");
