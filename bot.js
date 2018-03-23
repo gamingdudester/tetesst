@@ -131,7 +131,7 @@ if (~nommand.indexOf("foo"))
                           })
         .catch(message.channel.send("Ok, got it."));
   }
-  else
+  if (command != "deletekey")
   {
      client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
               .then(messages => 
