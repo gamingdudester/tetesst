@@ -142,7 +142,7 @@ if (~nommand.indexOf("foo"))
                 keycomebacks = come;
             })
             .catch(console.log("broke"));
-    
+    console.log("ples");
     
     for (i = 0; i < keywords.length; i++) 
       {
@@ -151,6 +151,7 @@ if (~nommand.indexOf("foo"))
             message.channel.send(keycomebacks[i]);
         }
       }
+    console.log("ples");
   }
   if(command === "help") 
   {
