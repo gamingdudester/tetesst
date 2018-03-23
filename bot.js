@@ -45,7 +45,7 @@ client.on("message", async message => {
   var spamInterval;
   var keycomebacks;
 
-  var keywords = ;
+  var keywords ;
   var keycomebacks ;
   
     client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
