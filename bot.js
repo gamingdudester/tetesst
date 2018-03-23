@@ -146,7 +146,9 @@ if (~nommand.indexOf("foo"))
   
   if(command === "help") 
   {
-    const m = await message.channel.send("Current commands: F-ping, F-say, F-purge, F-profanity (Not acessable through command), F-lenny, F-spam, F-quitSpam");
+    const m = await message.channel.send("Current commands: F-ping, F-say <message>, F-purge <int>, F-profanity (Not accessable through command),"
+                                         + "F-lenny, F-spam <message>, F-quitSpam," 
+                                         + "F-keyword <keyword,comeback> Contact @gamingdudester#7442 before using");
   }
   if(command === "ping") {
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
