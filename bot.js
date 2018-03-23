@@ -59,7 +59,7 @@ client.on("message", async message => {
   for (i = 0; i < keywords.length; i++) 
     {
       message.channel.send("D");
-      if (nommand = keywords[i])
+      if (~nommand.indexOf( keywords[i]))
       {
           message.channel.send(keycomebacks[i]);
       }
