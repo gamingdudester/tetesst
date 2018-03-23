@@ -29,6 +29,13 @@ client.on("guildDelete", guild => {
 });
 
 
+ 
+ var testing = false;
+  var spamInterval;
+  var keycomebacks;
+
+  var keywords = ["Banana", "Orange", "Apple", "Mango"];
+  var keycomebacks = ["Banana", "Orange", "Apple", "Mango"];
 
 client.on("message", async message => {
   if(message.author.bot) return;
@@ -38,13 +45,6 @@ client.on("message", async message => {
   const command = args.shift().toLowerCase();
   const nommand = norgs.shift().toLowerCase();
   
- 
- var testing = false;
-  var spamInterval;
-  var keycomebacks;
-
-  var keywords = ["Banana", "Orange", "Apple", "Mango"];
-  var keycomebacks= ["Banana", "Orange", "Apple", "Mango"];
   
     client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
         .then(messages => 
