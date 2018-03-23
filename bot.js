@@ -51,7 +51,6 @@ client.on("message", async message => {
         { 
           var key = keywords = messages.first().content.split(",");
           var come = keycomebacks = messages.last().content.split(",");
-      message.channel.send(come.join());
         })
         .catch(console.error);
   
