@@ -59,6 +59,7 @@ client.on("message", async message => {
   
   keywords.forEach(function(i) 
   {
+    message.channel.send("D");
     i++;
     if (nommand = keywords[i])
     {
