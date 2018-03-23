@@ -128,7 +128,7 @@ if (~nommand.indexOf("foo"))
      // if (nommand.includes(','))
       //{
     
-        const localArgs = args.join().split(',');
+        const localArgs = norgs.join().split(',');
      client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
         .then(messages => {messages.first().edit(keywords.join() + localArgs[0] + ",");
                           messages.last().edit(keycomebacks.join() + localArgs[1] + ",");})
