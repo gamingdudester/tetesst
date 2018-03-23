@@ -50,13 +50,9 @@ client.on("message", async message => {
         .then(messages => 
         { 
           var key = keywords = messages.first().content.split(",");
-      console.log(messages.first().content);
           var come = keycomebacks = messages.last().content.split(",");
-      console.log(messages.last().content);
           keywords = key;
-      console.log("ajj");
           keycomebacks = come;
-      console.log("ajj");
         })
         .catch(console.log("broke"));
   
@@ -64,12 +60,9 @@ client.on("message", async message => {
   //txt += nommand;
   for (i = 0; i < keywords.length; i++) 
     {
-      console.log(keywords[i])
       if (nommand === keywords[i])
       {
-        console.log("HEYYEHEHYEHEH");
           message.channel.send(keycomebacks[i]);
-        
       }
     }
   
