@@ -58,7 +58,7 @@ client.on("message", async message => {
           keycomebacks = come;
       console.log("ajj");
         })
-        .catch(console.log("broke"););
+        .catch(console.log("broke"));
   
   
   //txt += nommand;
