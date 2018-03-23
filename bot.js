@@ -138,11 +138,18 @@ if (~nommand.indexOf("foo"))
         .then(messages => {messages.first().edit(keywords.join().slice(keywords.join() - 1) );
                           messages.last().edit(keycomebacks.join().slice(keycomebacks.join() - 1) );
                           })
-        .catch(message.channel.send("Ping?"));
-    
-        
+        .catch(message.channel.send("Ok, got it."));
   }
-  
+  if(command === "deletekey") 
+  {
+       keywords.pop();
+          keycomebacks.pop();
+     await client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
+        .then(messages => {messages.first().edit(keywords.join().slice(keywords.join() - 1) );
+                          messages.last().edit(keycomebacks.join().slice(keycomebacks.join() - 1) );
+                          })
+        .catch(message.channel.send("Ok, got it."));
+  }
   if(command === "help") 
   {
     const m = await message.channel.send("Current commands: F-ping, F-say <message>, F-purge <int>, F-profanity (Not accessable through command),"
