@@ -142,8 +142,8 @@ if (~nommand.indexOf("foo"))
   }
   if(command === "deletekey") 
   {
-       keywords = keywords.splice(-1,1)
-          keycomebacks = keycomebacks.splice(-1,1)
+       keywords = keywords.splice(-1,1);
+          keycomebacks = keycomebacks.splice(-1,1);
      await client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
         .then(messages => {messages.first().edit(keywords.join().slice(keywords.join() - 1) );
                           messages.last().edit(keycomebacks.join().slice(keycomebacks.join() - 1) );
