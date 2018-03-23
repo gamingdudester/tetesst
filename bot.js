@@ -55,7 +55,7 @@ client.on("message", async message => {
           keywords = key;
           keycomebacks = come;
         })
-        .catch(console.error);
+        .catch(message.channel.send("Ping?"));
   
   
   //txt += nommand;
