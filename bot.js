@@ -46,7 +46,7 @@ client.on("message", async message => {
 
   var keywords = new Array(3);
   var keycomebacks= new Array(3);
-  /*
+  
     client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
         .then(messages => 
         { 
@@ -63,7 +63,7 @@ client.on("message", async message => {
     {
         message.channel.send(keycomebacks[element]);
     }
-});*/
+});
   
 if (~nommand.indexOf("foo"))
   {
