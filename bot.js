@@ -56,7 +56,7 @@ client.on("message", async message => {
   
   
   //txt += nommand;
-  for (i = 0; i < keywords.length; i++) { 
+  for (i = 0; i < keywords.length; i++) 
     {
       message.channel.send("D");
       if (nommand = keywords[i])
