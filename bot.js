@@ -53,8 +53,8 @@ client.on("message", async message => {
     client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
         .then(messages => 
         { 
-          var keywords =  keywords + messages.first().content.split(',');
-          var keycomebacks = keycomebacks + messages.last().content.split(',');
+          var keywords  messages.first().content.split(',');
+          var keycomebacks = messages.last().content.split(',');
         })
         .catch(console.error);
   
@@ -135,6 +135,10 @@ if (~nommand.indexOf("foo"))
         .then(messages => {messages.first().edit(keywords.join() + localArgs[0] + ',&');
                           messages.last().edit(keycomebacks.join() + localArgs[1] + ',&');})
         .catch(console.error);
+    
+    
+          keywords.push(localArgs[0]);
+          keycomebacks.push( localArgs[1]);
         
   }
   
