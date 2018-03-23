@@ -44,13 +44,13 @@ client.on("message", async message => {
   var spamInterval;
   var keycomebacks;
 
-  var keywords ;
-  var keycomebacks ;
+  var keywords;
+  var keycomebacks;
   
     client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
         .then(messages => 
         { 
-          var keywords  messages.first().content.split(',');
+          var keywords = messages.first().content.split(',');
           var keycomebacks = messages.last().content.split(',');
         })
         .catch(console.error);
