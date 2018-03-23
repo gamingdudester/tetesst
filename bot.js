@@ -32,7 +32,6 @@ client.on("guildDelete", guild => {
  
  var testing = false;
   var spamInterval;
-  var keycomebacks;
 
   var keywords = ["Banana", "Orange", "Apple", "Mango"];
   var keycomebacks = ["Banana", "Orange", "Apple", "Mango"];
@@ -60,8 +59,7 @@ client.on("message", async message => {
   //txt += nommand;
   for (i = 0; i < keywords.length; i++) 
     {
-      console.log(nommand.replace(" ","").toLowerCase() + "   " +keywords[i].replace(" ","").toLowerCase() );
-      if (nommand.replace(" ","").toLowerCase() == keywords[i].replace(" ","").toLowerCase())
+      if (message.content.replace(" ","").toLowerCase() == keywords[i].replace(" ","").toLowerCase())
       {
           message.channel.send(keycomebacks[i]);
       }
