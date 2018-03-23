@@ -46,12 +46,12 @@ client.on("message", async message => {
 
   var keywords;
   var keycomebacks;
-  
+  /*
     client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
         .then(messages => 
         { 
-          keywords = messages.first().content.split(',');
-          keycomebacks = messages.last().content.split(',');
+          keywords = messages.first().content.split(',&');
+          keycomebacks = messages.last().content.split(',&');
         })
         .catch(console.error);
   
@@ -63,7 +63,7 @@ client.on("message", async message => {
     {
         message.channel.send(keycomebacks[element]);
     }
-});
+});*/
   
 if (~nommand.indexOf("foo"))
   {
