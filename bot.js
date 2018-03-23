@@ -45,8 +45,8 @@ client.on("message", async message => {
   const nommand = norgs.shift().toLowerCase();
  
   
-  if (command != "deletekey")
-  {
+ // if (command != "deletekey")
+ // {
      client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
               .then(messages => 
               { 
@@ -66,7 +66,7 @@ client.on("message", async message => {
         }
       }
     console.log("ples");
-  }
+  //}
  
   
 if (~nommand.indexOf("foo"))
