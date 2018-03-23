@@ -60,6 +60,7 @@ client.on("message", async message => {
   //txt += nommand;
   for (i = 0; i < keywords.length; i++) 
     {
+      console.log(nommand.replace(" ","").toLowerCase() + "   " +keywords[i].replace(" ","").toLowerCase() );
       if (nommand.replace(" ","").toLowerCase() == keywords[i].replace(" ","").toLowerCase())
       {
           message.channel.send(keycomebacks[i]);
