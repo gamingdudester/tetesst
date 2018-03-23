@@ -50,9 +50,9 @@ client.on("message", async message => {
         .then(messages => 
         { 
           var key = keywords = messages.first().content.split(",");
-      console.log("ajj");
+      console.log(messages.first().content);
           var come = keycomebacks = messages.last().content.split(",");
-      console.log("ajj");
+      console.log(messages.last().content);
           keywords = key;
       console.log("ajj");
           keycomebacks = come;
