@@ -43,7 +43,30 @@ client.on("message", async message => {
   const norgs = message.content.split(/ +/g);
   const command = args.shift().toLowerCase();
   const nommand = norgs.shift().toLowerCase();
+ 
   
+  if (command != "deletekey")
+  {
+     client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
+              .then(messages => 
+              { 
+                var key = keywords = messages.first().content.split(",");
+                var come = keycomebacks = messages.last().content.split(",");
+                keywords = key;
+                keycomebacks = come;
+            })
+            .catch(console.log("broke"));
+    console.log("ples");
+    
+    for (i = 0; i < keywords.length; i++) 
+      {
+        if (message.content.replace(" ","").toLowerCase() == keywords[i].replace(" ","").toLowerCase())
+        {
+            message.channel.send(keycomebacks[i]);
+        }
+      }
+    console.log("ples");
+  }
  
   
 if (~nommand.indexOf("foo"))
@@ -131,28 +154,7 @@ if (~nommand.indexOf("foo"))
                           })
         .catch(message.channel.send("Ok, got it."));
   }
-  if (command != "deletekey")
-  {
-     client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
-              .then(messages => 
-              { 
-                var key = keywords = messages.first().content.split(",");
-                var come = keycomebacks = messages.last().content.split(",");
-                keywords = key;
-                keycomebacks = come;
-            })
-            .catch(console.log("broke"));
-    console.log("ples");
-    
-    for (i = 0; i < keywords.length; i++) 
-      {
-        if (message.content.replace(" ","").toLowerCase() == keywords[i].replace(" ","").toLowerCase())
-        {
-            message.channel.send(keycomebacks[i]);
-        }
-      }
-    console.log("ples");
-  }
+ 
   if(command === "help") 
   {
     const m = await message.channel.send("Current commands: F-ping, F-say <message>, F-purge <int>, F-profanity (Not accessable through command),"
