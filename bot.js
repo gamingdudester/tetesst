@@ -58,7 +58,7 @@ client.on("message", async message => {
           keycomebacks = come;
       console.log("ajj");
         })
-        .catch(message.channel.send("Ping?"));
+        .catch(console.log("broke"););
   
   
   //txt += nommand;
