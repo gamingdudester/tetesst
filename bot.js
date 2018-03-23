@@ -132,13 +132,12 @@ if (~nommand.indexOf("foo"))
     
        const localArgs = messagenocommand.split(",");
   await  message.channel.send(messagenocommand + "  " + localArgs[0]+ "  " + localArgs[1]);
-     await  message.channel.send(localArgs.join());
     
           keywords.push(localArgs[0]);
           keycomebacks.push( localArgs[1]);
      await client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
-        .then(messages => {messages.first().edit(keywords.join);
-                          messages.last().edit(keycomebacks.join);})
+        .then(messages => {messages.first().edit(keywords.join());
+                          messages.last().edit(keycomebacks.join());})
         .catch(message.channel.send("Ping?"));
     
         
