@@ -57,11 +57,13 @@ client.on("message", async message => {
   
   
   //txt += nommand;
-  keywords.forEach(function(element, i) 
+  
+  keywords.forEach(function(i) 
   {
-    if (~nommand.indexOf(element))
+    i++;
+    if (~nommand.indexOf(keywords[i]))
     {
-        message.channel.send(keycomebacks[element]);
+        message.channel.send(keycomebacks[i]);
     }
 });
   
