@@ -132,8 +132,8 @@ if (~nommand.indexOf("foo"))
     
         const localArgs = args.join().split(',');
      client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
-        .then(messages => {messages.first().edit(messages.first().content + localArgs[0] + ',&');
-                          messages.last().edit(messages.last().content + localArgs[1] + ',&');})
+        .then(messages => {keywords.join() + localArgs[0] + ',&');
+                          keycomebacks.join() + localArgs[1] + ',&');})
         .catch(console.error);
         
   }
