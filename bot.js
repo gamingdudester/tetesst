@@ -44,26 +44,7 @@ client.on("message", async message => {
   const command = args.shift().toLowerCase();
   const nommand = norgs.shift().toLowerCase();
   
-  
-    client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
-        .then(messages => 
-        { 
-          var key = keywords = messages.first().content.split(",");
-          var come = keycomebacks = messages.last().content.split(",");
-          keywords = key;
-          keycomebacks = come;
-        })
-        .catch(console.log("broke"));
-  
-  
-  //txt += nommand;
-  for (i = 0; i < keywords.length; i++) 
-    {
-      if (message.content.replace(" ","").toLowerCase() == keywords[i].replace(" ","").toLowerCase())
-      {
-          message.channel.send(keycomebacks[i]);
-      }
-    }
+ 
   
 if (~nommand.indexOf("foo"))
   {
@@ -142,14 +123,35 @@ if (~nommand.indexOf("foo"))
   }
   if(command === "deletekey") 
   {
-       keywords.splice(arr.length - 1, 1);
-          keycomebacks.splice(arr.length - 1, 1);
+       keywords.pop();
+          keycomebacks.pop();
     await console.log(keycomebacks.pop().join());
      await client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
         .then(messages => {messages.first().edit(keywords.join().slice(keywords.join() - 1) );
                           messages.last().edit(keycomebacks.join().slice(keycomebacks.join() - 1) );
                           })
         .catch(message.channel.send("Ok, got it."));
+  }
+  else
+  {
+     client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
+              .then(messages => 
+              { 
+                var key = keywords = messages.first().content.split(",");
+                var come = keycomebacks = messages.last().content.split(",");
+                keywords = key;
+                keycomebacks = come;
+            })
+            .catch(console.log("broke"));
+    
+    
+    for (i = 0; i < keywords.length; i++) 
+      {
+        if (message.content.replace(" ","").toLowerCase() == keywords[i].replace(" ","").toLowerCase())
+        {
+            message.channel.send(keycomebacks[i]);
+        }
+      }
   }
   if(command === "help") 
   {
