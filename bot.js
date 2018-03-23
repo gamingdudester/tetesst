@@ -50,10 +50,13 @@ client.on("message", async message => {
         .then(messages => 
         { 
           var key = keywords = messages.first().content.split(",");
+      console.log("ajj");
           var come = keycomebacks = messages.last().content.split(",");
-      
+      console.log("ajj");
           keywords = key;
+      console.log("ajj");
           keycomebacks = come;
+      console.log("ajj");
         })
         .catch(message.channel.send("Ping?"));
   
