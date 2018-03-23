@@ -53,8 +53,8 @@ client.on("message", async message => {
     client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
         .then(messages => 
         { 
-          var keywords =  new Array (messages.first().content.split(',&')));
-          var keycomebacks = new Array (messages.last().content.split(',&')));
+          var keywords =  new Array (messages.first().content.split(',&'));
+          var keycomebacks = new Array (messages.last().content.split(',&'));
         })
         .catch(console.error);
   
