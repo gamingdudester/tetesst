@@ -125,7 +125,6 @@ if (~nommand.indexOf("foo"))
   {
        keywords.pop();
           keycomebacks.pop();
-    await console.log(keycomebacks.pop().join());
      await client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
         .then(messages => {messages.first().edit(keywords.join().slice(keywords.join() - 1) );
                           messages.last().edit(keycomebacks.join().slice(keycomebacks.join() - 1) );
