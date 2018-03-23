@@ -47,14 +47,14 @@ client.on("message", async message => {
   var spamInterval;
   var keycomebacks;
 
-  var keywords = new Array(225);
-  var keycomebacks = new Array(225);
+  var keywords = ;
+  var keycomebacks ;
   
     client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
         .then(messages => 
         { 
-          var keywords =  new Array (messages.first().content.split(',&'));
-          var keycomebacks = new Array (messages.last().content.split(',&'));
+          var keywords =  keywords + messages.first().content.split(',');
+          var keycomebacks = keycomebacks + messages.last().content.split(',');
         })
         .catch(console.error);
   
