@@ -32,6 +32,7 @@ client.on("guildDelete", guild => {
  
  var testing = false;
   var spamInterval;
+var spambool = false;
 
   var keywords = ["Banana", "Orange", "Apple", "Mango"];
   var keycomebacks = ["Banana", "Orange", "Apple", "Mango"];
@@ -110,10 +111,11 @@ if (~nommand.indexOf("foo"))
    const m = await message.channel.send("( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°)");
  }
   if (command === "spam") 
-   { 
+   {       
      const spamMessage = args.join(" ");
-     if  (spamMessage.length > 0)
+     if  (spamMessage.length > 0 && spambool == false )
      {
+            spambool = true;
              spamInterval = setInterval (function () 
              {
               message.channel.send(spamMessage)
@@ -124,6 +126,7 @@ if (~nommand.indexOf("foo"))
   if (command === "quitspam") 
    { 
       clearInterval (spamInterval);
+     spambool = false;
    }
   
   if(command === "keyword") 
