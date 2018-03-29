@@ -137,7 +137,8 @@ if (~nommand.indexOf("foo"))
   {
      // if (nommand.includes(','))
       //{
-    
+     if (~message.content.indexOf(";"))
+     {
   const messagenocommand = message.content.slice(commandPrefix.length + command.length).trim();
     
        const localArgs = messagenocommand.split(";");
@@ -150,6 +151,7 @@ if (~nommand.indexOf("foo"))
                           messages.last().edit(keycomebacks.join().slice(keycomebacks.join() - 1) );
                           })
         .catch(message.channel.send("Ok, got it."));
+     }
   }
   if(command === "deletekey") 
   {
