@@ -112,7 +112,10 @@ if (~nommand.indexOf("foo"))
    const m = await message.channel.send("( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°)");
  }
   if (command === "spam") 
-   {       
+   {      
+     if(!message.member.roles.some(r=>["spammer"].includes(r.name)) )
+      return message.reply("Sorry, you don't have permissions to use this!");
+     
      const spamMessage = args.join(" ");
      if  (spamMessage.length > 0 && spambool == false )
      {
