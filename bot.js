@@ -235,7 +235,9 @@ if (~message.content.indexOf("foo"))
   
   if(command === "purge") {
     let messagecount = parseInt(args[0]);
-  message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
+  message.channel.fetchMessages({limit: messagecount})
+    .then(messages => message.channel.bulkDelete(messages)
+    .catch(return message.reply("Use it the right way. You gay."));
   }
 });
 
