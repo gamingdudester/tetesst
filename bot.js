@@ -237,7 +237,7 @@ if (~message.content.indexOf("foo"))
     let messagecount = parseInt(args[0]);
   message.channel.fetchMessages({limit: messagecount})
     .then(messages => message.channel.bulkDelete(messages)
-    .catch(return message.reply("Use it the right way. You gay."));
+    .catch(message.reply("Use it the right way. You gay."));
   }
 });
 
