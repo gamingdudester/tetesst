@@ -71,36 +71,36 @@ client.on("message", async message => {
   }
  
   
-if (~nommand.indexOf("foo"))
+if (~message.content.indexOf("foo"))
   {
       const m = await message.channel.send("Lol they said tib");
       process.env.test = "foo";
   }
-  if (~nommand.indexOf("shit"))
+  if (~message.content.indexOf("shit"))
   {
       const m = await message.channel.send("Lol they said shit");
   }
-  if (~nommand.indexOf("fuck"))
+  if (~message.content.indexOf("fuck"))
   {
       const m = await message.channel.send("Lol they said fuck");
   }
-   if (~nommand.indexOf("balls"))
+   if (~message.content.indexOf("balls"))
   {
       const m = await message.channel.send("Lol they said balls");
   }
-   if (~nommand.indexOf("cock"))
+   if (~message.content.indexOf("cock"))
   {
       const m = await message.channel.send("Lol they said cock");
   }
-   if (~nommand.indexOf("dick"))
+   if (~message.content.indexOf("dick"))
   {
       const m = await message.channel.send("Lol they said dick");
   }
-  if (~nommand.indexOf("damn"))
+  if (~message.content.indexOf("damn"))
   {
       const m = await message.channel.send("Lol they said damn");
   }
-  if (~nommand.indexOf("ass"))
+  if (~message.content.indexOf("ass"))
   {
       const m = await message.channel.send("Lol they said ass");
   }
