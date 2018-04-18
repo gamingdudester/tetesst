@@ -18,7 +18,7 @@ client.on("ready", () => {
                 type: 1
         };
 
-        client.setStatus(null, opts);
+        client.user.setStatus(null, opts);
 });
 
  
