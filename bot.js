@@ -5,14 +5,16 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const commandPrefix = process.env.prefix;
 
-client.on("ready",function(){client.user.setActivity('test') => {
+client.on("ready" () => {
  
   // This event will run if the bot starts, and logs in, successfully.
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
   // Example of changing the bot's playing game to something useful. `client.user` is what the
   // docs refer to as the "ClientUser".
 });
-
+client.user.setActivity('discord.js', { type: 'WATCHING' })
+  .then(presence => console.log(`Activity set to ${presence.game.name}`))
+  .catch(console.error);
  
 client.on("guildCreate", guild => {
   // This event triggers when the bot joins a guild.
