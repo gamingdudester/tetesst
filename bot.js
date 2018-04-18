@@ -47,16 +47,28 @@ client.on("message", async message => {
   
   if (command != "deletekey")
   {
-     client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
+     client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 100 })
               .then(messages => 
               { 
-                var key = keywords = messages.first().content.split(",");
-                var come = keycomebacks = messages.last().content.split(",");
-                keywords = key;
-                keycomebacks = come;
+                var key = "";
+                messages.forEach(function(element) 
+                {
+                  key = key + element; 
+                });
+                keywords = key.split(",");
             })
             .catch(console.log("broke"));
-    console.log("ples");
+    client.channels.get(process.env.databaseChannelComeback).fetchMessages({ limit: 100 })
+              .then(messages => 
+              { 
+                var come = "";
+                messages.forEach(function(element) 
+                {
+                  come = come + element; 
+                });
+                keycomebacks = come.split(",");
+            })
+            .catch(console.log("broke"));
     
     for (i = 0; i < keywords.length; i++) 
       {
@@ -143,10 +155,14 @@ if (~message.content.indexOf("foo"))
   await  message.channel.send(messagenocommand + "  " + localArgs[0]+ "  " + localArgs[1]);
     
           keywords.push(localArgs[0]);
-          keycomebacks.push( localArgs[1]);
-     await client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
-        .then(messages => {messages.first().edit(keywords.join().slice(keywords.join() - 1) );
-                          messages.last().edit(keycomebacks.join().slice(keycomebacks.join() - 1) );
+       
+     await client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 100 })
+        .then(messages => {
+       
+       //f/f/fd/fds/f/fsd/fsd/
+       
+       
+       
                           })
         .catch(message.channel.send("Ok, got it."));
      }
