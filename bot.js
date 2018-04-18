@@ -10,13 +10,9 @@ client.on("ready", () => {
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
   // Example of changing the bot's playing game to something useful. `client.user` is what the
   // docs refer to as the "ClientUser".
- var opts = {
-                name: 'Whuh.',
-                url: 'www.stupid.com',
-                type: 1
-        };
-
-        client.user.setStatus(null, opts);
+client.user.setActivity('Press F-help to be gay', { type: 'WATCHING' })
+  .then(presence => console.log(`Activity set to ${presence.game.name}`))
+  .catch(console.error);
 });
 
  
