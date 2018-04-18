@@ -5,7 +5,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const commandPrefix = process.env.prefix;
 
-client.on("ready" () => {
+client.on("ready", () => {
  
   // This event will run if the bot starts, and logs in, successfully.
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
