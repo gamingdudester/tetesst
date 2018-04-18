@@ -6,7 +6,8 @@ const client = new Discord.Client();
 const commandPrefix = process.env.prefix;
 
 client.on("ready", () => {
-  client.user.setActivity('press F-help to be gay', { type: 'PLAYING' })
+  client.user.setActivity('press F-help to be gay', { type: 'PLAYING' });
+   client.user.setStatus("dnd");
   // This event will run if the bot starts, and logs in, successfully.
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
   // Example of changing the bot's playing game to something useful. `client.user` is what the
