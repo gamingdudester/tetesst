@@ -5,8 +5,8 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const commandPrefix = process.env.prefix;
 
-client.on("ready", () => {
-  client.user.setActivity('discord.js');
+client.on("ready",function(){client.user.setActivity('test') => {
+ 
   // This event will run if the bot starts, and logs in, successfully.
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
   // Example of changing the bot's playing game to something useful. `client.user` is what the
