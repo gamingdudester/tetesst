@@ -13,6 +13,7 @@ client.on("ready", () => {
   // Example of changing the bot's playing game to something useful. `client.user` is what the
   // docs refer to as the "ClientUser".
   client.user.setGame(`on ${client.guilds.size} servers`);
+  client.setStreaming('F-help', 'http://heeeeeeeey.com', 1);
 });
 
  
