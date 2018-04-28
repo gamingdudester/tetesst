@@ -161,7 +161,18 @@ if (~message.content.indexOf("foo"))
                   }
                 });
           
-               console.log(numberof + "");
+               if(numberof < 100)
+                  {
+                   const messagenocommand = message.content.slice(commandPrefix.length + command.length).trim();
+                    const localArgs = messagenocommand.split(";");
+                     client.channels.get(process.env.databaseChannel).send(localArgs[0] + ",");
+                     client.channels.get(process.env.databaseChannelComeback).send(localArgs[1] + ",");
+                     message.channel.send("Ok, got it.");
+                  }
+          if(numberof > 99)
+                  {
+                     message.channel.send("Too many keywords currently.");
+                  }
             })
             .catch(console.log("broke"));
        
