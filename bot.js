@@ -156,19 +156,12 @@ if (~message.content.indexOf("foo"))
                 messages.forEach(function(element) 
                 {
                   if(element.content != null)
+                  {
                    numberof = numberof + 1;
-                });
-                if(numberof < 100)
-                  {
-                   const messagenocommand = message.content.slice(commandPrefix.length + command.length).trim();
-                    const localArgs = messagenocommand.split(";");
-                     client.channels.get(process.env.databaseChannel).send(localArgs[0] + ",");
-                     client.channels.get(process.env.databaseChannelComeback).send(localArgs[1] + ",");
-                     message.channel.send("Ok, got it.");
-                  }if(numberof > 99)
-                  {
-                     message.channel.send("Too many keywords currently.");
                   }
+                });
+          
+               console.log(numberof + "");
             })
             .catch(console.log("broke"));
        
