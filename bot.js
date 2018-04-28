@@ -184,7 +184,10 @@ if (~message.content.indexOf("foo"))
   {
      await client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 100 })
         .then(messages => {messages.last().delete();})
-        .catch(message.channel.send("Ok, got it."));
+        .catch();
+     await client.channels.get(process.env.databaseChannelComeback).fetchMessages({ limit: 100 })
+        .then(messages => {messages.last().delete();})
+        .catch();
   }
  
   if(command === "help") 
