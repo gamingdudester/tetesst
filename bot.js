@@ -149,32 +149,17 @@ if (~message.content.indexOf("foo"))
       //{
      if (~message.content.indexOf(";"))
      {
-  const messagenocommand = message.content.slice(commandPrefix.length + command.length).trim();
-    
-       const localArgs = messagenocommand.split(";");
-  await  message.channel.send(messagenocommand + "  " + localArgs[0]+ "  " + localArgs[1]);
-    
-          keywords.push(localArgs[0]);
-       
-     await client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 100 })
-        .then(messages => {
-       
-       //f/f/fd/fds/f/fsd/fsd/
-       
-       
-       
-                          })
-        .catch(message.channel.send("Ok, got it."));
+      const messagenocommand = message.content.slice(commandPrefix.length + command.length).trim();
+      const localArgs = messagenocommand.split(";");
+      await client.channels.get(process.env.databaseChannel).send(localArgs[0] + ",");
+      await client.channels.get(process.env.databaseChannelComebacks).send(localArgs[1] + ",");
+      await message.channel.send("Ok, got it.");
      }
   }
   if(command === "deletekey") 
   {
-       keywords.pop();
-          keycomebacks.pop();
-     await client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2 })
-        .then(messages => {messages.first().edit(keywords.join().slice(keywords.join() - 1) );
-                          messages.last().edit(keycomebacks.join().slice(keycomebacks.join() - 1) );
-                          })
+     await client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 100 })
+        .then(messages => {messages.last().delete();})
         .catch(message.channel.send("Ok, got it."));
   }
  
@@ -248,7 +233,7 @@ if (~message.content.indexOf("foo"))
   }
   
   if(command === "purge") {
-    let messagecount = parseInt(args[0]);
+    var messagecount = parseInt(args[0]);
   message.channel.fetchMessages({limit: messagecount})
     .then(messages => message.channel.bulkDelete(messages)
     .catch(message.reply("Use it the right way <->")));
