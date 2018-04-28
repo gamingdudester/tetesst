@@ -155,6 +155,7 @@ if (~message.content.indexOf("foo"))
                
                 messages.forEach(function(element) 
                 {
+                  if(element.content != null)
                    numberof = numberof + 1;
                 });
                 if(numberof < 100)
