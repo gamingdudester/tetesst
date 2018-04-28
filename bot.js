@@ -168,6 +168,38 @@ if (~message.content.indexOf("foo"))
                      client.channels.get(process.env.databaseChannel).send(localArgs[0] + ",");
                      client.channels.get(process.env.databaseChannelComeback).send(localArgs[1] + ",");
                      message.channel.send("Ok, got it.");
+                    
+                    client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 100 })
+              .then(messages => 
+              { 
+                var key = "";
+                messages.forEach(function(element) 
+                {
+                  key = key + element; 
+                });
+                keywords = key.split(",");
+            })
+            .catch(console.log("broke"));
+    client.channels.get(process.env.databaseChannelComeback).fetchMessages({ limit: 100 })
+              .then(messages => 
+              { 
+                var come = "";
+                messages.forEach(function(element) 
+                {
+                  come = come + element; 
+                });
+                keycomebacks = come.split(",");
+            })
+            .catch(console.log("broke"));
+    
+    for (i = 0; i < keywords.length; i++) 
+      {
+        if (message.content.replace(" ","").toLowerCase() == keywords[i].replace(" ","").toLowerCase())
+        {
+            message.channel.send(keycomebacks[i]);
+        }
+      }
+                    
                   }
           if(numberof > 99)
                   {
