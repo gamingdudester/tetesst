@@ -149,11 +149,29 @@ if (~message.content.indexOf("foo"))
       //{
      if (~message.content.indexOf(";"))
      {
-      const messagenocommand = message.content.slice(commandPrefix.length + command.length).trim();
-      const localArgs = messagenocommand.split(";");
-      await client.channels.get(process.env.databaseChannel).send(localArgs[0] + ",");
-      await client.channels.get(process.env.databaseChannelComeback).send(localArgs[1] + ",");
-      await message.channel.send("Ok, got it.");
+        client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 100 })
+              .then(messages => 
+              { 
+                var numberof = 0;
+                messages.forEach(function(element) 
+                {
+                   numberof = numberof + 1;
+                });
+          
+            })
+            .catch(console.log("broke"));
+            if(numberof < 100)
+            {
+             const messagenocommand = message.content.slice(commandPrefix.length + command.length).trim();
+              const localArgs = messagenocommand.split(";");
+              await client.channels.get(process.env.databaseChannel).send(localArgs[0] + ",");
+              await client.channels.get(process.env.databaseChannelComeback).send(localArgs[1] + ",");
+              await message.channel.send("Ok, got it.");
+            }if(numberof > 99)
+            {
+               await message.channel.send("Too many keywords currently.");
+            }
+       
      }
   }
   if(command === "deletekey") 
