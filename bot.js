@@ -149,10 +149,11 @@ if (~message.content.indexOf("foo"))
       //{
      if (~message.content.indexOf(";"))
      {
+        var numberof = 0;
         client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 100 })
               .then(messages => 
               { 
-                var numberof = 0;
+               
                 messages.forEach(function(element) 
                 {
                    numberof = numberof + 1;
@@ -160,6 +161,7 @@ if (~message.content.indexOf("foo"))
           
             })
             .catch(console.log("broke"));
+       
             if(numberof < 100)
             {
              const messagenocommand = message.content.slice(commandPrefix.length + command.length).trim();
