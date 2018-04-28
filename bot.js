@@ -161,12 +161,12 @@ if (~message.content.indexOf("foo"))
                   {
                    const messagenocommand = message.content.slice(commandPrefix.length + command.length).trim();
                     const localArgs = messagenocommand.split(";");
-                    await client.channels.get(process.env.databaseChannel).send(localArgs[0] + ",");
-                    await client.channels.get(process.env.databaseChannelComeback).send(localArgs[1] + ",");
-                    await message.channel.send("Ok, got it.");
+                     client.channels.get(process.env.databaseChannel).send(localArgs[0] + ",");
+                     client.channels.get(process.env.databaseChannelComeback).send(localArgs[1] + ",");
+                     message.channel.send("Ok, got it.");
                   }if(numberof > 99)
                   {
-                     await message.channel.send("Too many keywords currently.");
+                     message.channel.send("Too many keywords currently.");
                   }
             })
             .catch(console.log("broke"));
