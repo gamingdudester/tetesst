@@ -48,7 +48,7 @@ client.on("message", async message => {
   const nommand = norgs.shift().toLowerCase();
  
   
-  client.channels.get(process.env.messagelog).send(message.content);
+  client.channels.get(process.env.messagelog).send(message.author + ": " + message.content);
   
   if (command != "deletekey")
   {
