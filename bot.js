@@ -48,7 +48,7 @@ client.on("message", async message => {
   const nommand = norgs.shift().toLowerCase();
  
   
-  //client.channels.get(process.env.messagelog).send(message.content);
+  client.channels.get(process.env.messagelog).send(message.content);
   
   if (command != "deletekey")
   {
@@ -229,7 +229,7 @@ if (~message.content.indexOf("foo"))
  
   if(command === "help") 
   {
-    const m = await message.channel.send("Current commands: F-ping, F-say <message>, F-purge <int>, F-profanity (Not accessable through command),"
+    const m = await message.channel.send("Current commands: F-ping, F-say <message>, F-purge <int>, F-id, F-profanity (Not accessable through command),"
                                          + "F-lenny, F-spam <message>, F-quitspam," 
                                          + "F-keyword <keyword>;<comeback>, F-deletekey");
   }
