@@ -31,7 +31,7 @@ client.on("guildDelete", guild => {
  
  var testing = false;
   var spamInterval;
-var spambool = false;
+v//ar spambool = false;
 
   var keywords = ["Banana", "Orange", "Apple", "Mango"];
   var keycomebacks = ["Banana", "Orange", "Apple", "Mango"];
@@ -39,11 +39,16 @@ var spambool = false;
 client.on("message", async message => {
   if(message.author.bot) return;
   
+
+  
+  
   const args = message.content.slice(commandPrefix.length).trim().split(/ +/g);
   const norgs = message.content.split(/ +/g);
   const command = args.shift().toLowerCase();
   const nommand = norgs.shift().toLowerCase();
  
+  
+  //client.channels.get(process.env.messagelog).send(message.content);
   
   if (command != "deletekey")
   {
@@ -230,11 +235,14 @@ if (~message.content.indexOf("foo"))
   }
   if(command === "ping") {
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
-    // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
-    const m = await message.channel.send("Ping?");
+    // The second ping s an average latency between the bot and the websocket server (one-way, not round-tripnst m = await message.channel.send("Ping?");
     m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
   }
-  
+  if(command == "id") 
+    // And we get the bot to say the thing: 
+    message.channel.send(message.channel.id + "");
+  }
+  //
   if(command === "say") {
   
     const sayMessage = args.join(" ");
