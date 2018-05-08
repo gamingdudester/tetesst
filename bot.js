@@ -238,9 +238,9 @@ if (~message.content.indexOf("foo"))
     // The second ping s an average latency between the bot and the websocket server (one-way, not round-tripnst m = await message.channel.send("Ping?");
     m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
   }
-  if(command == "id") 
+  if(command === "id") 
     // And we get the bot to say the thing: 
-    message.channel.send(message.channel.id + "");
+    message.channel.send(message.channel.id);
   }
   //
   if(command === "say") {
