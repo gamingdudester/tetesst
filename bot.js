@@ -31,7 +31,7 @@ client.on("guildDelete", guild => {
  
  var testing = false;
   var spamInterval;
-v//ar spambool = false;
+var spambool = false;
 
   var keywords = ["Banana", "Orange", "Apple", "Mango"];
   var keycomebacks = ["Banana", "Orange", "Apple", "Mango"];
