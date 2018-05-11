@@ -38,10 +38,10 @@ var spambool = false;
 
 client.on("message", async message => {
   
-    client.channels.get(process.env.messagelog).send(message.author.id + ": " + message.content);
-
-  
   if(message.author.bot) return;
+  
+  client.channels.get(process.env.messagelog).send(message.author.id + ": " + message.content);
+
   
   const args = message.content.slice(commandPrefix.length).trim().split(/ +/g);
   const norgs = message.content.split(/ +/g);
