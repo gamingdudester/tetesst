@@ -37,18 +37,16 @@ var spambool = false;
   var keycomebacks = ["Banana", "Orange", "Apple", "Mango"];
 
 client.on("message", async message => {
-  if(message.author.bot) return;
   
+    client.channels.get(process.env.messagelog).send(message.author.id + ": " + message.content);
 
   
+  if(message.author.bot) return;
   
   const args = message.content.slice(commandPrefix.length).trim().split(/ +/g);
   const norgs = message.content.split(/ +/g);
   const command = args.shift().toLowerCase();
   const nommand = norgs.shift().toLowerCase();
- 
-  
-  client.channels.get(process.env.messagelog).send(message.author.id + ": " + message.content);
   
   if (command != "deletekey")
   {
