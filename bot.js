@@ -71,7 +71,7 @@ if(message.channel.id != process.env.messagelog)
                 {
                   come = come + element; 
                 });
-                keycomebacks = come.split(",");
+                keycomebacks = come.split(";");
             })
             .catch(console.log("broke"));
     
