@@ -220,7 +220,7 @@ if (~message.content.indexOf("foo"))
   if(command === "deletekey") 
   {
      await client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 100 })
-        .then(messages => {messages.last().delete();})
+        .then(messages => {messages.last().delete(); console.log(messages.length);})
         .catch();
      await client.channels.get(process.env.databaseChannelComeback).fetchMessages({ limit: 100 })
         .then(messages => {messages.last().delete();})
