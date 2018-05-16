@@ -34,8 +34,13 @@ var profanitybool = false;
      .then(messages => 
      { 
         if(messages.first().content == "true")
-        {profanitybool = false;}
-          else{profanitybool = false;}
+        {
+          profanitybool = false;
+        }
+          else
+          {
+            profanitybool = true;
+          }
      }
 
 
