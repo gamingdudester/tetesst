@@ -30,19 +30,7 @@ client.on("guildDelete", guild => {
   var spamInterval;
 var spambool = false;
 var profanitybool = false;
- client.channels.get(process.env.profanityboolid).fetchMessages({ limit: 100 })
-     .then(messages => 
-     { 
-        if(messages.first().content == "true")
-        {
-          profanitybool = false;
-        }
-          else
-          {
-            profanitybool = true;
-          }
-     })
-     .catch(console.log("broke"));     
+   
 
   var keywords = ["Banana", "Orange", "Apple", "Mango"];
   var keycomebacks = ["Banana", "Orange", "Apple", "Mango"];
@@ -138,15 +126,7 @@ if (~message.content.indexOf("foo"))
   if(message.content.indexOf(commandPrefix) !== 0) return;
  
   
-  if(command === "profanity")
-  {
-     client.channels.get(process.env.profanityboolid).fetchMessages({ limit: 100 })
-     .then(messages => 
-     { 
-        messages.first().edit(profanitybool + "");
-     })
-     .catch(console.log("broke"));
-  }
+  
  if(command === "lenny") 
  {
    message.delete(10);
