@@ -30,7 +30,7 @@ client.on("guildDelete", guild => {
   var spamInterval;
 var spambool = false;
 var profanitybool = false;
- client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 100 })
+ client.channels.get(process.env.profanityboolid).fetchMessages({ limit: 100 })
      .then(messages => 
      { 
         if(messages.first().content == "true")
@@ -140,7 +140,7 @@ if (~message.content.indexOf("foo"))
   
   if(command === "profanity")
   {
-     client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 100 })
+     client.channels.get(process.env.profanityboolid).fetchMessages({ limit: 100 })
      .then(messages => 
      { 
         messages.first().edit(profanitybool + "");
