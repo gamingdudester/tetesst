@@ -42,7 +42,7 @@ var profanitybool = false;
             profanitybool = true;
           }
      })
-           
+     .catch(console.log("broke"));     
 
   var keywords = ["Banana", "Orange", "Apple", "Mango"];
   var keycomebacks = ["Banana", "Orange", "Apple", "Mango"];
@@ -144,7 +144,8 @@ if (~message.content.indexOf("foo"))
      .then(messages => 
      { 
         messages.first().edit(profanitybool + "");
-     }
+     })
+     .catch(console.log("broke"));
   }
  if(command === "lenny") 
  {
