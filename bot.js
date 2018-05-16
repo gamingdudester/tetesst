@@ -41,8 +41,8 @@ var profanitybool = false;
           {
             profanitybool = true;
           }
-     }
-
+     })
+           
 
   var keywords = ["Banana", "Orange", "Apple", "Mango"];
   var keycomebacks = ["Banana", "Orange", "Apple", "Mango"];
