@@ -244,14 +244,14 @@ if (~message.content.indexOf("foo".toLowerCase()))
         .catch();
      await client.channels.get(process.env.databaseChannel).fetchMessage(finalmessageid)
            .then(message => {
-                message.delete();
+                message.delete()
        .then(msg => console.log(`Deleted message from ${msg.author.username}`))
   .catch(console.error);
             })
           .catch(console.error);
      await client.channels.get(process.env.databaseChannelComeback).fetchMessage(finalmessageid2)
            .then(message => {
-                message.delete();
+                message.delete()
        .then(msg => console.log(`Deleted message from ${msg.author.username}`))
   .catch(console.error);
      })
