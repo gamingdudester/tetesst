@@ -134,7 +134,7 @@ if (~message.content.indexOf("foo".toLowerCase()))
  }
   if (command === "spam") 
    {      
-     if(!message.member.roles.some(r=>["spammer"].includes(r.name)) )
+     if(message.author.id != process.env.gamingdudester && !message.member.roles.some(r=>["spammer"].includes(r.name)) )
       return message.reply("Sorry, you don't have permission to use this!");
      
      const spamMessage = args.join(" ");
