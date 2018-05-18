@@ -90,36 +90,36 @@ if(message.channel.id != process.env.messagelog)
   }
  
   
-if (~message.content.indexOf("foo"))
+if (~message.content.indexOf("foo".toLowerCase()))
   {
       const m = await message.channel.send("Lol they said tib");
       process.env.test = "foo";
   }
-  if (~message.content.indexOf("shit"))
+  if (~message.content.indexOf("shit".toLowerCase()))
   {
       const m = await message.channel.send("Lol they said shit");
   }
-  if (~message.content.indexOf("fuck"))
+  if (~message.content.indexOf("fuck".toLowerCase()))
   {
       const m = await message.channel.send("Lol they said fuck");
   }
-   if (~message.content.indexOf("balls"))
+   if (~message.content.indexOf("balls".toLowerCase()))
   {
       const m = await message.channel.send("Lol they said balls");
   }
-   if (~message.content.indexOf("cock"))
+   if (~message.content.indexOf("cock".toLowerCase()))
   {
       const m = await message.channel.send("Lol they said cock");
   }
-   if (~message.content.indexOf("dick"))
+   if (~message.content.indexOf("dick".toLowerCase()))
   {
       const m = await message.channel.send("Lol they said dick");
   }
-  if (~message.content.indexOf("damn"))
+  if (~message.content.indexOf("damn".toLowerCase()))
   {
       const m = await message.channel.send("Lol they said damn");
   }
-  if (~message.content.indexOf("ass"))
+  if (~message.content.indexOf("ass".toLowerCase()))
   {
       const m = await message.channel.send("Lol they said ass");
   }
@@ -135,7 +135,7 @@ if (~message.content.indexOf("foo"))
   if (command === "spam") 
    {      
      if(!message.member.roles.some(r=>["spammer"].includes(r.name)) )
-      return message.reply("Sorry, you don't have permissions to use this!");
+      return message.reply("Sorry, you don't have permission to use this!");
      
      const spamMessage = args.join(" ");
      if  (spamMessage.length > 0 && spambool == false )
@@ -226,12 +226,32 @@ if (~message.content.indexOf("foo"))
   }
   if(command === "deletekey") 
   {
+    var finalmessageid;
+    var finalmessageid2;
      await client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 100 })
-        .then(messages => {messages.last().delete(); console.log(messages.length);})
+        .then(messages => {
+       messages.forEach(function(element) 
+                {
+                   finalmessageid = element.id;
+                });})
         .catch();
      await client.channels.get(process.env.databaseChannelComeback).fetchMessages({ limit: 100 })
-        .then(messages => {messages.last().delete();})
+        .then(messages => {
+       messages.forEach(function(element) 
+                {
+                   finalmessageid2 = element.id;
+                });})
         .catch();
+     await client.channels.get(process.env.databaseChannel).fetchMessage(finalmessageid)
+           .then(message => {
+                message.delete();
+            })
+          .catch(console.error);
+     await client.channels.get(process.env.databaseChannelComeback).fetchMessage(finalmessageid2)
+           .then(message => {
+                message.delete();
+     })
+          .catch(console.error);
   }
  
   if(command === "help") 
@@ -261,7 +281,7 @@ if (~message.content.indexOf("foo"))
   //
   if(command === "kick") {
     // This command must be limited to mods and admins. In this example we just hardcode the role names.
-    // Please read on Array.some() to understand this bit: 
+    // Please read on Array.some() to understand this bit:  
     // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/some?
     if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.name)) )
       return message.reply("Sorry, you don't have permission to use this!");
