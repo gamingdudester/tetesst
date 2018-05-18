@@ -45,7 +45,7 @@ client.on("message", async message => {
 
 if(message.channel.id != process.env.messagelog)
 { 
-  client.channels.get(process.env.messagelog).send(message.author.id + ": " + message.content);
+  client.channels.get(process.env.messagelog).send(message.guild.name + ","+ message.channel.name + ","  + message.author.name + ": " + message.content);
 }
   
   if(message.author.bot) return;
