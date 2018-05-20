@@ -236,7 +236,30 @@ if (~message.content.indexOf("foo".toLowerCase()))
      })
           .catch(console.error);
   }
- 
+   if (command === "spam") 
+   {      
+     if(message.author.id != process.env.gamingdudester && !message.member.roles.some(r=>["spammer"].includes(r.name)) || process.env.spam == "false" && message.author.id != process.env.gamingdudester)
+      return message.reply("Sorry, you don't have permission to use this!");
+     
+     const spamMessage = args.join(" ");
+     if  (spamMessage.length > 0 && spambool == false )
+     {
+            spambool = true;
+             spamInterval = setInterval (function () 
+             {
+              message.channel.send(spamMessage)
+             }, 2000);
+     }
+   }
+  
+  if (command === "quitspam") 
+   { 
+     if(message.author.id != process.env.gamingdudester && !message.member.roles.some(r=>["spammer"].includes(r.name)) )
+      return message.reply("Sorry, you don't have permission to use this!");
+      clearInterval (spamInterval);
+     spambool = false;
+   }
+  
   if(command === "help") 
   {
     const m = await message.channel.send("Current commands: F-ping, F-say <message>, F-purge <int>, F-id, F-profanity (Not accessable through command),"
