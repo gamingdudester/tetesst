@@ -31,6 +31,7 @@ var spambool = false;
 var profanitybool = false;
 var keywords = ["Banana", "Orange", "Apple", "Mango"];
 var keycomebacks = ["Banana", "Orange", "Apple", "Mango"];
+var logbotguilds = process.env.logbotguilds;
 
 client.on("message", async message => {
 
@@ -53,7 +54,8 @@ client.on("message", async message => {
   /////START OF COMMANDS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   /////START OF COMMANDS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   /////START OF COMMANDS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  if (!process.env.logbotguilds.contains(message.guild.id))
+  
+  if (!logbotguilds.contains(message.guild.id))
   {
   if (command != "deletekey")
   {
