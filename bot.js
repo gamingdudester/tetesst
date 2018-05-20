@@ -55,7 +55,7 @@ client.on("message", async message => {
   /////START OF COMMANDS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   /////START OF COMMANDS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   
-  if (!logbotguilds.contains(message.guild.id))
+  if (!~logbotguilds.content.indexOf(message.guild.id))
   {
   if (command != "deletekey")
   {
