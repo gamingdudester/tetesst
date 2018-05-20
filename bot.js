@@ -132,28 +132,7 @@ if (~message.content.indexOf("foo".toLowerCase()))
    message.delete(10);
    const m = await message.channel.send("( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°) ( ͡° ͜ʖ ͡°)");
  }
-  if (command === "spam") 
-   {      
-     if(message.author.id != process.env.gamingdudester && !message.member.roles.some(r=>["spammer"].includes(r.name)) )
-      return message.reply("Sorry, you don't have permission to use this!");
-     
-     const spamMessage = args.join(" ");
-     if  (spamMessage.length > 0 && spambool == false )
-     {
-            spambool = true;
-             spamInterval = setInterval (function () 
-             {
-              message.channel.send(spamMessage)
-             }, 2000);
-     }
-   }
-  
-  if (command === "quitspam") 
-   { 
-      clearInterval (spamInterval);
-     spambool = false;
-   }
-  
+
   if(command === "keyword") 
   {
      // if (nommand.includes(','))
