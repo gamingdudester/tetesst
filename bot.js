@@ -38,8 +38,7 @@ client.on("message", async message => {
   if(message.channel.id != process.env.messagelog)
   { 
     //log messages
-    client.channels.find("Frostbot Database", message.channel.id);
-    client.channels.get(process.env.messagelog).send(message.guild.name + ","+ message.channel.name + ","  + message.author.username + ": " + message.content);
+    client.channels.find("Frostbot Database", message.channel.id).send(message.guild.name + ","+ message.channel.name + ","  + message.author.username + ": " + message.content);
   
   }
   //check if it's a bot
