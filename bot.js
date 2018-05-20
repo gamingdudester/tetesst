@@ -24,30 +24,22 @@ client.on("guildDelete", guild => {
   console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
 });
 
-
- 
- var testing = false;
-  var spamInterval;
+//set some basic vars
+var testing = false;
+var spamInterval;
 var spambool = false;
 var profanitybool = false;
-   
-
-  var keywords = ["Banana", "Orange", "Apple", "Mango"];
-  var keycomebacks = ["Banana", "Orange", "Apple", "Mango"];
-
-
-
-
-
-
+var keywords = ["Banana", "Orange", "Apple", "Mango"];
+var keycomebacks = ["Banana", "Orange", "Apple", "Mango"];
 
 client.on("message", async message => {
 
-if(message.channel.id != process.env.messagelog)
-{ 
-  client.channels.get(process.env.messagelog).send(message.guild.name + ","+ message.channel.name + ","  + message.author.username + ": " + message.content);
-}
-  
+  if(message.channel.id != process.env.messagelog)
+  { 
+    //log messages
+    client.channels.get(process.env.messagelog).send(message.guild.name + ","+ message.channel.name + ","  + message.author.username + ": " + message.content);
+  }
+  //check if it's a bot
   if(message.author.bot) return;
   
   const args = message.content.slice(commandPrefix.length).trim().split(/ +/g);
@@ -55,8 +47,15 @@ if(message.channel.id != process.env.messagelog)
   const command = args.shift().toLowerCase();
   const nommand = norgs.shift().toLowerCase();
   
+  /////START OF COMMANDS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  /////START OF COMMANDS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  /////START OF COMMANDS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  /////START OF COMMANDS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  if (!process.env.logbotguilds.contains(message.guild.id))
+  {
   if (command != "deletekey")
   {
+    //set keywords and such
      client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 100 })
               .then(messages => 
               { 
@@ -80,6 +79,8 @@ if(message.channel.id != process.env.messagelog)
             })
             .catch(console.log("broke"));
     
+    
+    //ok, check for keyword. If is, send.
     for (i = 0; i < keywords.length; i++) 
       {
         if (message.content.replace(" ","").toLowerCase() == keywords[i].replace(" ","").toLowerCase())
@@ -90,11 +91,7 @@ if(message.channel.id != process.env.messagelog)
   }
  
   
-if (~message.content.indexOf("foo".toLowerCase()))
-  {
-      const m = await message.channel.send("Lol they said tib");
-      process.env.test = "foo";
-  }
+//check for words even more contained in message
   if (~message.content.indexOf("shit".toLowerCase()))
   {
       const m = await message.channel.send("Lol they said shit");
@@ -284,59 +281,15 @@ if (~message.content.indexOf("foo".toLowerCase()))
     // And we get the bot to say the thing: 
     message.channel.send(sayMessage);
   }
-  //
-  if(command === "kick") {
-    // This command must be limited to mods and admins. In this example we just hardcode the role names.
-    // Please read on Array.some() to understand this bit:  
-    // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/some?
-    if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.name)) )
-      return message.reply("Sorry, you don't have permission to use this!");
-    
-    // Let's first check if we have a member and if we can kick them!
-    // message.mentions.members is a collection of people that have been mentioned, as GuildMembers.
-    let member = message.mentions.members.first();
-    if(!member)
-      return message.reply("Please mention a valid member of this server");
-    if(!member.kickable) 
-      return message.reply("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
-    
-    // slice(1) removes the first part, which here should be the user mention!
-    let reason = args.slice(1).join(' ');
-    if(!reason)
-      return message.reply("Please indicate a reason for the kick!");
-    
-    // Now, time for a swift kick in the nuts!
-    await member.kick(reason)
-      .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
-    message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
-
-  }
-  
-  if(command === "ban") {
-    if(!message.member.roles.some(r=>["Administrator"].includes(r.name)) )
-      return message.reply("Sorry, you don't have permissions to use this!");
-    
-    let member = message.mentions.members.first();
-    if(!member)
-      return message.reply("Please mention a valid member of this server");
-    if(!member.bannable) 
-      return message.reply("I cannot ban this user! Do they have a higher role? Do I have ban permissions?");
-
-    let reason = args.slice(1).join(' ');
-    if(!reason)
-      return message.reply("Please indicate a reason for the ban!");
-    
-    await member.ban(reason)
-      .catch(error => message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`));
-    message.reply(`${member.user.tag} has been banned by ${message.author.tag} because: ${reason}`);
-  }
   
   if(command === "purge") {
     var messagecount = parseInt(args[0]);
   message.channel.fetchMessages({limit: messagecount})
     .then(messages => message.channel.bulkDelete(messages)
-    .catch(message.reply("Use it the right way <->")));
+    .catch(message.reply("Ok <->")));
   }
-});
-
+}
+}
+  );
+//END OF COMMANDS!
 client.login(process.env.BOT_TOKEN);
