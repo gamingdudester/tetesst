@@ -127,6 +127,22 @@ client.on("message", async message => {
  
   
   
+    
+    
+    
+    
+ if(command === "itt") {
+  
+    var picture = message.attachments;
+   var rgbarray = picture.getImageData(10, 10, 50, 50).data;
+   rgbarray.prototype.forEach(function(element))
+   {
+   console.log(element.toString());
+ }
+    var picturemadeoftext;
+    message.channel.send(picturemadeoftext);
+  }
+    
  if(command === "lenny") 
  {
    message.delete(10);
@@ -289,7 +305,7 @@ client.on("message", async message => {
     var messagecount = parseInt(args[0]);
   message.channel.fetchMessages({limit: messagecount})
     .then(messages => message.channel.bulkDelete(messages)
-    .catch(message.reply("Ok <->")));
+    .catch(message.reply("Ok. <->")));
   }
 }
 }
