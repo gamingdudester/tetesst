@@ -132,10 +132,10 @@ client.on("message", async message => {
   
     var picture = message.attachments;
    var rgbarray = picture.getImageData(10, 10, 50, 50).data;
-   rgbarray.prototype.forEach(function(element))
-   {
-   console.log(element.toString());
- }
+     rgbarray.prototype.forEach(function(element)
+     {
+     console.log(element.toString());
+      });
     var picturemadeoftext;
     message.channel.send(picturemadeoftext);
   }
