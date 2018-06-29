@@ -94,36 +94,36 @@ client.on("message", async message => {
 //check for words even more contained in message
 if (profanitybool == true)
 {
-  if (~message.content.indexOf("shit".toLowerCase()))
+  if (~message.content.toLowerCase().indexOf("shit".toLowerCase()))
   {
       const m = await message.channel.send("Lol they said shit");
   }
-  if (~message.content.indexOf("fuck".toLowerCase()))
+  if (~message.content.toLowerCase().indexOf("fuck".toLowerCase()))
   {
       const m = await message.channel.send("Lol they said fuck");
   }
-   if (~message.content.indexOf("balls".toLowerCase()))
+   if (~message.content.toLowerCase().indexOf("balls".toLowerCase()))
   {
       const m = await message.channel.send("Lol they said balls");
   }
-   if (~message.content.indexOf("cock".toLowerCase()))
+   if (~message.content.toLowerCase().indexOf("cock".toLowerCase()))
   {
       const m = await message.channel.send("Lol they said cock");
   }
-   if (~message.content.indexOf("dick".toLowerCase()))
+   if (~message.content.toLowerCase().indexOf("dick".toLowerCase()))
   {
       const m = await message.channel.send("Lol they said dick");
   }
-  if (~message.content.indexOf("damn".toLowerCase()))
+  if (~message.content.toLowerCase().indexOf("damn".toLowerCase()))
   {
       const m = await message.channel.send("Lol they said damn");
   }
-  if (~message.content.indexOf("ass".toLowerCase()))
+  if (~message.content.toLowerCase().indexOf("ass".toLowerCase()))
   {
       const m = await message.channel.send("Lol they said ass");
   }
 }
-  if(message.content.indexOf(commandPrefix) !== 0) return;
+  if(message.content.toLowerCase().indexOf(commandPrefix) !== 0) return;
  
   
   
@@ -278,7 +278,7 @@ if (profanitybool == true)
   
   if(command === "help") 
   {
-    const m = await message.channel.send("Current commands: F-ping, F-say <message>, F-purge <int>, F-id, F-profanity (Not accessable through command),"
+    const m = await message.channel.send("Current commands: F-ping, F-say <message>, F-purge <int>, F-id, F-profanity,"
                                          + "F-lenny, F-spam <message>, F-quitspam," 
                                          + "F-keyword <keyword>;<comeback>, F-deletekey");
   }
