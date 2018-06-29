@@ -94,31 +94,31 @@ client.on("message", async message => {
 //check for words even more contained in message
 if (profanitybool == true)
 {
-  if (~message.content.toLowerCase().indexOf("shit".toLowerCase()))
+  if (~message.content.toLowerCase().indexOf("shit"))
   {
       const m = await message.channel.send("Lol they said shit");
   }
-  if (~message.content.toLowerCase().indexOf("fuck".toLowerCase()))
+  if (~message.content.toLowerCase().indexOf("fuck"))
   {
       const m = await message.channel.send("Lol they said fuck");
   }
-   if (~message.content.toLowerCase().indexOf("balls".toLowerCase()))
+   if (~message.content.toLowerCase().indexOf("balls"))
   {
       const m = await message.channel.send("Lol they said balls");
   }
-   if (~message.content.toLowerCase().indexOf("cock".toLowerCase()))
+   if (~message.content.toLowerCase().indexOf("cock"))
   {
       const m = await message.channel.send("Lol they said cock");
   }
-   if (~message.content.toLowerCase().indexOf("dick".toLowerCase()))
+   if (~message.content.toLowerCase().indexOf("dick"))
   {
       const m = await message.channel.send("Lol they said dick");
   }
-  if (~message.content.toLowerCase().indexOf("damn".toLowerCase()))
+  if (~message.content.toLowerCase().indexOf("damn"))
   {
       const m = await message.channel.send("Lol they said damn");
   }
-  if (~message.content.toLowerCase().indexOf("ass".toLowerCase()))
+  if (~message.content.toLowerCase().indexOf("ass"))
   {
       const m = await message.channel.send("Lol they said ass");
   }
