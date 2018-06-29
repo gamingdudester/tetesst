@@ -92,6 +92,8 @@ client.on("message", async message => {
  
   
 //check for words even more contained in message
+if (profanitybool == true)
+{
   if (~message.content.indexOf("shit".toLowerCase()))
   {
       const m = await message.channel.send("Lol they said shit");
@@ -120,6 +122,7 @@ client.on("message", async message => {
   {
       const m = await message.channel.send("Lol they said ass");
   }
+}
   if(message.content.indexOf(commandPrefix) !== 0) return;
  
   
