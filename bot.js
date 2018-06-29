@@ -308,10 +308,10 @@ if (profanitybool == true)
     .catch(message.reply("Ok. <->")));
   }
 }
-  if (command == “profanity”)
+  if (command == "profanity")
   {
      profanitybool = !profanitybool;
-     message.channel.send(profanitybool + “.”);
+     message.channel.send(profanitybool + ".");
   }
 }
   );
