@@ -94,7 +94,7 @@ client.on("message", async message => {
 //check for words even more contained in message
 if (profanitybool == true)
 {
-  if (~message.content.indexOf("shit"))
+  if (message.content.indexOf("shit"))
   {
       const m = await message.channel.send("Lol they said shit");
   }
