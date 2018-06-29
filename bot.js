@@ -94,31 +94,31 @@ client.on("message", async message => {
 //check for words even more contained in message
 if (profanitybool == true)
 {
-  if (message.content.toLowerCase().contains("shit"))
+  if (message.content.toLowerCase().contains("shit") == true)
   {
       const m = await message.channel.send("Lol they said shit");
   }
-   if (message.content.toLowerCase().contains("fuck"))
+   if (message.content.toLowerCase().contains("fuck") == true)
   {
       const m = await message.channel.send("Lol they said fuck");
   }
-   if (message.content.toLowerCase().contains("balls"))
+   if (message.content.toLowerCase().contains("balls") == true)
   {
       const m = await message.channel.send("Lol they said balls");
   }
-   if (message.content.toLowerCase().contains("cock"))
+   if (message.content.toLowerCase().contains("cock") == true)
   {
       const m = await message.channel.send("Lol they said cock");
   }
-   if (message.content.toLowerCase().contains("dick"))
+   if (message.content.toLowerCase().contains("dick") == true)
   {
       const m = await message.channel.send("Lol they said dick");
   }
-   if (message.content.toLowerCase().contains("damn"))
+   if (message.content.toLowerCase().contains("damn") == true)
   {
       const m = await message.channel.send("Lol they said damn");
   }
- if (message.content.toLowerCase().contains("ass"))
+ if (message.content.toLowerCase().contains("ass") == true)
   {
       const m = await message.channel.send("Lol they said ass");
   }
