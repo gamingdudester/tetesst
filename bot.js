@@ -300,12 +300,14 @@ if (profanitybool == true)
     // And we get the bot to say the thing: 
     message.channel.send(sayMessage);
   }
-    if(command === "csay") {
-  
-    const sayMessage = args.join(" ");
-     message.delete(20);
-    // And we get the bot to say the thing: 
-    message.channel.send(sayMessage);
+    if(command === "say") 
+    {
+    client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2})
+             .then(messages => 
+             {
+                 client.channels.get(messages.Last().content).send(message.content);
+             })
+            .catch(console.log("broke"));
   }
   if(command == "setsay")
   {
