@@ -55,7 +55,7 @@ client.on("message", async message => {
   {
   if (command != "deletekey")
   {
-    //set keywords and such
+    ///set keywords and such
      client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 100 })
               .then(messages => 
               { 
