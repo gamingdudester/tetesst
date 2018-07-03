@@ -31,13 +31,15 @@ var keycomebacks = ["Banana", "Orange", "Apple", "Mango"];
 var logbotguilds = process.env.logbotguilds;
 
 client.on("message", async message => {
-
+try {
   if(message.channel.id != process.env.messagelog)
   { 
     //log messages
     client.channels.find("name", message.guild.id.toString()).send(message.guild.name + ","+ message.channel.name + ","  + message.author.username + ": " + message.content);
   
   }
+}
+catch (){}
   //check if it's a bot
   if(message.author.bot) return;
   
