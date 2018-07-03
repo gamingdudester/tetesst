@@ -311,7 +311,7 @@ if (profanitybool == true)
   }
   if(command == "setsay")
   {
-     client.channels.get(process.env.setsayChannel).send(localArgs[0]);
+     client.channels.get(process.env.setsayChannel).send(args[0]);
   }
   if(command === "purge") {
     var messagecount = parseInt(args[0]);
