@@ -293,14 +293,24 @@ if (profanitybool == true)
     message.channel.send(message.channel.id);
   }
   //
-  if(command === "say") {
+  if(command === "newsay") {
   
     const sayMessage = args.join(" ");
      message.delete(20);
     // And we get the bot to say the thing: 
     message.channel.send(sayMessage);
   }
+    if(command === "csay") {
   
+    const sayMessage = args.join(" ");
+     message.delete(20);
+    // And we get the bot to say the thing: 
+    message.channel.send(sayMessage);
+  }
+  if(command == "setsay")
+  {
+     client.channels.get(process.env.setsayChannel).send(localArgs[0]);
+  }
   if(command === "purge") {
     var messagecount = parseInt(args[0]);
   message.channel.fetchMessages({limit: messagecount})
