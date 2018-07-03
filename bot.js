@@ -278,7 +278,7 @@ if (profanitybool == true)
   
   if(command === "help") 
   {
-    const m = await message.channel.send("Current commands: Says your message: F-say <message>, Sets the channel for F-say: F-setsay <channel id>, Says your message always in the current channel: F-oldsay <message>,Deletes messages: F-purge 100, Says channel ID: F-id, Toggles profanity filter: F-profanity,"
+    const m = await message.channel.send("Current commands: Says your message: F-say <message>, Sets the channel for F-say: F-setsay <channel id>, Says your message always in the current channel: F-newsay <message>,Deletes messages: F-purge 100, Says channel ID: F-id, Toggles profanity filter: F-profanity,"
                                          + "Gives you a lenny face: F-lenny, Spams messages: F-spam <message>, Quits spamming: F-quitspam," 
                                          + "Sets a keyword & comeback: F-keyword <keyword>;<comeback>, Deletes most-recent keyword: F-deletekey");
   }
@@ -293,7 +293,7 @@ if (profanitybool == true)
     message.channel.send(message.channel.id);
   }
   //
-  if(command === "oldsay") {
+  if(command === "newsay") {
   
     const sayMessage = args.join(" ");
      message.delete(20);
