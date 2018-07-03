@@ -302,7 +302,7 @@ if (profanitybool == true)
   }
     if(command === "say") 
     {
-    client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2})
+    client.channels.get(process.env.setsayChannel).fetchMessages({ limit: 2})
              .then(messages => 
              {
                  client.channels.get(messages.last().content).send(message.content);
