@@ -39,7 +39,7 @@ try {
   
   }
 }
-catch (){}
+catch (err){}
   //check if it's a bot
   if(message.author.bot) return;
   
