@@ -293,7 +293,7 @@ if (profanitybool == true)
     message.channel.send(message.channel.id);
   }
   //
-  if(command === "newsay") {
+  if(command === "oldsay") {
   
     const sayMessage = args.join(" ");
      message.delete(20);
