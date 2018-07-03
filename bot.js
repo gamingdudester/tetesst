@@ -305,7 +305,7 @@ if (profanitybool == true)
     client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 2})
              .then(messages => 
              {
-                 client.channels.get(messages.Last().content).send(message.content);
+                 client.channels.get(messages.last().content).send(message.content);
              })
             .catch(console.log("broke"));
   }
