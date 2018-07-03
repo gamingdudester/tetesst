@@ -305,7 +305,7 @@ if (profanitybool == true)
     client.channels.get(process.env.setsayChannel).fetchMessages({ limit: 2})
              .then(messages => 
              {
-                 client.channels.get(messages.last().content).send(message.content.replace(process.env.Prefix + command + " ",""));
+                 client.channels.get(messages.last().content).send(message.content.replace(process.env.prefix + command + " ",""));
              })
             .catch(console.log("broke"));
   }
