@@ -52,8 +52,8 @@ catch (err){}
   /////START OF COMMANDS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   /////START OF COMMANDS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   /////START OF COMMANDS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  if (message.guild.id != null)
-  {
+  try
+{
   if (!~logbotguilds.indexOf(message.guild.id))
   {
   if (command != "deletekey")
@@ -93,6 +93,7 @@ catch (err){}
       }
   }
  }
+catch (err){}
   
 //check for words even more contained in message
 if (profanitybool == true)
