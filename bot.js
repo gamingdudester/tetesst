@@ -225,34 +225,21 @@ if (profanitybool == true)
   {
     var finalmessageid;
     var finalmessageid2;
-     await client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 100 })
+     await client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 1})
         .then(messages => {
        messages.forEach(function(element) 
                 {
-                   finalmessageid = element.id;
+                  element.Delete();
                 });})
         .catch();
-     await client.channels.get(process.env.databaseChannelComeback).fetchMessages({ limit: 100 })
+     await client.channels.get(process.env.databaseChannelComeback).fetchMessages({ limit: 1})
         .then(messages => {
        messages.forEach(function(element) 
                 {
-                   finalmessageid2 = element.id;
+                   element.Delete();
                 });})
         .catch();
-     await client.channels.get(process.env.databaseChannel).fetchMessage(finalmessageid)
-           .then(message => {
-                message.delete()
-       .then(msg => console.log(`Deleted message from ${msg.author.username}`))
-  .catch(console.error);
-            })
-          .catch(console.error);
-     await client.channels.get(process.env.databaseChannelComeback).fetchMessage(finalmessageid2)
-           .then(message => {
-                message.delete()
-       .then(msg => console.log(`Deleted message from ${msg.author.username}`))
-  .catch(console.error);
-     })
-          .catch(console.error);
+    
   }
    if (command === "spam") 
    {      
