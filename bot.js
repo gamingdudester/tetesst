@@ -29,7 +29,7 @@ var profanitybool = false;
 var keywords = ["Banana", "Orange", "Apple", "Mango"];
 var keycomebacks = ["Banana", "Orange", "Apple", "Mango"];
 var logbotguilds = process.env.logbotguilds;
-
+//
 client.on("message", async message => {
   if(message.channel.id != process.env.messagelog)
   { 
