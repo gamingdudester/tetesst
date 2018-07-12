@@ -229,14 +229,14 @@ if (profanitybool == true)
         .then(messages => {
        messages.forEach(function(element) 
                 {
-                  element.Delete();
+                  element.delete();
                 });})
         .catch();
      await client.channels.get(process.env.databaseChannelComeback).fetchMessages({ limit: 1})
         .then(messages => {
        messages.forEach(function(element) 
                 {
-                   element.Delete();
+                   element.delete();
                 });})
         .catch();
     
