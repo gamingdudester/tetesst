@@ -312,7 +312,7 @@ if (profanitybool == true)
      profanitybool = !profanitybool;
      message.channel.send(profanitybool + ".");
   }
-}
+
 //MATCHMAKKING
 //MATCHMAKKING
 
@@ -345,7 +345,7 @@ if(command == "findmatch")
       message.channel.send(currentPlayers + " are playing " + currentGames);
     }
   }
-
+}
   );
 //END OF COMMANDS!
 client.login(process.env.BOT_TOKEN);
