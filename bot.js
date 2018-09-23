@@ -265,9 +265,9 @@ if (profanitybool == true)
   
   if(command === "help") 
   {
-    const m = await message.channel.send("Current commands: Says your message: F-say <message>, Sets the channel for F-say: F-setsay <channel id>, Says your message always in the current channel: F-newsay <message>,Deletes messages: F-purge 100, Says channel ID: F-id, Toggles profanity filter: F-profanity,"
-                                         + "Gives you a lenny face: F-lenny, Spams messages: F-spam <message>, Quits spamming: F-quitspam," 
-                                         + "Sets a keyword & comeback: F-keyword <keyword>;<comeback>, Deletes most-recent keyword: F-deletekey");
+    const m = await message.channel.send("`Current commands: \n Says your message: F-say <message> \nSets the channel for F-say: F-setsay <channel id> \nSays your message always in the current channel: F-newsay <message> \nDeletes messages: F-purge 100 \nSays channel ID: F-id \nToggles profanity filter: F-profanity \n"
+                                         + "Gives you a lenny face: F-lenny \nSpams messages: F-spam <message> \nQuits spamming: F-quitspam \n" 
+                                         + "Sets a keyword & comeback: F-keyword <keyword>;<comeback> \nDeletes most-recent keyword: F-deletekey \n Finds a person to play with in a game like Brawl: F-findmatch <gamename>");
   }
   if(command === "ping") {
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
