@@ -323,14 +323,14 @@ if(command == "findmatch")
     var currentGames;
     var which = 0;
     var foundMatch = false;
-     players.forEach(function(element))
+     players.forEach(function(item))
     {
       which++;
        currentPlayers = currentPlayers + item;
     }
     
     which = 0;
-     games.forEach(function(element))
+     games.forEach(function(item))
     {
       which++;
        currentGames = currentGames + item;
