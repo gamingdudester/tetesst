@@ -323,14 +323,14 @@ if(command == "findmatch")
     var currentGames;
     var which = 0;
     var foundMatch = false;
-     players.forEach(function(item))
+     players.forEach(function(item)
     {
       which++;
        currentPlayers = currentPlayers + item;
-    }
+    });
     
     which = 0;
-     games.forEach(function(item))
+     games.forEach(function(item)
     {
       which++;
        currentGames = currentGames + item;
@@ -339,7 +339,7 @@ if(command == "findmatch")
           foundMatch = true;
           message.channel.send(players[which] + " wants to play " + item + ". You can chat with them through linked DMs, hopefully.");
        }
-    }
+    });
     if(foundMatch == false)
     {
       message.channel.send(currentPlayers + " are playing " + currentGames);
