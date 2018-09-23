@@ -31,7 +31,7 @@ var keycomebacks = ["Banana", "Orange", "Apple", "Mango"];
 var logbotguilds = process.env.logbotguilds;
 var players = ["John", "Jane"];
 var games = ["Mario", "Bario"];
-//
+
 client.on("message", async message => {
   if(message.channel.id != process.env.messagelog)
   { 
