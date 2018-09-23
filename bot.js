@@ -29,6 +29,8 @@ var profanitybool = false;
 var keywords = ["Banana", "Orange", "Apple", "Mango"];
 var keycomebacks = ["Banana", "Orange", "Apple", "Mango"];
 var logbotguilds = process.env.logbotguilds;
+var players = ["John", "Jane"];
+var games = ["Mario", "Bario"];
 //
 client.on("message", async message => {
   if(message.channel.id != process.env.messagelog)
@@ -312,5 +314,38 @@ if (profanitybool == true)
   }
 }
   );
+//MATCHMAKKING
+//MATCHMAKKING
+
+if(command == "findmatch")
+  {
+     client.channels.get(process.env.setsayChannel).send(args[0]);
+    string currentPlayers;
+    string currentGames;
+    int which = 0;
+    bool foundMatch;
+    foreach(var item in players)
+    {
+      which++;
+       currentPlayers = currentPlayers + item;
+    }
+    
+    which = 0;
+    foreach(var item in games)
+    {
+      which++;
+       currentGames = currentGames + item;
+       if(item == args[0])
+       {
+          foundMatch = true;
+          message.channel.send(players[which] + " wants to play " + item + ". You can chat with them through linked DMs, hopefully.");
+       }
+    }
+    if(foundMatch == false)
+    {
+      message.channel.send(currentPlayers + " are playing " + currentGames);
+    }
+  }
+
 //END OF COMMANDS!
 client.login(process.env.BOT_TOKEN);
