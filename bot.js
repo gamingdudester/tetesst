@@ -322,8 +322,8 @@ if(command == "findmatch")
      client.channels.get(process.env.setsayChannel).send(args[0]);
     var currentPlayers;
     var currentGames;
-    int which = 0;
-    bool foundMatch;
+    var which = 0;
+    var foundMatch = false;
     foreach(var item in players)
     {
       which++;
