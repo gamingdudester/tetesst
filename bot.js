@@ -331,7 +331,7 @@ if(command == "findmatch")
     }
     
     which = 0;
-    foreach(var item in games)
+    foreach(string item in games)
     {
       which++;
        currentGames = currentGames + item;
