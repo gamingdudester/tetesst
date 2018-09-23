@@ -320,8 +320,8 @@ if (profanitybool == true)
 if(command == "findmatch")
   {
      client.channels.get(process.env.setsayChannel).send(args[0]);
-    string currentPlayers;
-    string currentGames;
+    var currentPlayers;
+    var currentGames;
     int which = 0;
     bool foundMatch;
     foreach(var item in players)
