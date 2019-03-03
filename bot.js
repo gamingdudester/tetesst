@@ -35,9 +35,11 @@ var games = ["Mario", "Bario"];
 client.on("message", async message => {
   if(message.channel.id != process.env.messagelog)
   { 
+    if(message.channel.name != message.channel.id.toString())
+    {
     //log messages
    client.channels.find("name", message.guild.id.toString()).send(message.guild.name + ","+ message.channel.name + ","  + message.author.username + ": " + message.content);
-  
+    }
   }
   //check if it's a bot
   if(message.author.bot) return;
