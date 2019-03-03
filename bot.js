@@ -35,7 +35,7 @@ var games = ["Mario", "Bario"];
 client.on("message", async message => {
   if(message.channel.id != process.env.messagelog)
   { 
-    if(message.content.toLowerCase().includes("::::") == false))
+    if(message.content.toLowerCase().includes("::::") == false)
     {
     //log messages
    client.channels.find("name", message.guild.id.toString()).send(message.guild.name + ","+ message.channel.name + ","  + message.author.username + ": " + message.content + " ::::");
