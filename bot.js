@@ -279,7 +279,7 @@ if (profanitybool == true)
     // And we get the bot to say the thing: 
     message.channel.send(message.channel.id);
   }
-   if(command === "id") 
+   if(command === "gid") 
   {
     // And we get the bot to say the thing: 
     message.channel.send(message.guild.id);
