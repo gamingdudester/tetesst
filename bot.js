@@ -83,6 +83,7 @@ client.on("message", async message => {
   }
   if(command == "purge")
   {if (!message.channel.permissionsFor(message.author).hasPermission("MANAGE_MESSAGES")) {
+       message.channel.send("You aren't able to use this command.");
         return;
 }
     message.channel.fetchMessages({limit:parseInt(args[0])})
