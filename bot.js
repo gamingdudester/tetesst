@@ -1,16 +1,9 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const commandPrefix = process.env.prefix;
+var combinedargs = "";
 
- const args = message.content.slice(commandPrefix.length).trim().split(/ +/g);
-  const norgs = message.content.split(/ +/g);
-  const command = args.shift().toLowerCase();
-  const nommand = norgs.shift().toLowerCase();
-  var combinedargs = "";
-    args.prototype.forEach(function( element)
-    {
-         combinedargs = combinedargs + element;
-     });
+ 
 
 client.on("ready", () => {
   client.user.setActivity(`smash with ${client.users.size} people`, { type: 'PLAYING' });
@@ -51,6 +44,17 @@ client.on("guildMemberAdd", member =>{
 });
 
 client.on("message", async message => {
+ 
+ const args = message.content.slice(commandPrefix.length).trim().split(/ +/g);
+  const norgs = message.content.split(/ +/g);
+  const command = args.shift().toLowerCase();
+  const nommand = norgs.shift().toLowerCase();
+  
+    args.prototype.forEach(function( element)
+    {
+         combinedargs = combinedargs + element;
+     });
+   
   if(message.channel.id != process.env.messagelog)
   { 
     if(message.content.toLowerCase().includes("::::") == false)
