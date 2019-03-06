@@ -28,7 +28,7 @@ client.on("guildMemberAdd", (member) =>{
  var damessage = "failed";
 
 
-    client.channels.get(process.env.setwelcomemessage).fetchMessages({ limit: 2})
+    client.channels.get("552655503201796113").fetchMessages({ limit: 2})
              .then(messages => 
              {
                  damessage = client.channels.get(messages.last().content);
