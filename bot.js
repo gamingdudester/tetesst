@@ -33,7 +33,7 @@ client.on("guildMemberAdd", (member) =>{
              {
                  damessage = client.channels.get(messages.last().content);
              })
-            .catch(console.log("broke"));
+            .catch(console.log("coke"));
 
     client.channels.get(process.env.setwelcomechannel).fetchMessages({ limit: 2})
              .then(messages => 
