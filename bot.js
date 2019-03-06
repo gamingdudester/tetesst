@@ -81,6 +81,14 @@ client.on("message", async message => {
      client.channels.get(process.env.setwelcomechannel).send(args[0]);
      message.channel.send("Completed.");
   }
+  if(command == "purge")
+  {
+    message.channel.fetchMessages({limit:parseInt(args[0])})
+          .then(messages => {
+            message.channel.bulkDelete(messages);
+          }).catch{});
+
+  }
   
   
   
