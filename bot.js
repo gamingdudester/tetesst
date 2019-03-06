@@ -88,10 +88,6 @@ client.on("message", async message => {
   
   
   
-  
-  
-  
-  
   /*
   
 //set some basic vars
@@ -415,7 +411,8 @@ if(command == "findmatch")
     }
   }
 }
+*/
   );
+  
 //END OF COMMANDS!
 client.login(process.env.BOT_TOKEN);
-*/
