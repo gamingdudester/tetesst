@@ -31,14 +31,14 @@ client.on("guildMemberAdd", (member) =>{
     client.channels.get(process.env.setwelcomemessage).fetchMessages({ limit: 2})
              .then(messages => 
              {
-                 damessage = client.channels.get(messages.last().content + "");
+                 damessage = client.channels.get(parseInt(messages.last().content));
              })
             .catch(console.log("coke"));
 
     client.channels.get(process.env.setwelcomechannel).fetchMessages({ limit: 2})
              .then(messages => 
              {
-                 client.channels.get(messages.last().content + "").send(damessage.replace("USERID", member.user.tag));
+                 client.channels.get(parseInt(messages.last().content)).send(damessage.replace("USERID", member.user.tag));
                 
              })
             .catch(console.log("broke"));
