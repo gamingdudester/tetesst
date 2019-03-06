@@ -22,7 +22,7 @@ client.on("guildDelete", guild => {
 });
 
 client.on("guildMemberAdd", (member) =>{
-    string damessage = "";
+    var damessage = "";
 
     client.channels.get(process.env.setsayChannel).fetchMessages({ limit: 1})
              .then(messages => 
