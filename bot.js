@@ -76,10 +76,11 @@ client.on("message", async message => {
   }
   if(command == "setwelcomechannel")
   {
-  
+     try{
      client.channels.get(process.env.setwelcomechannel).send(args.toString());
-     message.channel.send("Completed.");
-  }.catch(console.log("oh");)
+     message.channel.send("Completed.");}
+     catch{}
+  }
   
   
   
