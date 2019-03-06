@@ -12,7 +12,8 @@ client.on("ready", () => {
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
 });
 
- 
+client.on("error", console.error);
+
 client.on("guildCreate", guild => {
   // This event triggers when the bot joins a guild.
   console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
@@ -76,13 +77,9 @@ client.on("message", async message => {
   }
   if(command == "setwelcomechannel")
   {
-     try{
      client.channels.get(process.env.setwelcomechannel).send(args.toString());
      message.channel.send("Completed.");}
-     catch{}
   }
-  
-  
   
   
   
