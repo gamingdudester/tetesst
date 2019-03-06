@@ -49,11 +49,11 @@ client.on("message", async message => {
   const norgs = message.content.split(/ +/g);
   const command = args.shift().toLowerCase();
   const nommand = norgs.shift().toLowerCase();
- var combinedargs = "";//
+ var combinedargs = "";
   
-    args.prototype.forEach(function( element)
+    args.forEach(function(element)
     {
-         combinedargs = combinedargs + element;
+         combinedargs = combinedargs + element + "";
      });
    
   if(message.channel.id != process.env.messagelog)
