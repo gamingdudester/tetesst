@@ -82,7 +82,9 @@ client.on("message", async message => {
      message.channel.send("Completed.");
   }
   if(command == "purge")
-  {
+  {if (!message.channel.permissionsFor(message.author).hasPermission("MANAGE_MESSAGES")) {
+        return;
+}
     message.channel.fetchMessages({limit:parseInt(args[0])})
           .then(messages => {
             message.channel.bulkDelete(messages);
