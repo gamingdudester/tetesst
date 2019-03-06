@@ -34,7 +34,7 @@ client.on("guildMemberAdd", member =>{
     client.channels.get(process.env.setwelcomechannel).fetchMessages({ limit: 1})
              .then(messages => 
              {
-                 client.channels.get(messages.last().content).send("");
+                 client.channels.get(messages.last().content).send(damessage.replace("USERID", member.id);
              })
             .catch(console.log("broke"));
 });
