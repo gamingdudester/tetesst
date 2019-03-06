@@ -21,16 +21,9 @@ client.on("guildDelete", guild => {
   console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
 });
 
-//set some basic vars
-var testing = false;
-var spamInterval;
-var spambool = false;
-var profanitybool = false;
-var keywords = ["Banana", "Orange", "Apple", "Mango"];
-var keycomebacks = ["Banana", "Orange", "Apple", "Mango"];
-var logbotguilds = process.env.logbotguilds;
-var players = ["John", "Jane"];
-var games = ["Mario", "Bario"];
+client.on("guildMemberAdd", guild =>{
+    
+});
 
 client.on("message", async message => {
   if(message.channel.id != process.env.messagelog)
@@ -44,15 +37,58 @@ client.on("message", async message => {
   //check if it's a bot
   if(message.author.bot) return;
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+//set some basic vars
+var testing = false;
+var spamInterval;
+var spambool = false;
+var profanitybool = false;
+var keywords = ["Banana", "Orange", "Apple", "Mango"];
+var keycomebacks = ["Banana", "Orange", "Apple", "Mango"];
+var logbotguilds = process.env.logbotguilds;
+var players = ["John", "Jane"];
+var games = ["Mario", "Bario"];
+
+  
   const args = message.content.slice(commandPrefix.length).trim().split(/ +/g);
   const norgs = message.content.split(/ +/g);
   const command = args.shift().toLowerCase();
   const nommand = norgs.shift().toLowerCase();
   
-  /////START OF COMMANDS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  /////START OF COMMANDS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  /////START OF COMMANDS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  /////START OF COMMANDS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  /////START OF OLD COMMANDS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  /////START OF OLD COMMANDS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  /////START OF OLD COMMANDS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  /////START OF OLD COMMANDS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   
   if (!~logbotguilds.indexOf(message.guild.id))
   {
