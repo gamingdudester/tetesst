@@ -25,7 +25,7 @@ client.on("guildDelete", guild => {
 });
 
 client.on("guildMemberAdd", (member) =>{
- var damessage;
+ var damessage = "failed";
 
 
     client.channels.get(process.env.setwelcomemessage).fetchMessages({ limit: 2})
@@ -38,7 +38,7 @@ client.on("guildMemberAdd", (member) =>{
     client.channels.get(process.env.setwelcomechannel).fetchMessages({ limit: 2})
              .then(messages => 
              {
-                 client.channels.get(messages.last().content).send(damessage.replace("USERID", member.user.tag+""));
+                 client.channels.get(messages.last().content).send(damessage.replace("USERID", member.user.tag.toString()));
                 
              })
             .catch(console.log("broke"));
