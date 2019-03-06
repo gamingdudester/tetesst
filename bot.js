@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const commandPrefix = process.env.prefix;
-var combinedargs = "";
+
 
  
 
@@ -49,6 +49,7 @@ client.on("message", async message => {
   const norgs = message.content.split(/ +/g);
   const command = args.shift().toLowerCase();
   const nommand = norgs.shift().toLowerCase();
+ var combinedargs = "";//
   
     args.prototype.forEach(function( element)
     {
