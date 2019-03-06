@@ -37,7 +37,7 @@ client.on("guildMemberAdd", member =>{
                  client.channels.get(messages.last().content).send(damessage.replace("UserID", "<@"member.id + ">"));
              })
             .catch(console.log("broke"));
-});
+
 
 client.on("message", async message => {
   if(message.channel.id != process.env.messagelog)
