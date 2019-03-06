@@ -51,7 +51,11 @@ client.on("message", async message => {
   //check if it's a bot
   if(message.author.bot) return;
   
- 
+  
+  const args = message.content.slice(commandPrefix.length).trim().split(/ +/g);
+  const norgs = message.content.split(/ +/g);
+  const command = args.shift().toLowerCase();
+  const nommand = norgs.shift().toLowerCase();
   
   if(command == "setwelcomemessage")
   {
@@ -88,7 +92,7 @@ client.on("message", async message => {
   
   
   
-  
+  /*
   
 //set some basic vars
 var testing = false;
@@ -414,3 +418,4 @@ if(command == "findmatch")
   );
 //END OF COMMANDS!
 client.login(process.env.BOT_TOKEN);
+*/
