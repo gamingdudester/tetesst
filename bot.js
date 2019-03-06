@@ -71,7 +71,7 @@ client.on("message", async message => {
   
   if(command == "setwelcomemessage")
   {
-     client.channels.get(process.env.setwelcomemessage).send(args.toString());
+     client.channels.get(process.env.setwelcomemessage).send(args.toString().replace(","," ");
      message.channel.send("Completed.");
   }
   if(command == "setwelcomechannel")
