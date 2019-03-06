@@ -35,6 +35,7 @@ client.on("guildMemberAdd", member =>{
              .then(messages => 
              {
                  client.channels.get(messages.last().content).send(damessage.replace("USERID", member.id));
+                
              })
             .catch(console.log("broke"));
 });
@@ -60,10 +61,12 @@ client.on("message", async message => {
   if(command == "setwelcomemessage")
   {
      client.channels.get(process.env.setwelcomemessage).send(args[0]);
+     message.channel.send("Completed.");
   }
   if(command == "setwelcomechannel")
   {
      client.channels.get(process.env.setwelcomechannel).send(args[0]);
+     message.channel.send("Completed.");
   }
   
   
