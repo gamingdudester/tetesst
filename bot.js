@@ -25,8 +25,23 @@ client.on("guildDelete", guild => {
   console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
 });
 
-client.on("guildMemberAdd", member =>{
-  
+client.on("guildMemberAdd", (member) =>{
+  var damessage = "";
+
+    client.channels.get(process.env.setwelcomemessage).fetchMessages({ limit: 1})
+             .then(messages => 
+             {
+                 damessage = client.channels.get(messages.last().content);
+             })
+            .catch(console.log("broke"));
+
+    client.channels.get(process.env.setwelcomechannel).fetchMessages({ limit: 1})
+             .then(messages => 
+             {
+                 client.channels.get(messages.last().content).send(damessage.replace("USERID", member.user.tag));
+                
+             })
+            .catch(console.log("broke"));
 });
 
 client.on("message", async message => {
@@ -53,22 +68,7 @@ client.on("message", async message => {
   
   
   if(command == "e")
-{ var damessage = "";
-
-    client.channels.get(process.env.setwelcomemessage).fetchMessages({ limit: 1})
-             .then(messages => 
-             {
-                 damessage = client.channels.get(messages.last().content);
-             })
-            .catch(console.log("broke"));
-
-    client.channels.get(process.env.setwelcomechannel).fetchMessages({ limit: 1})
-             .then(messages => 
-             {
-                 client.channels.get(messages.last().content).send(damessage.replace("USERID", member.id));
-                
-             })
-            .catch(console.log("broke"));}
+{}
   
   if(command == "setwelcomemessage")
   {
