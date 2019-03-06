@@ -34,7 +34,7 @@ client.on("guildMemberAdd", (member) =>{
   client.channels.get(process.env.setwelcomechannel).fetchMessages({ limit: 2})
              .then(messagei => 
              {
-                 client.channels.get(messagei.last().content).send(messages.last().content.replace("USERID", "@" + member.user.tag.toString()));
+                 client.channels.get(messagei.last().content).send(messages.last().content.replace("USERID", "<@" + member.user.id.toString() + ">"));
                 
              })
             .catch(console.log("broke"));
