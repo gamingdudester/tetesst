@@ -26,22 +26,7 @@ client.on("guildDelete", guild => {
 });
 
 client.on("guildMemberAdd", member =>{
-    var damessage = "";
-
-    client.channels.get(process.env.setwelcomemessage).fetchMessages({ limit: 1})
-             .then(messages => 
-             {
-                 damessage = client.channels.get(messages.last().content);
-             })
-            .catch(console.log("broke"));
-
-    client.channels.get(process.env.setwelcomechannel).fetchMessages({ limit: 1})
-             .then(messages => 
-             {
-                 client.channels.get(messages.last().content).send(damessage.replace("USERID", member.id));
-                
-             })
-            .catch(console.log("broke"));
+  
 });
 
 client.on("message", async message => {
@@ -66,8 +51,24 @@ client.on("message", async message => {
   if(message.author.bot) return;
   
   
- 
-    
+  
+  if(command == "e")
+{ var damessage = "";
+
+    client.channels.get(process.env.setwelcomemessage).fetchMessages({ limit: 1})
+             .then(messages => 
+             {
+                 damessage = client.channels.get(messages.last().content);
+             })
+            .catch(console.log("broke"));
+
+    client.channels.get(process.env.setwelcomechannel).fetchMessages({ limit: 1})
+             .then(messages => 
+             {
+                 client.channels.get(messages.last().content).send(damessage.replace("USERID", member.id));
+                
+             })
+            .catch(console.log("broke"));}
   
   if(command == "setwelcomemessage")
   {
