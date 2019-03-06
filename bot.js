@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const commandPrefix = process.env.prefix;
-var damessage;
 
  
 
@@ -26,7 +25,8 @@ client.on("guildDelete", guild => {
 });
 
 client.on("guildMemberAdd", (member) =>{
- 
+ var damessage;
+
 
     client.channels.get(process.env.setwelcomemessage).fetchMessages({ limit: 2})
              .then(messages => 
