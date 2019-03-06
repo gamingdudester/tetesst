@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const commandPrefix = process.env.prefix;
+const commandPrefix = process.env.prefix;//
 
 client.on("ready", () => {
   client.user.setActivity(`smash with ${client.users.size} people`, { type: 'PLAYING' });
