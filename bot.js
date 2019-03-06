@@ -24,14 +24,14 @@ client.on("guildDelete", guild => {
 client.on("guildMemberAdd", member =>{
     var damessage = "";
 
-    client.channels.get(process.env.setsayChannel).fetchMessages({ limit: 1})
+    client.channels.get(process.env.setwelcomemessage).fetchMessages({ limit: 1})
              .then(messages => 
              {
                  damessage = client.channels.get(messages.last().content);
              })
             .catch(console.log("broke"));
 
-    client.channels.get(process.env.setsayChannel).fetchMessages({ limit: 1})
+    client.channels.get(process.env.setwelcomechannel).fetchMessages({ limit: 1})
              .then(messages => 
              {
                  client.channels.get(messages.last().content).send("");
