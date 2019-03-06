@@ -31,17 +31,18 @@ client.on("guildMemberAdd", (member) =>{
     client.channels.get("552655503201796113").fetchMessages({ limit: 2})
              .then(messages => 
              {
-                 damessage = "e";//client.channels.get(messages.last().content);
-             })
-            .catch(console.log("coke"));
-
-    client.channels.get(process.env.setwelcomechannel).fetchMessages({ limit: 2})
-             .then(messages => 
+  client.channels.get(process.env.setwelcomechannel).fetchMessages({ limit: 2})
+             .then(messagei => 
              {
-                 client.channels.get(messages.last().content).send(damessage.replace("USERID", member.user.tag.toString()));
+                 client.channels.get(messagei.last().content).send(messages.last().content.replace("USERID", member.user.tag.toString()));
                 
              })
             .catch(console.log("broke"));
+                 //damessage = "e";client.channels.get(messages.last().content);
+             })
+            .catch(console.log("coke"));
+
+ 
 });
 
 client.on("message", async message => {
