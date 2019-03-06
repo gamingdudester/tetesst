@@ -49,7 +49,7 @@ client.on("message", async message => {
   const norgs = message.content.split(/ +/g);
   const command = args.shift().toLowerCase();
   const nommand = norgs.shift().toLowerCase();
- string combinedargs = null;
+ var combinedargs = null;
 
 
      args.forEach(function(element)
