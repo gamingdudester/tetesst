@@ -25,7 +25,7 @@ client.on("guildDelete", guild => {
 });
 
 client.on("guildMemberAdd", (member) =>{
- public var damessage = "failed";
+ var damessage = "failed";
 
 
     client.channels.get("552655503201796113").fetchMessages({ limit: 2})
