@@ -72,12 +72,12 @@ client.on("message", async message => {
   
   if(command == "setwelcomemessage")
   {
-     client.channels.get(process.env.setwelcomemessage).send(args[0]);
+     client.channels.get(process.env.setwelcomemessage).send(bargs);
      message.channel.send("Completed.");
   }
   if(command == "setwelcomechannel")
   {
-     client.channels.get(process.env.setwelcomechannel).send(bargs);
+     client.channels.get(process.env.setwelcomechannel).send(args[0]);
      message.channel.send("Completed.");
   }
   
