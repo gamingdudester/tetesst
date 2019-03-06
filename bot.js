@@ -57,6 +57,12 @@ client.on("message", async message => {
   const norgs = message.content.split(/ +/g);
   const command = args.shift().toLowerCase();
   const nommand = norgs.shift().toLowerCase();
+  var combinedargs = "";
+    args.prototype.forEach(function( element)
+    {
+         combinedargs = combinedargs + element;
+     });
+    
   
   if(command == "setwelcomemessage")
   {
@@ -65,8 +71,8 @@ client.on("message", async message => {
   }
   if(command == "setwelcomechannel")
   {
-    
-     client.channels.get(process.env.setwelcomechannel).send(args[0]);
+  
+     client.channels.get(process.env.setwelcomechannel).send(combinedargs);
      message.channel.send("Completed.");
   }
   
