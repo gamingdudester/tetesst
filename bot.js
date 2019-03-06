@@ -79,8 +79,7 @@ client.on("message", async message => {
   
      client.channels.get(process.env.setwelcomechannel).send(args.toString());
      message.channel.send("Completed.");
-  }
-  
+  }.catch(console.log("oh");)
   
   
   
