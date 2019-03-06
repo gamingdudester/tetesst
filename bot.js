@@ -68,7 +68,7 @@ client.on("message", async message => {
   
  
     
-  /*
+  
   if(command == "setwelcomemessage")
   {
      client.channels.get(process.env.setwelcomemessage).send(args[0]);
@@ -79,7 +79,7 @@ client.on("message", async message => {
   
      client.channels.get(process.env.setwelcomechannel).send(args.toString());
      message.channel.send("Completed.");
-  }*/
+  }
   
   
   
