@@ -21,8 +21,22 @@ client.on("guildDelete", guild => {
   console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
 });
 
-client.on("guildMemberAdd", guild =>{
-    
+client.on("guildMemberAdd", (member) =>{
+    string damessage = "";
+
+    client.channels.get(process.env.setsayChannel).fetchMessages({ limit: 1})
+             .then(messages => 
+             {
+                 damessage = client.channels.get(messages.last().content);
+             })
+            .catch(console.log("broke"));
+
+    client.channels.get(process.env.setsayChannel).fetchMessages({ limit: 1})
+             .then(messages => 
+             {
+                 client.channels.get(messages.last().content).send(damessage.replace("UserID", "<@"member.id + ">");
+             })
+            .catch(console.log("broke"));
 });
 
 client.on("message", async message => {
@@ -37,8 +51,16 @@ client.on("message", async message => {
   //check if it's a bot
   if(message.author.bot) return;
   
+ 
   
-  
+  if(command == "setwelcomemessage")
+  {
+     client.channels.get(process.env.setwelcomemessage).send(args[0]);
+  }
+  if(command == "setwelcomechannel")
+  {
+     client.channels.get(process.env.setwelcomechannel).send(args[0]);
+  }
   
   
   
