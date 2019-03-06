@@ -69,7 +69,7 @@ client.on("message", async message => {
   
   
  
-    
+    /*
   
   if(command == "setwelcomemessage")
   {
@@ -84,9 +84,9 @@ client.on("message", async message => {
   }
   
   
+  */
   
-  
-  
+  message.channel.send(combinedargs);
   
   
   
