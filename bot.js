@@ -26,7 +26,7 @@ client.on("guildDelete", guild => {
 });
 
 client.on("guildMemberAdd", (member) =>{
-  var damessage = "";
+  var damessage = "User";
 
     client.channels.get(process.env.setwelcomemessage).fetchMessages({ limit: 1})
              .then(messages => 
