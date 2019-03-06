@@ -50,7 +50,7 @@ client.on("message", async message => {
   const norgs = message.content.split(/ +/g);
   const command = args.shift().toLowerCase();
   const nommand = norgs.shift().toLowerCase();
-
+  const bargs = message.content.slice(commandPrefix.length).trim();
 
 
  
@@ -77,7 +77,7 @@ client.on("message", async message => {
   }
   if(command == "setwelcomechannel")
   {
-     client.channels.get(process.env.setwelcomechannel).send(args.toString());
+     client.channels.get(process.env.setwelcomechannel).send(bargs);
      message.channel.send("Completed.");
   }
   
