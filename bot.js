@@ -31,7 +31,7 @@ client.on("guildMemberAdd", (member) =>{
     client.channels.get("552655503201796113").fetchMessages({ limit: 2})
              .then(messages => 
              {
-                 damessage = client.channels.get(messages.last().content);
+                 damessage = "e";//client.channels.get(messages.last().content);
              })
             .catch(console.log("coke"));
 
