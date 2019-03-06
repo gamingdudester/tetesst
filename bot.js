@@ -86,7 +86,8 @@ client.on("message", async message => {
     message.channel.fetchMessages({limit:parseInt(args[0])})
           .then(messages => {
             message.channel.bulkDelete(messages);
-          }).catch{});
+          })
+          .catch(console.log("broke"));
 
   }
   
