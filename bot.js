@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const client = new Discord.Client();
+const client = new Discord.Client();//
 const commandPrefix = process.env.prefix;
 
 client.on("ready", () => {
@@ -21,7 +21,7 @@ client.on("guildDelete", guild => {
   console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
 });
 
-client.on("guildMemberAdd", (member) =>{
+client.on("guildMemberAdd", member =>{
     var damessage = "";
 
     client.channels.get(process.env.setsayChannel).fetchMessages({ limit: 1})
