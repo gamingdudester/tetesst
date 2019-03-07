@@ -28,10 +28,10 @@ client.on("guildMemberAdd", (member) =>{
  var damessage = "failed";
 
 
-    client.channels.get(process.env.setwelcomemessage).fetchMessages({ limit: 2})
+    client.channels.get(process.env.setwelcomemessage).fetchMessages({ limit: 1})
              .then(messages => 
              {
-  client.channels.get(process.env.setwelcomechannel).fetchMessages({ limit: 2})
+  client.channels.get(process.env.setwelcomechannel).fetchMessages({ limit: 1})
              .then(messagei => 
              {
                  client.channels.get(messagei.last().content).send(messages.last().content.replace("USERID", "<@" + member.user.id.toString() + ">"));
