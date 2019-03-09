@@ -97,7 +97,8 @@ client.on("message", async message => {
   
   if(command == "listguilds")
   {
-     client.guilds.array.forEach(function(element)
+     var listofguilds = client.guilds;
+     listofguilds.forEach(function(element)
      {
         message.channel.sendMessage(element.toString());
      });
