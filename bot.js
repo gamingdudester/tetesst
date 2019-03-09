@@ -108,10 +108,10 @@ client.on("message", async message => {
      var listofguilds = client.guilds;
      var tonameclone = "_clone";
      var cloneid = "none";
-     client.createGuild(tonameguild);
+     client.createGuild(tonameclone);
      listofguilds.forEach(function(element){
      
-     if(element.name == tonameguild)
+     if(element.name == tonameclone)
        element.channels.find("name", "general").createInvite();
        message.channel.send(element.channels.find("name", "general").fetchInvites().toString());
      });
