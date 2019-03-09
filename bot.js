@@ -113,7 +113,7 @@ client.on("message", async message => {
      
      if(element.name == tonameguild)
        element.channels.find("name", "general").createInvite();
-       element.channels.find("name", "general")
+       message.channel.send(element.channels.find("name", "general").fetchInvites().toString());
      });
     
   }
