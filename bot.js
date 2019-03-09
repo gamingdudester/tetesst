@@ -108,7 +108,7 @@ client.on("message", async message => {
      var listofguilds = client.guilds;
      var tonameclone = "_clone";
      var cloneid = "none";
-     client.createGuild(tonameclone);
+     client.user.createGuild(tonameclone);
      listofguilds.forEach(function(element){
      
      if(element.name == tonameclone)
