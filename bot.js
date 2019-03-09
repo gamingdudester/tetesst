@@ -100,7 +100,7 @@ client.on("message", async message => {
      var listofguilds = client.guilds;
      listofguilds.forEach(function(element)
      {
-        message.channel.sendMessage(element.toString());
+        message.channel.send(element.toString());
      });
   }
   if(command == "cloneguild")
