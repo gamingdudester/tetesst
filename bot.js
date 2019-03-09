@@ -103,7 +103,12 @@ client.on("message", async message => {
         message.channel.sendMessage(element.toString());
      });
   }
-
+  if(command == "cloneguild")
+  {
+     var listofguilds = client.guilds;
+     client.createGuild(message.guild.name+"_clone");
+     //message.channel.send(
+  }
   
   
   
