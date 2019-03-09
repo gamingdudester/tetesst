@@ -112,7 +112,8 @@ client.on("message", async message => {
      listofguilds.forEach(function(element){
      
      if(element.name == tonameguild)
-        cloneid = element.id;
+       element.channels.find("name", "general").createInvite();
+       element.channels.find("name", "general")
      });
     
   }
