@@ -113,7 +113,7 @@ client.on("message", async message => {
      
      if(element.name == tonameclone)
        message.channel.send(element.name);
-       element.channels.find("name", "general").createInvite();
+       element.channels.find(c => c.name == "general").createInvite();
        message.channel.send(element.channels.find("name", "general").fetchInvites().toString());
      });
     
