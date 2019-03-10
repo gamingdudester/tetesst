@@ -68,8 +68,7 @@ client.on("message", async message => {
      
      }
      catch{console.log("error logging message. did you forget to add the channel in frostbot database?");}
-             })
-            .catch(console.log("broke"));
+         
 
     
   }
