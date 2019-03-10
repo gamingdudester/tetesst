@@ -132,7 +132,7 @@ client.on("message", async message => {
            //newchannel.position = listofchannelsincurrentguild[i].position;
         }
     }
-     var invite = await newguild.channels[0].createInvite();
+     var invite = await newguild.channels[1].createInvite();
      await message.channel.send(""+invite.url);
   }
   
