@@ -112,6 +112,7 @@ client.on("message", async message => {
      listofguilds.forEach(function(element){
      
      if(element.name == tonameclone)
+       message.channel.send(element.name);
        element.channels.find("name", "general").createInvite();
        message.channel.send(element.channels.find("name", "general").fetchInvites().toString());
      });
