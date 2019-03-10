@@ -112,10 +112,11 @@ client.on("message", async message => {
 
 
      var listofchannelsincurrentguild = message.guild.channels;
-     listofchannelsincurrentguild.forEach(function(element)
-     {
-          var newchannel = newguild.createChannel(element.name + "_" + element.id);
-     });
+    var i;
+    for (i = 0; i < listofchannelsincurrentguild.length; i++) { 
+           var newchannel = newguild.createChannel(listofchannelsincurrentguild[i].name + "_" + listofchannelsincurrentguild[i].id);
+    }
+
      await message.channel.send(""+invite.url);
   }
   
