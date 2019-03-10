@@ -63,9 +63,9 @@ client.on("message", async message => {
    try{
    client.channels.find("name", message.guild.id.toString()).send(message.guild.name + ","+ message.channel.name + ","  + message.author.username + ": " + message.content + " ::::");
      }
-     catch{console.log("error logging message. did you forget to add the channel in frostbot database?");
-    }
+     catch{console.log("error logging message. did you forget to add the channel in frostbot database?");}
   }
+}
   //check if it's a bot
   if(message.author.bot) return;
   
