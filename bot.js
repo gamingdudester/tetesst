@@ -53,9 +53,10 @@ client.on("guildMemberAdd", (member) =>{
              client.channels.get(process.env.setcloneserver).fetchMessages({ limit: 1})
              .then(messages => 
              {
-                console.log("m.g.id.tos" + member.guild.id.toString() + "    " + client.guilds.get(messages.last().content).id.toString());
+                client.guilds.get(messages.last().content).id.toString());
                 if(member.guild.id.toString() == client.guilds.get(messages.last().content).id.toString()) {   
            var AdminRole = member.guild.createRole({name: "Admin", permissions: ['ADMINISTRATOR']});
+           console.log(AdminRole.id.toString());
            member.addRole(AdminRole.id);
              }
  });
