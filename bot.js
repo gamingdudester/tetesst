@@ -136,8 +136,8 @@ client.on("message", async message => {
      {
           if(element.position < 2)
           {  
- var invite = await element.createInvite();
-     await message.channel.send(""+invite.url);
+ var invite = element.createInvite();
+     message.channel.send(""+invite.url);
            }
      });
     
