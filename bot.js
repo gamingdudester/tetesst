@@ -70,10 +70,7 @@ client.on("message", async message => {
      catch{console.log("error logging message. did you forget to add the channel in frostbot database?");}
 
 
-     try{
-      client.channels.find("name", message.channel.name + "_"+message.channel.id.toString()).send(message.guild.name + ","+ message.channel.name + ","  + message.author.username + ": " + message.content + " ::::");
-       }
-       catch{console.log("couldnt output to clone idk");}
+    
   }
 }
   //check if it's a bot
@@ -178,8 +175,15 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
      console.log(message.channel.name.split("_")[1]);
      client.channels.get(message.channel.name.split("_")[1]).send(message.content.toString());
   }
-             })
-            .catch(console.log("broke"));
+
+  //also server to clone
+        try{
+      client.channels.find("name", message.channel.name + "_"+message.channel.id.toString()).send(message.guild.name + ","+ message.channel.name + ","  + message.author.username + ": " + message.content + " ::::");
+       }
+       catch{console.log("couldnt output to clone idk");}
+
+
+      
 //endsayclone
   
 
