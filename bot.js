@@ -120,7 +120,17 @@ client.on("message", async message => {
     i=i+1;
   }
   
-  
+  if(command == "deleteguild")
+  {
+      var guildtodelete = args[1];
+      var listofguilds = client.guilds;
+     listofguilds.forEach(function(element){
+     if(element.name == guildtodelete)
+     {
+         element.delete();
+     }
+    });
+  }
   
   
   
