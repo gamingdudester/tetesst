@@ -109,6 +109,13 @@ client.on("message", async message => {
      var tonameclone = message.guild.name + "_clone";
      var newguild = await client.user.createGuild(tonameclone);
      var invite = await newguild.channels.find(c => c.name=="general").createInvite();
+
+
+     var listofchannelsincurrentguild = message.guild.channels;
+     listofchannelsincurrentguild.forEach(function(element)
+     {
+          
+     });
      await message.channel.send(":"+invite.url);
   }
   
