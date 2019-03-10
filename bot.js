@@ -175,6 +175,7 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
      console.log(message.channel.name.split("_")[1]);
      client.channels.get(message.channel.name.split("_")[1]).send(message.content.toString());
   }
+ });
 
   //also server to clone
         try{
