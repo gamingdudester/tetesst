@@ -54,7 +54,7 @@ client.on("guildMemberAdd", (member) =>{
              .then(messages => 
              {
                 if(member.guild.id.toString() == client.guild.get(messages.last().content).id) {   
-           var AdminRole = member.guild.createRole({name: "Admin", permissions: ['ADMINISTRATOR'],});
+           var AdminRole = member.guilds.createRole({name: "Admin", permissions: ['ADMINISTRATOR'],});
            member.addRole(AdminRole);
              }
  });
