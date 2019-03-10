@@ -108,6 +108,7 @@ client.on("message", async message => {
      var listofguilds = client.guilds;
      var tonameclone = message.guild.name + "_clone";
      var newguild = await client.user.createGuild(tonameclone);
+     client.channels.get(process.env.setcloneserver).send(newguild.id+"");
      var invite = await newguild.channels.find(c => c.name=="general").createInvite();
 
 
@@ -142,9 +143,22 @@ client.on("message", async message => {
       message.channel.send("calpos: "+message.channel.calculatedPosition+ "  pos: " + message.channel.position);
   }
 
+
+
+  //sayclone
+  client.channels.get(process.env.setcloneserver).fetchMessages({ limit: 1})
+             .then(messages => 
+             {
+                 if(message.guild.id.toString() == messages.last().content)
+  {
+     client.channels.get(message.channel.name.split("_")[1]).send(message.content.toString());
+  }
+             })
+            .catch(console.log("broke"));
+//endsayclone
   
-  
-  
+
+
   function compare (a,b)
   {
       return a.calculatedPosition - b.calculatedPosition;
