@@ -119,7 +119,7 @@ client.on("message", async message => {
      element.delete();
     });
 
-     var invite = await newguild.channels.find(c => c.type=="text").createInvite();
+    
 
     
 
@@ -132,7 +132,7 @@ client.on("message", async message => {
            //newchannel.position = listofchannelsincurrentguild[i].position;
         }
     }
-
+     var invite = await newguild.channels.find(c => c.type=="text").createInvite();
      await message.channel.send(""+invite.url);
   }
   
