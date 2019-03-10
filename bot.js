@@ -114,10 +114,10 @@ client.on("message", async message => {
      var newguild = await client.user.createGuild(tonameclone);
      client.channels.get(process.env.setcloneserver).send(newguild.id+"");
 
-     var channelsdelete = newguild.channels;
+     /*var channelsdelete = newguild.channels;
      channelsdelete.forEach(function(element){
-     element.delete();
-    });
+     element.delete(5000);
+    });*/
 
     
 
