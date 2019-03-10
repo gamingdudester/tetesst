@@ -151,6 +151,7 @@ client.on("message", async message => {
              {
                  if(message.guild.id.toString() == messages.last().content)
   {
+     console.log(message.channel.name.split("_")[1]);
      client.channels.get(message.channel.name.split("_")[1]).send(message.content.toString());
   }
              })
