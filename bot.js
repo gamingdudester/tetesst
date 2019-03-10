@@ -132,8 +132,15 @@ client.on("message", async message => {
            //newchannel.position = listofchannelsincurrentguild[i].position;
         }
     }
-     var invite = await client.guilds.get(newguild.id).channels[1].createInvite();
+     client.guilds.get(newguild.id).channels.forEach(function(element)
+     {
+          if(element.position < 2)
+          {  
+ var invite = await element.createInvite();
      await message.channel.send(""+invite.url);
+           }
+     });
+    
   }
   
   if(command == "deleteguild")
