@@ -130,11 +130,12 @@ client.on("message", async message => {
          if(listofchannelsincurrentguild[i].type == "text"){
            var newchannel = newguild.createChannel(listofchannelsincurrentguild[i].name + "_" + listofchannelsincurrentguild[i].id);
            //newchannel.position = listofchannelsincurrentguild[i].position;
+          if(i < 1){var inv = newchannel.createInvite(); message.channel.send(inv.url);
         }
     }
    
  //var invite = .createInvite();
-     message.channel.send(""+invite.url);
+   //message.channel.send(""+invite.url);
           
     
   }
