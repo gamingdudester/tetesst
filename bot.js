@@ -112,6 +112,7 @@ client.on("message", async message => {
 
 
      var listofchannelsincurrentguild = message.guild.channels;
+     message.channel.send(listofchannelsincurrentguild.length+"");
     var i;
     for (i = 0; i < listofchannelsincurrentguild.length; i++) { 
            var newchannel = newguild.createChannel(listofchannelsincurrentguild[i].name + "_" + listofchannelsincurrentguild[i].id);
