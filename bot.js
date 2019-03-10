@@ -114,9 +114,9 @@ client.on("message", async message => {
      var listofchannelsincurrentguild = message.guild.channels;
      listofchannelsincurrentguild.forEach(function(element)
      {
-          
+          var newchannel = newguild.createChannel(element.name + "," + element.id);
      });
-     await message.channel.send(":"+invite.url);
+     await message.channel.send(""+invite.url);
   }
   
   if(command == "deleteguild")
