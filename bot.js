@@ -132,14 +132,10 @@ client.on("message", async message => {
            //newchannel.position = listofchannelsincurrentguild[i].position;
         }
     }
-     client.guilds.get(newguild.id).channels.forEach(function(element)
-     {
-          if(element.position < 2)
-          {  
- var invite = element.createInvite();
+   
+ //var invite = .createInvite();
      message.channel.send(""+invite.url);
-           }
-     });
+          
     
   }
   
