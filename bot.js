@@ -115,6 +115,10 @@ client.on("message", async message => {
      client.channels.get(process.env.setcloneserver).send(newguild.id+"");
      var invite = await newguild.channels.find(c => c.name=="general").createInvite();
 
+     var channelsdelete = newguild.channels;
+     channelsdelete.forEach(function(element){
+     element.delete();
+    });
 
      var listofchannelsincurrentguild = message.guild.channels.array(). sort(function (a, b) { return a.position - b.position;});
      message.channel.send(listofchannelsincurrentguild.length+"");
