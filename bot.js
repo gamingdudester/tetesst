@@ -106,18 +106,10 @@ client.on("message", async message => {
   if(command == "cloneguild")
   {
      var listofguilds = client.guilds;
-     var tonameclone = "_clone";
-     var cloneid = "none";
-     var i = 0;
-     client.user.createGuild(tonameclone);
-     listofguilds.forEach(function(element){
-    
-     if(element.name == tonameclone)
-       message.channel.send(element.name);
-       var invite = client.channels.find(c => c.name == "general").createInvite();
-       message.channel.send(invite);
-     });
-    i=i+1;
+     var tonameclone = message.guild.name + "_clone";
+     var newguild = client.user.createGuild(tonameclone);
+     var invite = client.channels.find(c => c.name=="general").createInvite();
+     message.channel.send(":"+invite);
   }
   
   if(command == "deleteguild")
