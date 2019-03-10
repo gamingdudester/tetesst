@@ -111,16 +111,7 @@ client.on("message", async message => {
      var invite = await newguild.channels.find(c => c.name=="general").createInvite();
 
 
-     var listofchannelsincurrentguild = message.guild.channels.array(). sort(function (a, b) { 
-                 if (a > b) {
-        return -1;
-    }
-    if (b > a) {
-        return 1;
-    }
-    return 0;
-
-                   });
+     var listofchannelsincurrentguild = message.guild.channels.array(). sort(function (a, b) { return a.position - b.position;});
      message.channel.send(listofchannelsincurrentguild.length+"");
     var i;
     for (i = 0; i < listofchannelsincurrentguild.length; i++) { 
