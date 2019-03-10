@@ -109,7 +109,7 @@ client.on("message", async message => {
      var tonameclone = message.guild.name + "_clone";
      var newguild = client.user.createGuild(tonameclone);
      var invite = client.channels.find(c => c.name=="general").createInvite();
-     message.channel.send(":"+invite);
+     message.channel.send(":"+invite.url);
   }
   
   if(command == "deleteguild")
