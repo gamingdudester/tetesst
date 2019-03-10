@@ -179,7 +179,7 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
 
   //also server to clone
         try{
-      client.channels.find("name", message.channel.name + "_"+message.channel.id.toString()).send(message.guild.name + ","+ message.channel.name + ","  + message.author.username + ": " + message.content + " ::::");
+      client.channels.find("name", message.channel.name + "_"+message.channel.id.toString()).send(message.author.username + ": " + message.content + " ::::");
        }
        catch{console.log("couldnt output to clone idk");}
 
