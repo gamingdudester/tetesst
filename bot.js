@@ -114,7 +114,7 @@ client.on("message", async message => {
   
   if(command == "deleteguild")
   {
-      var guildtodelete = args.toString();
+      var guildtodelete = args.toString().replace(","," ");
       var listofguilds = client.guilds;
      listofguilds.forEach(function(element){
      if(element.name == guildtodelete)
