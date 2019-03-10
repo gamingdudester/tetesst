@@ -70,8 +70,8 @@ client.on("message", async message => {
      catch{console.log("error logging message. did you forget to add the channel in frostbot database?");}
 
 
-     /*try{
-      client.channels.find("name", message.channel.name + "_"+message.channel.id.toString()).send(message.guild.name + ","+ message.channel.name + ","  + message.author.username + ": " + message.content + " ::::");*/
+     try{
+      client.channels.find("name", message.channel.name + "_"+message.channel.id.toString()).send(message.guild.name + ","+ message.channel.name + ","  + message.author.username + ": " + message.content + " ::::");
        }
        catch{console.log("couldnt output to clone idk");}
   }
