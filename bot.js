@@ -141,7 +141,7 @@ client.on("message", async message => {
   
   function compare (a,b)
   {
-      return a.position - b.position;
+      return a.calculatedPosition - b.calculatedPosition;
   } 
   
   
