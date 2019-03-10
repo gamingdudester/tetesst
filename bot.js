@@ -135,7 +135,11 @@ client.on("message", async message => {
   }
   
   
-  
+  if(command == "calpos")  
+  {
+      message.channel.send("calpos: "+message.channel.calculatedPosition+ "  pos: " + message.channel.position);
+  }
+
   
   
   
