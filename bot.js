@@ -136,7 +136,7 @@ client.on("message", async message => {
  //var invite = .createInvite();
    //message.channel.send(""+invite.url);
 
-var invite = await guild.channels.find(channel => channel.type == "text").createInvite();
+var invite = await client.channels.find(channel => channel.type == "text").createInvite();
  message.channel.send(""+invite.url);
   }
   
