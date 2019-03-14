@@ -131,7 +131,7 @@ client.on("message", async message => {
      var listofguilds = client.guilds;
      listofguilds.forEach(function(element)
      {
-        message.channel.send(element.toString());
+        message.channel.send(element.toString()+ "       "  +element.id);
      });
   }
   if(command == "cloneguild")
@@ -172,7 +172,7 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
       var guildtodelete = args.toString().replace(","," ");
       var listofguilds = client.guilds;
      listofguilds.forEach(function(element){
-     if(element.name == guildtodelete)
+     if(element.id == guildtodelete)
      {
          element.delete();
      }
