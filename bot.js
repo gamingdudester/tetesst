@@ -38,7 +38,7 @@ client.on("guildMemberAdd", (member) =>{
              .then(messagei => 
              {
                  if(client.channels.find("id", messagei.last().content).guild.id == member.guild.id){      
-                 client.channels.get(messagei.last().content).send(messages.last().content.replace("USERID", "<@" + member.user.id.toString() + ">").replace(",", " "));
+                 client.channels.get(messagei.last().content).send(messages.last().content.replace("USERID", "<@" + member.user.id.toString() + ">"));
                 
 
                  }
@@ -104,7 +104,7 @@ client.on("message", async message => {
   
   if(command == "setwelcomemessage")
   {
-     client.channels.get(process.env.setwelcomemessage).send(args.toString().replace(","," "));
+     client.channels.get(process.env.setwelcomemessage).send(args.join(" "));
      message.channel.send("Completed.");
   }
   if(command == "setwelcomechannel")
