@@ -38,7 +38,7 @@ client.on("guildMemberAdd", (member) =>{
              .then(messagei => 
              {
                  if(client.channels.find("id", messagei.last().content).guild.id == member.guild.id){      
-                 client.channels.get(messagei.last().content).send(messages.last().content.replace("USERID", "<@" + member.user.id.toString() + ">"));
+                 client.channels.get(messagei.last().content).send(messages.last().content.replace("USERID", "<@" + member.user.id.toString() + ">").replace(",", " "));
                 
 
                  }
