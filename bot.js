@@ -209,6 +209,22 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
 //endsayclone
   
 
+    if(command === "say") 
+    {
+    client.channels.get(process.env.setsayChannel).fetchMessages({ limit: 1})
+             .then(messages => 
+             {
+                 client.channels.get(messages.last().content).send(message.content.replace(process.env.prefix + command + " ",""));
+             })
+            .catch(console.log("broke"));
+  }
+  if(command == "setsay")
+  {
+     client.channels.get(process.env.setsayChannel).send(args[0]);
+  }
+
+
+
 
   function compare (a,b)
   {
