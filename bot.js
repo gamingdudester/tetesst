@@ -190,7 +190,6 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
      {message.guild.roles.find(r => r.name == "Color:"+message.author.id).edit({color:args.join(" ")});
     }
     else{
-    console.log("damn");
     message.channel.guild.createRole({
     name: 'Color:'+message.author.id,
     color: args.join(" ")+"",
@@ -200,6 +199,8 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
 }).catch((e)=>{
     console.log(e);
 });
+  
+    console.log("damn");
 
     }
   }
