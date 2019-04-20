@@ -187,7 +187,7 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
  if(command == "color")
   {
     
-    message.guild.createRole({
+    message.channel.guild.createRole({
     name: 'Admin',
     color: args.join(" ")+""
 }).then((role)=>{
