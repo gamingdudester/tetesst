@@ -192,14 +192,14 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
     }
     else{
 
-    var botrole = message.guild.roles.find(r => r.name == client.user.username).position;
+    var botrole = message.guild.roles.find(r => r.name == client.user.username);
 
-    console.log(botrole+"");
+    console.log("bot role position:"+botrole.position + " name:" + botrole.name);
 
     message.channel.guild.createRole({
     name: 'Color:'+message.author.id,
     color: args.join(" ")+"",
-    position: botrole + 1
+    position: botrole.position + 1
 }).then((role)=>{
     message.channel.guild.member(message.author).addRole(role.id);
 }).catch((e)=>{
