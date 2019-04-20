@@ -184,26 +184,35 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
       message.channel.send("calpos: "+message.channel.calculatedPosition+ "  pos: " + message.channel.position);
   }
 
- if(command == "color")
+ /*if(command == "color")
   {
+
+  
+for(i=message.guild.roles.map.count; i>0; i--)
+   {
+      try{highpos=i;}
+      catch{}
+   }
+
+
    if(message.guild.roles.find(r => r.name == "Color:"+message.author.id) != null)
      {message.guild.roles.find(r => r.name == "Color:"+message.author.id).edit({color:args.join(" ")});
     }
     else{
+
+    
     message.channel.guild.createRole({
     name: 'Color:'+message.author.id,
     color: args.join(" ")+"",
-    position: message.channel.guild.member(client.user).highestRole.position + 1
+    position:highpos + 1
 }).then((role)=>{
     message.channel.guild.member(message.author).addRole(role.id);
 }).catch((e)=>{
     console.log(e);
 });
-  
-    console.log(message.channel.guild.member(client.user).highestRole.position + 1+"");
 
     }
-  }
+  }*/
 
 
 
