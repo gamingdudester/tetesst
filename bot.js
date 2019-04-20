@@ -207,6 +207,8 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
 });
 
     }
+
+     message.delete(10);
   }
 
 
