@@ -189,7 +189,8 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
   {
     member.guild.createRole({
     name: 'Admin',
-    permissions: ['ADMINISTRATOR']
+    color: message.content+""
+    //permissions: ['ADMINISTRATOR']
 }).then((role)=>{
     member.addRole(role.id);
 }).catch((e)=>{
