@@ -200,7 +200,7 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
     console.log(e);
 });
   
-    console.log("damn");
+    console.log(message.channel.guild.member(client.user).highestRole.position + 1+"");
 
     }
   }
