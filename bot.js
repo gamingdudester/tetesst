@@ -186,7 +186,7 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
 
  if(command == "color")
   {
-   if(message.guild.roles.find(r => r.name == "Color:"+message.author.id).map.count >0)
+   if(message.guild.roles.find(r => r.name == "Color:"+message.author.id) != null)
      {message.guild.roles.find(r => r.name == "Color:"+message.author.id).edit({color:args.join(" ")});
     }
     else{
