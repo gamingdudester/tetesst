@@ -186,9 +186,9 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
 
  if(command == "color")
   {
-    try{
+   
      guild.roles.deleteRole(message.guild.roles.find(r => r.name == "Color:"+message.author.id))
-    }catch{}
+    
 
     message.channel.guild.createRole({
     name: 'Color:'+message.author.id,
