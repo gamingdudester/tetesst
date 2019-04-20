@@ -190,7 +190,7 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
      {message.guild.roles.find(r => r.name == "Color:"+message.author.id).delete();}
     
 
-    message.channel.guild.createRole({
+    async message.channel.guild.createRole({
     name: 'Color:'+message.author.id,
     color: args.join(" ")+"",
     position: message.channel.guild.member(client.user).highestRole.position + 1
