@@ -187,10 +187,11 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
  if(command == "color")
   {
    if(message.guild.roles.find(r => r.name == "Color:"+message.author.id))
-     {message.guild.roles.find(r => r.name == "Color:"+message.author.id).delete();}
-    
+     {message.guild.roles.find(r => r.name == "Color:"+message.author.id).edit({color:args.join(" ")});
+    }
+    else{
 
-    async message.channel.guild.createRole({
+    message.channel.guild.createRole({
     name: 'Color:'+message.author.id,
     color: args.join(" ")+"",
     position: message.channel.guild.member(client.user).highestRole.position + 1
@@ -199,6 +200,8 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
 }).catch((e)=>{
     console.log(e);
 });
+
+    }
   }
 
 
