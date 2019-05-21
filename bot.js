@@ -177,7 +177,21 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
      }
     });
   }
-  
+   if (command === "spam") 
+   {      
+     if(message.member.roles.some(r=>["spammer"].includes(r.name)))
+      return message.reply("Sorry, you don't have permission to use this.");
+     
+     const spamMessage = args.join(" ");
+     if  (spamMessage.length > 0 && spambool == false )
+     {
+            spambool = true;
+             spamInterval = setInterval (function () 
+             {
+              message.channel.send(spamMessage)
+             }, 2000);
+     }
+   }
   
   if(command == "calpos")  
   {
