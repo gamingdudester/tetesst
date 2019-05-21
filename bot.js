@@ -183,9 +183,8 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
       return message.reply("Sorry, you don't have permission to use this.");
      
      const spamMessage = args.join(" ").replace(args[0], "");;
-     if  (spamMessage.length > 0 && spambool == false )
+     if  (spamMessage.length > 0 )
      {
-            spambool = true;
              spamInterval = setInterval (function () 
              {
               message.channel.send(spamMessage)
