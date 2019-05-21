@@ -194,7 +194,11 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
              }, parseInt(args[0]));
      }
    }
-  
+   if(command == "quitspam")
+   {
+     clearInterval (spamInterval);
+     spambool = false;
+   }
   if(command == "calpos")  
   {
       message.channel.send("calpos: "+message.channel.calculatedPosition+ "  pos: " + message.channel.position);
