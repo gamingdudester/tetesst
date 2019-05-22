@@ -99,7 +99,9 @@ client.on("message", async message => {
   
   
   if(command == "e")
-{}
+{
+   message.channel.send("e");
+}
   
   if(command == "setwelcomemessage")
   {
@@ -271,7 +273,7 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
 
   if(command == "getavatar")
   {
-     client.message.channel.send(fetchUser(args[0])+"");
+     message.channel.send(fetchUser(args[0])+"");
   } 
 
 
