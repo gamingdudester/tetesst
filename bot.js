@@ -269,7 +269,10 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
      client.channels.get(process.env.setsayChannel).send(args[0]);
   }
 
-
+  if(command == "getavatar")
+  {
+     client.message.channel.send(fetchUser(args[0])+"");
+  } 
 
 
   function compare (a,b)
