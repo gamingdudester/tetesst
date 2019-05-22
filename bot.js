@@ -274,7 +274,7 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
   if(command == "getavatar")
   {
      //message.channel.send(client.fetchUser(args[0]).avatarURL+args[0]+"");
-    bot.users.fetch(args[0]).then(myUser => {
+    client.users.fetch(args[0]).then(myUser => {
     message.channel.send(myUser.avatarURL()); 
 });
 
