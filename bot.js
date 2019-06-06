@@ -95,7 +95,7 @@ client.on("message", async message => {
 }
   //check if it's a bot
   if(message.author.bot) return;
-  if(!message.content.contains(process.env.commandPrefix) return;
+  if(!message.content.contains(commandPrefix) return;
   
   
   if(command == "e")
