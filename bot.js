@@ -49,10 +49,10 @@ client.on("guildMemberAdd", (member) =>{
             .catch(console.log("coke"));
 
 
-             client.channels.get(process.env.setcloneserver).fetchMessages({ limit: 1})
+             client.channels.get(process.env.setcloneserver).fetchMessages({ limit: 2})
              .then(messages => 
              {
-                //client.guilds.get(messages.last().content).id.toString();
+                //client.guilds.get(messages.first().content).id.toString();
                 if(member.guild.id.toString() == client.guilds.get(messages.last().content).id.toString()) {   
       
           member.guild.createRole({
