@@ -95,6 +95,24 @@ client.on("message", async message => {
 }
   //check if it's a bot
   if(message.author.bot) return;
+
+  
+  //sayclone
+  client.channels.get(process.env.setcloneserver).fetchMessages({ limit: 1})
+             .then(messages => 
+             {
+                 if(message.guild.id.toString() == messages.last().content)
+  {
+     console.log(message.channel.name.split("_")[1]);
+     client.channels.get(message.channel.name.split("_")[1]).send(message.content.toString());
+  }
+ });
+
+  //also server to clone
+        try{
+      client.channels.find("name", message.channel.name + "_"+message.channel.id.toString()).send(message.author.username + ": " + message.content + " ::::");
+       }
+       catch{console.log("couldnt output to clone idk");}
   if(message.content.substring(0, commandPrefix.length) != commandPrefix) return;
   
   
@@ -235,22 +253,6 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
 
 
 
-  //sayclone
-  client.channels.get(process.env.setcloneserver).fetchMessages({ limit: 1})
-             .then(messages => 
-             {
-                 if(message.guild.id.toString() == messages.last().content)
-  {
-     console.log(message.channel.name.split("_")[1]);
-     client.channels.get(message.channel.name.split("_")[1]).send(message.content.toString());
-  }
- });
-
-  //also server to clone
-        try{
-      client.channels.find("name", message.channel.name + "_"+message.channel.id.toString()).send(message.author.username + ": " + message.content + " ::::");
-       }
-       catch{console.log("couldnt output to clone idk");}
 
 
       
