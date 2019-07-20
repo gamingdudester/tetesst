@@ -293,9 +293,19 @@ if(command == "rps")
     var userone = client.fetchUser(message.author.id);
     var usertwo = client.fetchUser(message.mentions.users.first().id);
  
-    var privateGuild = message.guild.createChannel(userone.name + " and " + usertwo + "'s Game", { 
-     permissionOverwrites: [ {id: message.guild.defaultRole.id,deny: ['VIEW_CHANNEL']},{id: userone.id,allow: ['VIEW_CHANNEL']},{id: usertwo.id,allow: ['VIEW_CHANNEL']}]});
-    
+    //var privateGuild = message.guild.createChannel(userone.name + " and " + usertwo + "'s Game", { 
+     //permissionOverwrites: [ {id: message.guild.defaultRole.id,deny: ['VIEW_CHANNEL']},{id: userone.id,allow: ['VIEW_CHANNEL']},{id: usertwo.id,allow: ['VIEW_CHANNEL']}]});
+    message.guild.createChannel('new-category', {
+    type: 'text',
+    permissionOverwrites: [{
+      id: message.guild.id,
+      deny: ['MANAGE_MESSAGES'],
+      allow: ['SEND_MESSAGES']
+    }]
+  })
+    .then(console.log)
+    .catch(console.error);
+ 
     privateGuild.send("<@" + userone.id + ">" + "<@" + usertwo.id + ">");
  
     privateGuild.send("https://rpsgame.org/room?id=" + makeid(15));
