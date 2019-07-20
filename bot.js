@@ -283,8 +283,10 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
   } 
 
 
+if(command == "editMsg")
+{
 
-
+}
 
 
 
