@@ -298,7 +298,7 @@ if(command == "rps")
     message.guild.createChannel('new-category', {
     type: 'text',
     permissionOverwrites: [{
-      id: message.channel.guild.defaultrole.id,
+      id: message.guild.defaultrole.id,
       deny: ['MANAGE_MESSAGES'],
       allow: ['SEND_MESSAGES']
     }]
