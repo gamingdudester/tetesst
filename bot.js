@@ -285,18 +285,48 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
 
 if(command == "editMsg")
 {
-
+    
 }
 
-
+if(command == "rps")
+{
+    var userone = client.fetchUser(message.author.id);
+    var usertwo = client.fetchUser(message.mentions.users.first().id);
+ 
+    var privateGuild = message.guild.createChannel(userone.name + " and " + usertwo + "'s Game", permissionOverwrites[
+            {
+                id: guild.defaultRole.id,
+                deny: ['VIEW_CHANNEL']
+            },
+            {
+                id: user.id,
+                allow: ['VIEW_CHANNEL']
+            }
+        ]);
+    
+    privateGuild.send("<@" + userone.id + ">" + "<@" + usertwo.id + ">");
+ 
+    privateGuild.send("https://rpsgame.org/room?id=" + makeid(15));
+}
 
   function compare (a,b)
   {
       return a.calculatedPosition - b.calculatedPosition;
   } 
+  function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+  }
   
-  
-  
+  function makeid(length) 
+ {
+   var result           = '';
+   var characters       = 'GAYgay';
+   var charactersLength = characters.length;
+   for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+   }
+   return result;
+}
   
   
 
