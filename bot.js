@@ -17,7 +17,7 @@ client.on("ready", () => {
 });
 
 client.on('messageReactionAdd', ( reaction,user) => {
-  reaction.message.channel.send(listOfRPSRooms..length+"");
+  reaction.message.channel.send(listOfRPSRooms.length+"");
  for(var i; i < listOfRPSRooms.length; i++)
  {
    reaction.message.channel.send("room really exist");
