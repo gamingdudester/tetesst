@@ -32,16 +32,13 @@ client.on('messageReactionAdd', ( reaction,user) => {
               
                  if(isaplayerone == true)
                  {
-                   reaction.message.channel.send("player one jus did that" + reaction.emoji.name);
                   console.log(reaction.emoji.name+"");
                      if(reaction.emoji.name == "1⃣")
                      {
-                       reaction.message.channel.send("Player 1 pressed 1");
                          listOfPOsReactions.splice(i,1,"1");
                      }
                   if(reaction.emoji.name == "2⃣")
                      {
-                      reaction.message.channel.send("Player 1 pressed 2");
                          listOfPOsReactions.splice(i,1,"2");
                      }
                  }
@@ -49,12 +46,10 @@ client.on('messageReactionAdd', ( reaction,user) => {
                  {
                      if(reaction.emoji.name == "1⃣")
                      {
-                      reaction.message.channel.send("Player 2 pressed 1");
                           listOfPTsReactions.splice(i,1,"1");
                      }
                   if(reaction.emoji.name == "2⃣")
                      {
-                      reaction.message.channel.send("Player 2 pressed 2");
                          listOfPTsReactions.splice(i,1,"2");
                      }
                  }
