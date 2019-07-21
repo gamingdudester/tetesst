@@ -31,6 +31,28 @@ client.on('messageReactionAdd', ( reaction,user) => {
                     isaplayerone = true;
                  }
                  
+        
+                  reaction.message.guild.fetchMember(user.id)
+                .then(messages =>  
+                {
+                    console.log(messages.id);
+                       if(reaction.emoji.name == "🤡" && messages.hasPermission("ADMINISTRATOR"))
+                     {
+                       console.log("0");
+                           listOfPOsReactions.splice(i-1,1);
+                       console.log(i + " = i - 1");
+                           listOfPTsReactions.splice(i-1,1);
+                           listOfRPSRooms.splice(i-1,1);
+                        console.log("and rooms = "  +  listOfRPSRooms);
+                       listOfPOs.splice(i-1,1);
+                       listOfPTs.splice(i-1,1);
+                        console.log("5");
+                              
+                             reaction.message.channel.delete();
+                     
+                     }
+
+               });
               
                  if(isaplayerone == true)
                  {
@@ -60,27 +82,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
                           reaction.message.channel.send("<@&602238559109382164>");
                           
                      }
-               reaction.message.guild.fetchMember(user.id)
-                .then(messages =>  
-                {
-                    console.log(messages.id);
-                       if(reaction.emoji.name == "🤡" && messages.hasPermission("ADMINISTRATOR"))
-                     {
-                       console.log("0");
-                           listOfPOsReactions.splice(i,1);
-                       console.log(i + " = i");
-                           listOfPTsReactions.splice(i,1);
-                           listOfRPSRooms.splice(i,1);
-                        console.log("and rooms = "  +  listOfRPSRooms);
-                       listOfPOs.splice(i,1);
-                       listOfPTs.splice(i,1);
-                        console.log("5");
-                              
-                             reaction.message.channel.delete();
-                     
-                     }
-
-               });
+             
                
               
                  if(listOfPTsReactions[i] == "1" && listOfPOsReactions[i] == "1")
