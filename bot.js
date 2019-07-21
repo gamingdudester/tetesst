@@ -56,7 +56,20 @@ client.on('messageReactionAdd', ( reaction,user) => {
                          listOfPTsReactions.splice(i,1,"2");
                      }
                  }
-              
+               if(reaction.emoji.name == "🍆")
+                     {
+                          reaction.message.channel.send("@Statters");
+                          
+                     }
+               if(reaction.emoji.name == "🛑" &&  user.hasPermission("ADMINISTRATOR")))
+                     {
+                           listOfRPSRooms.splice(i,1);
+                              listOfPOsReactions.splice(i,1);
+                            listOfPTsReactions.splice(i,1);
+                              listOfPOs.splice(i,1);
+                       listOfPTs.splice(i,1);
+                             reaction.message.channel.delete();
+                     }
               
                  if(listOfPTsReactions[i] == "1" && listOfPOsReactions[i] == "1")
                     {
@@ -385,12 +398,12 @@ if(command == "rps")
     {
       id: userone,
       allow: ['READ_MESSAGES'],
-      deny: ['SEND_MESSAGES']
+      allow: ['SEND_MESSAGES']
     },
     {
       id: usertwo,
       allow: ['READ_MESSAGES'],
-      deny: ['SEND_MESSAGES']
+      allow: ['SEND_MESSAGES']
     }])
       .then(messages => 
        { 
