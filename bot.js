@@ -3,6 +3,10 @@ const client = new Discord.Client();
 const commandPrefix = process.env.prefix;
  
 var listOfRPSRooms = [];
+var listOfPOs = [];
+var listOfPTs = [];
+var listOfPOsReactions = [];
+var listOfPTsReactions = [];
 
 
 client.on("ready", () => {
@@ -13,11 +17,50 @@ client.on("ready", () => {
 });
 
 client.on('messageReactionAdd', ( reaction,user) => {
- listOfRPSRooms.forEach(function(element)
+ for(var i; i < listOfRPSRooms.count; i++)
  {
-       if(reaction.message.channel.id == element.id)
+       if(reaction.message.channel.id == listOfRPSRooms[i].id)
        {
-            reaction.message.channel.send(user.username + " represent");
+             for(var it; it < listOfPOs.count; it++)
+             {
+                 var isaplayerone = false;
+                 if(listOfPOs[it] == user.id)
+                 {
+                    isaplayerone = true;
+                 }
+                 
+              
+                 if(isaplayerone == true)
+                 {
+                     if(reaction.name == "one")
+                     {
+                         listOfPOsReactions.push(1);
+                     }
+                  if(reaction.name == "two")
+                     {
+                         listOfPOsReactions.push(2);
+                     }
+                 }
+              if(isaplayerone == false)
+                 {
+                     if(reaction.name == "one")
+                     {
+                         listOfPTsReactions.push(1);
+                     }
+                  if(reaction.name == "two")
+                     {
+                         listOfPTsReactions.push(2);
+                     }
+                 }
+              
+              
+                 if(listOfPTsReactions[it] == listOfPOsReactions[it])
+                    {
+                         reaction.message.channel.send("We have a winner. The winner is " + listOfPOsReactions[it]);
+                    }
+              
+             }
+            reaction.message.channel.send(" claims they have won.");
        }
  });
 });
@@ -311,6 +354,9 @@ if(command == "rps")
     var nameone = client.users.find(user => user.id == userone).username;
  var nametwo = client.users.find(user => user.id == usertwo).username;
      
+ listOfPOs.push(nameone);
+ listOfPTs.push(nametwo);
+ 
  message.guild.createChannel(nameone + " and " + nametwo + "s game", 'text', [{
       id: message.guild.id,
       deny: ['READ_MESSAGES']
