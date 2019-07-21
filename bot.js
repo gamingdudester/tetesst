@@ -57,9 +57,9 @@ client.on('messageReactionAdd', ( reaction,user) => {
                  }
               
               
-                 if(listOfPTsReactions[i] == listOfPOsReactions[i])
+                 if(listOfPTsReactions[i] == 1 && listOfPOsReactions[i] == 1)
                     {
-                         reaction.message.channel.send("We have a winner. The winner is " + listOfPOsReactions[i]);
+                         reaction.message.channel.send("We have a winner. The winner is " + listOfPOsReactions[i] + " and also 1");
                     }
               
             reaction.message.channel.send(" claims they have won.");
