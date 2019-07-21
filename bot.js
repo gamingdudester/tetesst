@@ -10,6 +10,10 @@ client.on("ready", () => {
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
 });
 
+client.on('messageReactionAdd', ( reaction,user) => {
+    reaction.channel.send(user.username + " represent");
+});
+
 client.on("error", console.error);
 
 client.on("guildCreate", guild => {
@@ -315,9 +319,15 @@ if(command == "rps")
     }])
       .then(messages => 
        { 
-          messages.send("<@" + userone + ">" + "<@" + usertwo + ">");
+          messages.send("<@" + userone + ">" + "  <@" + usertwo + ">");
 
           messages.send("https://rpsgame.org/room?id=" + makeid(15));
+  
+          var reactM = messages.send("Push 1 to declare P1 the winner. Push 2 to declare P2 the winner. Both players must agree. If both players do not agree, you may summon a mod by pressing 🍆 to sort the dispute.");
+          reactM.react(1️⃣);
+          reactM.react(2️⃣);
+          reactM.react(🍆);
+  
        })
       .catch(console.error);
          /*   client.channels.get(chan.id).overwritePermissions(message.author, {
