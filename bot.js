@@ -17,10 +17,11 @@ client.on("ready", () => {
 });
 
 client.on('messageReactionAdd', ( reaction,user) => {
+  if(reaction.message.author.bot) return;
  for(i = 0; i < listOfRPSRooms.length; i++)
  {
   
-       if(reaction.message.channel.id == listOfRPSRooms[i].id && listOfPOs[i].id != client.id) 
+       if(reaction.message.channel.id == listOfRPSRooms[i].id) 
        {
                  reaction.message.channel.send(listOfPOs[i].id + "  " + user.id);
                  var isaplayerone = false;
