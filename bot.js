@@ -13,13 +13,13 @@ client.on("ready", () => {
 });
 
 client.on('messageReactionAdd', ( reaction,user) => {
- listOfRPSRooms.forEach(function(element))
+ listOfRPSRooms.forEach(function(element)
  {
        if(reaction.message.channel.id == element.id)
        {
             reaction.message.channel.send(user.username + " represent");
        }
- }
+ });
 });
 
 client.on("error", console.error);
