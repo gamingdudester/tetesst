@@ -71,7 +71,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
                          
                     }
         
-                        if(listOfPTsReactions[i] == "1" && listOfPOsReactions[i] == "2")
+                        if(listOfPTsReactions[i] == "2" && listOfPOsReactions[i] == "2")
                             {
                          reaction.message.channel.send("We have a winner. The winner is player " + listOfPTsReactions[i]);
                                 client.channels.get(process.env.gameresultschannel).send (listOfPTs[i] + " just beat the gay fellow,  " + listOfPOs[i]);
