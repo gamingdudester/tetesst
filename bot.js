@@ -64,11 +64,14 @@ client.on('messageReactionAdd', ( reaction,user) => {
                 .then(messages =>  
                 {
                     console.log(messages.id);
-                      /* if(reaction.emoji.name == "🤡" && messages.hasPermission("ADMINISTRATOR"))
+                       if(reaction.emoji.name == "🤡" && messages.hasPermission("ADMINISTRATOR"))
                      {
+                       console.log("0");
                            if( listOfPOsReactions[i])
                            {
                            listOfPOsReactions.splice(i,1);
+                            
+                    console.log("one");
                            }
                       if( listOfPTsReactions[i])
                            {
@@ -77,6 +80,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
                       if( listOfRPSRooms[i])
                       {
                            listOfRPSRooms.splice(i,1);
+                        console.log("3");
                       }
                       if( listOfPOs[i])
                       {
@@ -85,9 +89,10 @@ client.on('messageReactionAdd', ( reaction,user) => {
                       if( listOfPTs[i])
                       {
                        listOfPTs.splice(i,1);
+                        console.log("5");
                       }
                               
-                             reaction.message.channel.delete();*/
+                             reaction.message.channel.delete();
                      
 
 
