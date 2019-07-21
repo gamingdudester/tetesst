@@ -62,7 +62,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
              }
             reaction.message.channel.send(" claims they have won.");
        }
- });
+ };
 });
 
 client.on("error", console.error);
