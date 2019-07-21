@@ -298,17 +298,20 @@ if(command == "rps")
    
     var nameone = client.users.find(user => user.id == userone).username;
  var nametwo = client.users.find(user => user.id == usertwo).username;
-     message.guild.createChannel(nameone + " & " + nametwo + "s game", 'text', [{
+     
+ message.guild.createChannel(nameone + " and " + nametwo + "s game", 'text', [{
       id: message.guild.id,
       deny: ['READ_MESSAGES']
     }, 
     {
       id: userone,
-      allow: ['READ_MESSAGES']
+      allow: ['READ_MESSAGES'],
+      deny: ['SEND_MESSAGES']
     },
     {
       id: usertwo,
-      allow: ['READ_MESSAGES']
+      allow: ['READ_MESSAGES'],
+      deny: ['SEND_MESSAGES']
     }])
       .then(messages => 
        { 
