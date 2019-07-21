@@ -18,7 +18,7 @@ client.on("ready", () => {
 
 client.on('messageReactionAdd', ( reaction,user) => {
   reaction.message.channel.send("phase 1 and room length is " + listOfRPSRooms.length );
- for(i = 0; i < listOfRPSRooms.length + 1; i++)
+ for(i = 0; i < listOfRPSRooms.length; i++)
  {
    reaction.message.channel.send("room really exist");
        if(reaction.message.channel.id == listOfRPSRooms[i].id)
