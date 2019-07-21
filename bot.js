@@ -303,9 +303,9 @@ if(command == "rps")
    .then(updated => console.log(updated.permissionOverwrites.get(message.author.id)))
    .catch(console.error);
  */
-    chan.send("<@" + userone.id + ">" + "<@" + usertwo.id + ">");
+    //chan.send("<@" + userone.id + ">" + "<@" + usertwo.id + ">");
  
-    chan.send("https://rpsgame.org/room?id=" + makeid(15));
+    //chan.send("https://rpsgame.org/room?id=" + makeid(15));
 }
 
   function compare (a,b)
