@@ -61,7 +61,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
                           reaction.message.channel.send("@Statters");
                           
                      }
-               if(reaction.emoji.name == "🛑" &&  user.hasPermission("ADMINISTRATOR")))
+               if(reaction.emoji.name == "🛑" &&  user.hasPermission("ADMINISTRATOR"))
                      {
                            listOfRPSRooms.splice(i,1);
                               listOfPOsReactions.splice(i,1);
