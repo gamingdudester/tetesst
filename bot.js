@@ -299,10 +299,12 @@ if(command == "rps")
      message.guild.createChannel('new-yeet', 'text', [{
       id: message.guild.id,
       deny: ['READ_MESSAGES']
-    }, {
+    }, 
+    {
       id: userone.id,
       allow: ['READ_MESSAGES']
-    }, {
+    },
+    {
       id: usertwo.id,
       allow: ['READ_MESSAGES']
     }])
