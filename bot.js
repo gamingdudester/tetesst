@@ -17,18 +17,14 @@ client.on("ready", () => {
 });
 
 client.on('messageReactionAdd', ( reaction,user) => {
-  reaction.message.channel.send("phase 1 and room length is " + listOfRPSRooms.length );
  for(i = 0; i < listOfRPSRooms.length; i++)
  {
    reaction.message.channel.send("room really exist");
        if(reaction.message.channel.id == listOfRPSRooms[i].id)
        {
-         reaction.message.channel.send("room exist huzz");
-             for(it = 0; it < listOfPOs.length; it++)
-             {
                 
                  var isaplayerone = false;
-                 if(listOfPOs[it] == user.id)
+                 if(listOfPOs[i] == user.id)
                  {
                     reaction.message.channel.send("yes kinda");
                     isaplayerone = true;
@@ -61,12 +57,11 @@ client.on('messageReactionAdd', ( reaction,user) => {
                  }
               
               
-                 if(listOfPTsReactions[it] == listOfPOsReactions[it])
+                 if(listOfPTsReactions[i] == listOfPOsReactions[i])
                     {
-                         reaction.message.channel.send("We have a winner. The winner is " + listOfPOsReactions[it]);
+                         reaction.message.channel.send("We have a winner. The winner is " + listOfPOsReactions[i]);
                     }
               
-             }
             reaction.message.channel.send(" claims they have won.");
        }
  };
