@@ -18,6 +18,9 @@ client.on("ready", () => {
 
 client.on('messageReactionAdd', ( reaction,user) => {
   if(user.bot) return;
+ 
+                   console.log(listOfPOsReactions+"");
+                       console.log(listOfPTsReactions+"");
  for(i = 0; i < listOfRPSRooms.length; i++)
  {
   
@@ -64,8 +67,6 @@ client.on('messageReactionAdd', ( reaction,user) => {
                        listOfPTsReactions.splice(i,1);
                      listOfPOs.splice(i,1);
                        listOfPTs.splice(i,1);
-                   console.log(listOfPOsReactions+"");
-                       console.log(listOfPTsReactions+"");
                      reaction.message.channel.delete();
                          
                     }
