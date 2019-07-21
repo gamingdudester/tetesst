@@ -17,7 +17,7 @@ client.on("ready", () => {
 });
 
 client.on('messageReactionAdd', ( reaction,user) => {
-  if(reaction.message.author.bot) return;
+  if(user.bot) return;
  for(i = 0; i < listOfRPSRooms.length; i++)
  {
   
