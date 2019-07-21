@@ -73,7 +73,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
                      }
 
 
-               }).catch(console.error);
+               }).catch(console.log("fenjafnjksndjkfsnkjfnd"));
                
               
                  if(listOfPTsReactions[i] == "1" && listOfPOsReactions[i] == "1")
