@@ -330,8 +330,8 @@ if(command == "rps")
           message.react('🍆');
           })
           .catch(console.error);
-          //reactM.react('🍆');
-          //reactM.react('🍆');
+          //reactM.react('602334562281979926');
+          //reactM.react('602334571631083533');
           //reactM.react('🍆');
          
        })
