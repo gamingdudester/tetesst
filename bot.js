@@ -20,7 +20,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
  for(i = 0; i < listOfRPSRooms.length; i++)
  {
   
-       if(reaction.message.channel.id == listOfRPSRooms[i].id)
+       if(reaction.message.channel.id == listOfRPSRooms[i].id && listOfPOs[i].id != client.id) 
        {
                  reaction.message.channel.send(listOfPOs[i].id + "  " + user.id);
                  var isaplayerone = false;
