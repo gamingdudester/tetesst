@@ -290,8 +290,8 @@ if(command == "editMsg")
 
 if(command == "rps")
 {
-    var userone = client.fetchUser(message.author.id);
-    var usertwo = client.fetchUser(message.mentions.users.first().id);
+    var userone = message.author.id;
+    var usertwo = message.mentions.users.first().id;
  
     //var privateGuild = message.guild.createChannel(userone.name + " and " + usertwo + "'s Game", { 
      //permissionOverwrites: [ {id: message.guild.defaultRole.id,deny: ['VIEW_CHANNEL']},{id: userone.id,allow: ['VIEW_CHANNEL']},{id: usertwo.id,allow: ['VIEW_CHANNEL']}]});
@@ -301,11 +301,11 @@ if(command == "rps")
       deny: ['READ_MESSAGES']
     }, 
     {
-      id: message.guild.id,
+      id: userone,
       allow: ['READ_MESSAGES']
     },
     {
-      id: message.guild.id,
+      id: usertwo,
       allow: ['READ_MESSAGES']
     }])
       .then(console.log)
