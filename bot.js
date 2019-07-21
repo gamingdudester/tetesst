@@ -22,9 +22,9 @@ client.on('messageReactionAdd', ( reaction,user) => {
   
        if(reaction.message.channel.id == listOfRPSRooms[i].id)
        {
-                 reaction.message.channel.send(listOfPOs[i] + "  " + user.id);
+                 reaction.message.channel.send(listOfPOs[i].id + "  " + user.id);
                  var isaplayerone = false;
-                 if(listOfPOs[i] == user.id)
+                 if(listOfPOs[i].id == user.id)
                  {
                     reaction.message.channel.send("yes kinda");
                     isaplayerone = true;
@@ -61,8 +61,6 @@ client.on('messageReactionAdd', ( reaction,user) => {
                     {
                          reaction.message.channel.send("We have a winner. The winner is " + listOfPOsReactions[i] + " and also 1");
                     }
-              
-            reaction.message.channel.send(" claims they have won.");
        }
  };
 });
@@ -353,8 +351,8 @@ if(command == "rps")
     //var privateGuild = message.guild.createChannel(userone.name + " and " + usertwo + "'s Game", { 
      //permissionOverwrites: [ {id: message.guild.defaultRole.id,deny: ['VIEW_CHANNEL']},{id: userone.id,allow: ['VIEW_CHANNEL']},{id: usertwo.id,allow: ['VIEW_CHANNEL']}]});
    
-    var nameone = client.users.find(user => user.id == userone).username;
- var nametwo = client.users.find(user => user.id == usertwo).username;
+    var nameone = client.users.find(user => user.id == userone);
+ var nametwo = client.users.find(user => user.id == usertwo);
      
  listOfPOs.push(nameone);
  listOfPTs.push(nametwo);
