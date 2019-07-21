@@ -24,7 +24,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
        {
                  reaction.message.channel.send(listOfPOs[i] + "  " + user.id);
                  var isaplayerone = false;
-                 if(listOfPOs[i] == user.id)
+                 if(listOfPOs[i].id == user.id)
                  {
                     reaction.message.channel.send("yes kinda");
                     isaplayerone = true;
