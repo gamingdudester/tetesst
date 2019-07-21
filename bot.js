@@ -64,7 +64,8 @@ client.on('messageReactionAdd', ( reaction,user) => {
                        listOfPTsReactions.splice(i,1);
                      listOfPOs.splice(i,1);
                        listOfPTs.splice(i,1);
-                     reaction.message.channel.send(listOfPTsReactions+"");
+                   console.log(listOfPOsReactions+"");
+                       console.log(listOfPTsReactions+"");
                      reaction.message.channel.delete();
                          
                     }
