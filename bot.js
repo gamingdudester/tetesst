@@ -18,13 +18,13 @@ client.on("ready", () => {
 
 client.on('messageReactionAdd', ( reaction,user) => {
   reaction.message.channel.send("phase 1 and room length is " + listOfRPSRooms.length );
- for(var i; i < listOfRPSRooms.length + 1; i++)
+ for(i = 0; i < listOfRPSRooms.length + 1; i++)
  {
    reaction.message.channel.send("room really exist");
        if(reaction.message.channel.id == listOfRPSRooms[i].id)
        {
          reaction.message.channel.send("room exist huzz");
-             for(var it; it < listOfPOs.length; it++)
+             for(it = 0; it < listOfPOs.length; it++)
              {
                 
                  var isaplayerone = false;
