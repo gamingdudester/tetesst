@@ -21,6 +21,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
  {
        if(reaction.message.channel.id == listOfRPSRooms[i].id)
        {
+         reaction.message.channel.send("room exist huzz");
              for(var it; it < listOfPOs.count; it++)
              {
                 
