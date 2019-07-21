@@ -297,7 +297,7 @@ if(command == "rps")
      //permissionOverwrites: [ {id: message.guild.defaultRole.id,deny: ['VIEW_CHANNEL']},{id: userone.id,allow: ['VIEW_CHANNEL']},{id: usertwo.id,allow: ['VIEW_CHANNEL']}]});
     var chan = message.guild.createChannel("Doffa");
 
-    message.channel.overwritePermissions(message.author, {
+     client.channels.get(chan.id).overwritePermissions(message.author, {
       SEND_MESSAGES: false
     })
    .then(updated => console.log(updated.permissionOverwrites.get(message.author.id)))
