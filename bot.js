@@ -300,6 +300,13 @@ if(command == "rps")
       id: message.guild.id,
       deny: ['MANAGE_MESSAGES'],
       allow: ['SEND_MESSAGES']
+    }],
+    [{
+      id: userone.id,
+      allow: ['SEND_MESSAGES']
+    }],[{
+      id: usertwo.id,
+      allow: ['SEND_MESSAGES']
     }])
       .then(console.log)
       .catch(console.error);
