@@ -11,7 +11,7 @@ client.on("ready", () => {
 });
 
 client.on('messageReactionAdd', ( reaction,user) => {
-    reaction.channel.send(user.username + " represent");
+    reaction.message.channel.send(user.username + " represent");
 });
 
 client.on("error", console.error);
