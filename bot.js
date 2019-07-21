@@ -23,11 +23,9 @@ client.on('messageReactionAdd', ( reaction,user) => {
   
        if(reaction.message.channel.id == listOfRPSRooms[i].id) 
        {
-                 reaction.message.channel.send(listOfPOs[i].id + "  " + user.id);
                  var isaplayerone = false;
                  if(listOfPOs[i].id == user.id)
                  {
-                    reaction.message.channel.send("yes kinda");
                     isaplayerone = true;
                  }
                  
@@ -64,7 +62,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
               
                  if(listOfPTsReactions[i] == 1 && listOfPOsReactions[i] == 1)
                     {
-                         reaction.message.channel.send("We have a winner. The winner is " + listOfPOsReactions[i] + " and also 1");
+                         reaction.message.channel.send("We have a winner. The winner is player " + listOfPOsReactions[i]);
                     }
        }
  };
