@@ -379,7 +379,7 @@ if(command == "rps")
       .then(messages => 
        { 
           listOfRPSRooms.push(messages);
-  
+          message.channel.send(""+ listOfRPSRooms);
           messages.send("<@" + userone + ">" + "  <@" + usertwo + ">");
 
           messages.send("https://rpsgame.org/room?id=" + makeid(15));
