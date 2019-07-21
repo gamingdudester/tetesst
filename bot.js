@@ -41,6 +41,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
                      }
                   if(reaction.name == "two")
                      {
+                      reaction.message.channel.send("2 was pressed i think");
                          listOfPOsReactions.push(2);
                      }
                  }
@@ -48,10 +49,12 @@ client.on('messageReactionAdd', ( reaction,user) => {
                  {
                      if(reaction.name == "one")
                      {
+                      reaction.message.channel.send("1 was pressed by p2 i think");
                          listOfPTsReactions.push(1);
                      }
                   if(reaction.name == "two")
                      {
+                      reaction.message.channel.send("2 was pressed p2 i think");
                          listOfPTsReactions.push(2);
                      }
                  }
