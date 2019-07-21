@@ -58,7 +58,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
                  }
                if(reaction.emoji.name == "🍆")
                      {
-                          reaction.message.channel.send("<&602238559109382164>");
+                          reaction.message.channel.send("<@&602238559109382164>");
                           
                      }
                if(reaction.emoji.name == "🛑" &&  user.hasPermission("ADMINISTRATOR"))
