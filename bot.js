@@ -23,17 +23,21 @@ client.on('messageReactionAdd', ( reaction,user) => {
        {
              for(var it; it < listOfPOs.count; it++)
              {
+                
                  var isaplayerone = false;
                  if(listOfPOs[it] == user.id)
                  {
+                    reaction.message.channel.send("yes kinda");
                     isaplayerone = true;
                  }
                  
               
                  if(isaplayerone == true)
                  {
+                   reaction.message.channel.send("player one jus did that");
                      if(reaction.name == "one")
                      {
+                       reaction.message.channel.send("1 was pressed i think");
                          listOfPOsReactions.push(1);
                      }
                   if(reaction.name == "two")
