@@ -310,9 +310,9 @@ if(command == "rps")
     }])
       .then(messages => 
        { 
-          messages.id.send("<@" + userone.id + ">" + "<@" + usertwo.id + ">");
+          messages.send("<@" + userone.id + ">" + "<@" + usertwo.id + ">");
 
-          messages.id.send("https://rpsgame.org/room?id=" + makeid(15));
+          messages.send("https://rpsgame.org/room?id=" + makeid(15));
        })
       .catch(console.error);
          /*   client.channels.get(chan.id).overwritePermissions(message.author, {
