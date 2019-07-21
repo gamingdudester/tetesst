@@ -64,9 +64,15 @@ client.on('messageReactionAdd', ( reaction,user) => {
                 {
                        if(reaction.emoji.name == "🤡" && messages.hasPermission("ADMINISTRATOR"))
                      {
+                           if( listOfPOsReactions[i])
+                           {
+                           listOfPOsReactions.splice(i,1);
+                           }
+                      if( listOfPTsReactions[i])
+                           {
+                           listOfPTsReactions.splice(i,1);
+                           }
                            listOfRPSRooms.splice(i,1);
-                              listOfPOsReactions.splice(i,1);
-                            listOfPTsReactions.splice(i,1);
                               listOfPOs.splice(i,1);
                        listOfPTs.splice(i,1);
                              reaction.message.channel.delete();
