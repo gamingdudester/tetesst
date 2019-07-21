@@ -19,10 +19,10 @@ client.on("ready", () => {
 client.on('messageReactionAdd', ( reaction,user) => {
  for(i = 0; i < listOfRPSRooms.length; i++)
  {
-   reaction.message.channel.send("room really exist");
+  
        if(reaction.message.channel.id == listOfRPSRooms[i].id)
        {
-                
+                 reaction.message.channel.send(listOfPOs[i] + "  " + user.id);
                  var isaplayerone = false;
                  if(listOfPOs[i] == user.id)
                  {
