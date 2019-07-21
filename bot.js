@@ -33,7 +33,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
               
                  if(isaplayerone == true)
                  {
-                   reaction.message.channel.send("player one jus did that");
+                   reaction.message.channel.send("player one jus did that" + reaction.name);
                      if(reaction.name == "one")
                      {
                        reaction.message.channel.send("1 was pressed i think");
