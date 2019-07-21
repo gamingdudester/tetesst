@@ -99,7 +99,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
                               listOfPOs.splice(i,1);
                        listOfPTs.splice(i,1);
                              reaction.message.channel.delete();
-                            }
+                            }//
        }
  };
 });
