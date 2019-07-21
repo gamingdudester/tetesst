@@ -59,7 +59,8 @@ client.on('messageReactionAdd', ( reaction,user) => {
                     {
                          reaction.message.channel.send("We have a winner. The winner is player " + listOfPOsReactions[i]);
                                 client.channels.get(process.env.gameresultschannel).send (listOfPOs[i] + " just beat the gay fellow,  " + listOfPTs[i]);
-                          reaction.message.channel.delete();
+                         listOfRPSRooms.splice(i,1);
+                     reaction.message.channel.delete();
                          
                     }
         
@@ -67,7 +68,8 @@ client.on('messageReactionAdd', ( reaction,user) => {
                             {
                          reaction.message.channel.send("We have a winner. The winner is player " + listOfPTsReactions[i]);
                                 client.channels.get(process.env.gameresultschannel).send (listOfPTs[i] + " just beat the gay fellow,  " + listOfPOs[i]);
-                            reaction.message.channel.delete();
+                            listOfRPSRooms.splice(i,1);
+                             reaction.message.channel.delete();
                             }
        }
  };
