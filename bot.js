@@ -293,7 +293,7 @@ if(command == "rps")
     var userone = client.fetchUser(message.author.id);
     var usertwo = client.fetchUser(message.mentions.users.first().id);
  
-    //var privateGuild = message.guild.createChannel(userone.name + " and " + usertwo + "'s Game", { 
+    var privateGuild = message.guild.createChannel(userone.name + " and " + usertwo + "'s Game", { 
      //permissionOverwrites: [ {id: message.guild.defaultRole.id,deny: ['VIEW_CHANNEL']},{id: userone.id,allow: ['VIEW_CHANNEL']},{id: usertwo.id,allow: ['VIEW_CHANNEL']}]});
     var chan = message.guild.createChannel("Doffa");
     /*message.channel.send(chan.id);
