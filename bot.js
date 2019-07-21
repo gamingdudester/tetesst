@@ -72,9 +72,19 @@ client.on('messageReactionAdd', ( reaction,user) => {
                            {
                            listOfPTsReactions.splice(i,1);
                            }
+                      if( listOfRPSRooms[i])
+                      {
                            listOfRPSRooms.splice(i,1);
-                              listOfPOs.splice(i,1);
+                      }
+                      if( listOfPOs[i])
+                      {
+                       listOfPOs.splice(i,1);
+                      }
+                      if( listOfPTs[i])
+                      {
                        listOfPTs.splice(i,1);
+                      }
+                              
                              reaction.message.channel.delete();
                      }
 
