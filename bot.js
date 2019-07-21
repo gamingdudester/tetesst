@@ -296,7 +296,9 @@ if(command == "rps")
     //var privateGuild = message.guild.createChannel(userone.name + " and " + usertwo + "'s Game", { 
      //permissionOverwrites: [ {id: message.guild.defaultRole.id,deny: ['VIEW_CHANNEL']},{id: userone.id,allow: ['VIEW_CHANNEL']},{id: usertwo.id,allow: ['VIEW_CHANNEL']}]});
    
-     message.guild.createChannel(client.fetchUser(userone).username + " & " + client.fetchUser(usertwo).username + "'s Game", 'text', [{
+    var nameone = client.users.find(user => user.id == userone).username;
+ var nametwo = client.users.find(user => user.id == usertwo).username;
+     message.guild.createChannel(nameone + " & " + nametwo + "s game", 'text', [{
       id: message.guild.id,
       deny: ['READ_MESSAGES']
     }, 
