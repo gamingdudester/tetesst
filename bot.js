@@ -94,7 +94,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
                               
                              reaction.message.channel.delete();
                      
-
+                     }
 
                });
                
