@@ -411,13 +411,11 @@ if(command == "rps")
     }, 
     {
       id: userone,
-      allow: ['READ_MESSAGES'],
-      allow: ['SEND_MESSAGES']
+      allow: ['READ_MESSAGES']
     },
     {
       id: usertwo,
-      allow: ['READ_MESSAGES'],
-      allow: ['SEND_MESSAGES']
+      allow: ['READ_MESSAGES']
     }])
       .then(messages => 
        { 
