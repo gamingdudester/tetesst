@@ -310,11 +310,6 @@ if(command == "rps")
     }])
       .then(console.log)
       .catch(console.error);
-
-     
-     
-     
-    message.channel.send("oof yeet");
          /*   client.channels.get(chan.id).overwritePermissions(message.author, {
       SEND_MESSAGES: false
     })
