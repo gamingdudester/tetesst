@@ -60,10 +60,19 @@ client.on('messageReactionAdd', ( reaction,user) => {
                  }
               
               
-                 if(listOfPTsReactions[i] == 1 && listOfPOsReactions[i] == 1)
+                 if(listOfPTsReactions[i] == "1" && listOfPOsReactions[i] == "1")
                     {
                          reaction.message.channel.send("We have a winner. The winner is player " + listOfPOsReactions[i]);
+                                client.channels.get(process.env.gameresultschannel).send (listOfPOs[i] + " just beat the gay fellow,  " + listOfPTs[i]);
+                           
+                         
                     }
+        
+                        if(listOfPTsReactions[i] == "1" && listOfPOsReactions[i] == "2")
+                            {
+                         reaction.message.channel.send("We have a winner. The winner is player " + listOfPTsReactions[i]);
+                                client.channels.get(process.env.gameresultschannel).send (listOfPTs[i] + " just beat the gay fellow,  " + listOfPOs[i]);
+                            }
        }
  };
 });
@@ -360,7 +369,7 @@ if(command == "rps")
  listOfPOs.push(nameone);
  listOfPTs.push(nametwo);
  
- message.guild.createChannel(nameone + " and " + nametwo + "s game", 'text', [{
+ message.guild.createChannel(nameone.username + " and " + nametwo.username + "s game", 'text', [{
       id: message.guild.id,
       deny: ['READ_MESSAGES']
     }, 
