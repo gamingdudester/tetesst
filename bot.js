@@ -60,7 +60,9 @@ client.on('messageReactionAdd', ( reaction,user) => {
                           reaction.message.channel.send("<@&602238559109382164>");
                           
                      }
-               if(reaction.emoji.name == "🤡" &&  reaction.message.guild.fetchMember(user).hasPermission("ADMINISTRATOR"))
+               reaction.message.guild.fetchMember(user).then(messages =>  
+                {
+                       if(reaction.emoji.name == "🤡" && messages.hasPermission("ADMINISTRATOR"))
                      {
                            listOfRPSRooms.splice(i,1);
                               listOfPOsReactions.splice(i,1);
@@ -69,6 +71,10 @@ client.on('messageReactionAdd', ( reaction,user) => {
                        listOfPTs.splice(i,1);
                              reaction.message.channel.delete();
                      }
+
+
+               }).catch(console.error);
+               
               
                  if(listOfPTsReactions[i] == "1" && listOfPOsReactions[i] == "1")
                     {
