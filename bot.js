@@ -298,15 +298,16 @@ if(command == "rps")
    
      message.guild.createChannel('new-yeet', 'text', [{
       id: message.guild.id,
-      deny: ['MANAGE_MESSAGES'],
-      allow: ['SEND_MESSAGES']
+      deny: ['READ_MESSAGES']
     }],
     [{
       id: userone.id,
-      allow: ['SEND_MESSAGES']
+      allow: ['READ_MESSAGES'],
+      deny: ['SEND_MESSAGES']
     }],[{
       id: usertwo.id,
-      allow: ['SEND_MESSAGES']
+      allow: ['READ_MESSAGES'],
+      deny: ['SEND_MESSAGES']
     }])
       .then(console.log)
       .catch(console.error);
