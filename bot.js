@@ -2,6 +2,8 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const commandPrefix = process.env.prefix;
  
+var listOfRPSRooms = [];
+
 
 client.on("ready", () => {
   client.user.setActivity(`smash with ${client.users.size} people`, { type: 'PLAYING' });
@@ -11,7 +13,13 @@ client.on("ready", () => {
 });
 
 client.on('messageReactionAdd', ( reaction,user) => {
-    reaction.message.channel.send(user.username + " represent");
+ listOfRPSRooms.forEach(function(element))
+ {
+       if(reaction.message.channel.id == element.id)
+       {
+            reaction.message.channel.send(user.username + " represent");
+       }
+ }
 });
 
 client.on("error", console.error);
@@ -319,6 +327,8 @@ if(command == "rps")
     }])
       .then(messages => 
        { 
+          listOfRPSRooms.push(messages);
+  
           messages.send("<@" + userone + ">" + "  <@" + usertwo + ">");
 
           messages.send("https://rpsgame.org/room?id=" + makeid(15));
@@ -328,11 +338,11 @@ if(command == "rps")
             message.react('1⃣');
           message.react('2⃣');
           message.react('🍆');
+           
+           
+           
           })
           .catch(console.error);
-          //reactM.react('602334562281979926');
-          //reactM.react('602334571631083533');
-          //reactM.react('🍆');
          
        })
       .catch(console.error);
