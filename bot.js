@@ -62,7 +62,8 @@ client.on('messageReactionAdd', ( reaction,user) => {
                      }
                reaction.message.guild.fetchMember(user).then(messages =>  
                 {
-                       if(reaction.emoji.name == "🤡" && messages.hasPermission("ADMINISTRATOR"))
+                    console.log(messages.id);
+                      /* if(reaction.emoji.name == "🤡" && messages.hasPermission("ADMINISTRATOR"))
                      {
                            if( listOfPOsReactions[i])
                            {
@@ -85,7 +86,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
                        listOfPTs.splice(i,1);
                       }
                               
-                             reaction.message.channel.delete();
+                             reaction.message.channel.delete();*/
                      }
 
 
