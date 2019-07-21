@@ -295,9 +295,9 @@ if(command == "rps")
  
     //var privateGuild = message.guild.createChannel(userone.name + " and " + usertwo + "'s Game", { 
      //permissionOverwrites: [ {id: message.guild.defaultRole.id,deny: ['VIEW_CHANNEL']},{id: userone.id,allow: ['VIEW_CHANNEL']},{id: usertwo.id,allow: ['VIEW_CHANNEL']}]});
-    var newchannel = message.guild.createChannel("Doffa");
+    var chan = message.guild.createChannel("Doffa");
 
-    newchannel.overwritePermissions(message.author, {
+    message.channel.overwritePermissions(message.author, {
       SEND_MESSAGES: false
     })
    .then(updated => console.log(updated.permissionOverwrites.get(message.author.id)))
