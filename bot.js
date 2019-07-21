@@ -296,7 +296,7 @@ if(command == "rps")
     //var privateGuild = message.guild.createChannel(userone.name + " and " + usertwo + "'s Game", { 
      //permissionOverwrites: [ {id: message.guild.defaultRole.id,deny: ['VIEW_CHANNEL']},{id: userone.id,allow: ['VIEW_CHANNEL']},{id: usertwo.id,allow: ['VIEW_CHANNEL']}]});
    
-     message.guild.createChannel('new-yeet', 'text', [{
+     message.guild.createChannel(client.fetchUser(userone).username + " & " + client.fetchUser(usertwo).username + "'s Game", 'text', [{
       id: message.guild.id,
       deny: ['READ_MESSAGES']
     }, 
