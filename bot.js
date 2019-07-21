@@ -301,11 +301,11 @@ if(command == "rps")
       deny: ['READ_MESSAGES']
     }, 
     {
-      id: userone.id,
+      id: message.guild.id,
       allow: ['READ_MESSAGES']
     },
     {
-      id: usertwo.id,
+      id: message.guild.id,
       allow: ['READ_MESSAGES']
     }])
       .then(console.log)
