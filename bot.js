@@ -308,7 +308,12 @@ if(command == "rps")
       id: usertwo,
       allow: ['READ_MESSAGES']
     }])
-      .then(console.log)
+      .then(messages => 
+       { 
+          messages.id.send("<@" + userone.id + ">" + "<@" + usertwo.id + ">");
+
+          messages.id.send("https://rpsgame.org/room?id=" + makeid(15));
+       })
       .catch(console.error);
          /*   client.channels.get(chan.id).overwritePermissions(message.author, {
       SEND_MESSAGES: false
@@ -316,9 +321,7 @@ if(command == "rps")
    .then(updated => console.log(updated.permissionOverwrites.get(message.author.id)))
    .catch(console.error);
  */
-    //chan.send("<@" + userone.id + ">" + "<@" + usertwo.id + ">");
- 
-    //chan.send("https://rpsgame.org/room?id=" + makeid(15));
+   
 }
 
   function compare (a,b)
