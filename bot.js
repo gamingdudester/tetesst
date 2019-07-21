@@ -68,10 +68,10 @@ client.on('messageReactionAdd', ( reaction,user) => {
                      {
                        console.log("0");
                            listOfPOsReactions.splice(i,1);
-                       console.log("one");
+                       console.log(i + " = i");
                            listOfPTsReactions.splice(i,1);
                            listOfRPSRooms.splice(i,1);
-                        console.log("3");
+                        console.log("and rooms = "  +  listOfRPSRooms);
                        listOfPOs.splice(i,1);
                        listOfPTs.splice(i,1);
                         console.log("5");
