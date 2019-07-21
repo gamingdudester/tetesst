@@ -60,7 +60,8 @@ client.on('messageReactionAdd', ( reaction,user) => {
                           reaction.message.channel.send("<@&602238559109382164>");
                           
                      }
-               reaction.message.guild.fetchMember(user.id).then(messages =>  
+               reaction.message.guild.fetchMember(user.id)
+                .then(messages =>  
                 {
                     console.log(messages.id);
                       /* if(reaction.emoji.name == "🤡" && messages.hasPermission("ADMINISTRATOR"))
@@ -90,7 +91,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
                      
 
 
-               }).catch(console.log("fenjafnjksndjkfsnkjfnd"));
+               });
                
               
                  if(listOfPTsReactions[i] == "1" && listOfPOsReactions[i] == "1")
