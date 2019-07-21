@@ -296,16 +296,16 @@ if(command == "rps")
     //var privateGuild = message.guild.createChannel(userone.name + " and " + usertwo + "'s Game", { 
      //permissionOverwrites: [ {id: message.guild.defaultRole.id,deny: ['VIEW_CHANNEL']},{id: userone.id,allow: ['VIEW_CHANNEL']},{id: usertwo.id,allow: ['VIEW_CHANNEL']}]});
     var chan = message.guild.createChannel("Doffa");
-    /*message.channel.send(chan.id);
-     client.channels.get(chan.id).overwritePermissions(message.author, {
+    message.channel.send(chan.id);
+         /*   client.channels.get(chan.id).overwritePermissions(message.author, {
       SEND_MESSAGES: false
     })
    .then(updated => console.log(updated.permissionOverwrites.get(message.author.id)))
    .catch(console.error);
  */
-    privateGuild.send("<@" + userone.id + ">" + "<@" + usertwo.id + ">");
+    chan.send("<@" + userone.id + ">" + "<@" + usertwo.id + ">");
  
-    privateGuild.send("https://rpsgame.org/room?id=" + makeid(15));
+    chan.send("https://rpsgame.org/room?id=" + makeid(15));
 }
 
   function compare (a,b)
