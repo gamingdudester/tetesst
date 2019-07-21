@@ -60,7 +60,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
                           reaction.message.channel.send("<@&602238559109382164>");
                           
                      }
-               if(reaction.emoji.name == "🤡" &&  user.hasPermission("ADMINISTRATOR"))
+               if(reaction.emoji.name == "🤡" &&  reaction.message.guild.fetchMember(user).hasPermission("ADMINISTRATOR"))
                      {
                            listOfRPSRooms.splice(i,1);
                               listOfPOsReactions.splice(i,1);
