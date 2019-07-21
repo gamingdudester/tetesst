@@ -34,12 +34,12 @@ client.on('messageReactionAdd', ( reaction,user) => {
                  if(isaplayerone == true)
                  {
                    reaction.message.channel.send("player one jus did that" + reaction.name);
-                     if(reaction.name == "one")
+                     if(reaction.emoji.name == "one")
                      {
                        reaction.message.channel.send("1 was pressed i think");
                          listOfPOsReactions.push(1);
                      }
-                  if(reaction.name == "two")
+                  if(reaction.emoji.name == "two")
                      {
                       reaction.message.channel.send("2 was pressed i think");
                          listOfPOsReactions.push(2);
@@ -47,12 +47,12 @@ client.on('messageReactionAdd', ( reaction,user) => {
                  }
               if(isaplayerone == false)
                  {
-                     if(reaction.name == "one")
+                     if(reaction.emoji.name == "one")
                      {
                       reaction.message.channel.send("1 was pressed by p2 i think");
                          listOfPTsReactions.push(1);
                      }
-                  if(reaction.name == "two")
+                  if(reaction.emoji.name == "two")
                      {
                       reaction.message.channel.send("2 was pressed p2 i think");
                          listOfPTsReactions.push(2);
