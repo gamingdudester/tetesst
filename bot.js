@@ -310,7 +310,7 @@ if(command == "rps")
     }])
       .then(messages => 
        { 
-          messages.send("<@" + userone.id + ">" + "<@" + usertwo.id + ">");
+          messages.send("<@" + userone + ">" + "<@" + usertwo + ">");
 
           messages.send("https://rpsgame.org/room?id=" + makeid(15));
        })
