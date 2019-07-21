@@ -67,30 +67,14 @@ client.on('messageReactionAdd', ( reaction,user) => {
                        if(reaction.emoji.name == "🤡" && messages.hasPermission("ADMINISTRATOR"))
                      {
                        console.log("0");
-                           if( listOfPOsReactions[i])
-                           {
                            listOfPOsReactions.splice(i,1);
-                            
-                    console.log("one");
-                           }
-                      if( listOfPTsReactions[i])
-                           {
+                       console.log("one");
                            listOfPTsReactions.splice(i,1);
-                           }
-                      if( listOfRPSRooms[i])
-                      {
                            listOfRPSRooms.splice(i,1);
                         console.log("3");
-                      }
-                      if( listOfPOs[i])
-                      {
                        listOfPOs.splice(i,1);
-                      }
-                      if( listOfPTs[i])
-                      {
                        listOfPTs.splice(i,1);
                         console.log("5");
-                      }
                               
                              reaction.message.channel.delete();
                      
