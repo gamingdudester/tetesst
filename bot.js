@@ -327,7 +327,7 @@ if(command == "rps")
           //reactM.react('🍆');
           //reactM.react('🍆');
           //reactM.react('🍆');
-          message.react('🍆');
+          reactM.react('🍆');
        })
       .catch(console.error);
          /*   client.channels.get(chan.id).overwritePermissions(message.author, {
