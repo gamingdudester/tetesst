@@ -87,7 +87,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
                       }
                               
                              reaction.message.channel.delete();*/
-                     }
+                     
 
 
                }).catch(console.log("fenjafnjksndjkfsnkjfnd"));
