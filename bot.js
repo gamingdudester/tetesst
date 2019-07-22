@@ -95,6 +95,9 @@ client.on('messageReactionAdd', ( reaction,user) => {
                      listOfPOs.splice(i-1,1);
                        listOfPTs.splice(i-1,1);
                      reaction.message.channel.delete();
+                     
+                     
+                     
                          
                     }
         
@@ -447,6 +450,17 @@ if(command == "rps")
    
 }
 
+ 
+ 
+ if(command == "clearRPS")
+ {
+     
+                      listOfRPSRooms = {};
+                      listOfPOsReactions = {};
+                       listOfPTsReactions = {};
+                     listOfPOs = {};
+                       listOfPTs = {};
+ }
   function compare (a,b)
   {
       return a.calculatedPosition - b.calculatedPosition;
