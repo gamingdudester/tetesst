@@ -219,7 +219,7 @@ client.on("message", async message => {
       client.channels.find("name", message.channel.name + "_"+message.channel.id.toString()).send(message.author.username + ": " + message.content + " ::::");
        }
        catch{console.log("couldnt output to clone idk");}
-  if(message.content.substring(0, commandPrefix.length) != commandPrefix) return;
+  if(message.content.toLowerCase().substring(0, commandPrefix.length) != commandPrefix.toLowerCase()) return;
   
   
   if(command == "e")
