@@ -59,22 +59,22 @@ client.on('messageReactionAdd', ( reaction,user) => {
                   console.log(reaction.emoji.name+"");
                      if(reaction.emoji.name == "1⃣")
                      {
-                         listOfPOsReactions.splice(i,1,"1");
+                         listOfPOsReactions.splice(i-1,1,"1");
                      }
                   if(reaction.emoji.name == "2⃣")
                      {
-                         listOfPOsReactions.splice(i,1,"2");
+                         listOfPOsReactions.splice(i-1,1,"2");
                      }
                  }
               if(isaplayerone == false)
                  {
                      if(reaction.emoji.name == "1⃣")
                      {
-                          listOfPTsReactions.splice(i,1,"1");
+                          listOfPTsReactions.splice(i-1,1,"1");
                      }
                   if(reaction.emoji.name == "2⃣")
                      {
-                         listOfPTsReactions.splice(i,1,"2");
+                         listOfPTsReactions.splice(i-1,1,"2");
                      }
                  }
                if(reaction.emoji.name == "🍆")
@@ -89,11 +89,11 @@ client.on('messageReactionAdd', ( reaction,user) => {
                     {
                          reaction.message.channel.send("We have a winner. The winner is player " + listOfPOsReactions[i]);
                                 client.channels.get(process.env.gameresultschannel).send (listOfPOs[i] + " just beat the gay fellow,  " + listOfPTs[i]);
-                         listOfRPSRooms.splice(i,1);
-                      listOfPOsReactions.splice(i,1);
-                       listOfPTsReactions.splice(i,1);
-                     listOfPOs.splice(i,1);
-                       listOfPTs.splice(i,1);
+                         listOfRPSRooms.splice(i-1,1);
+                      listOfPOsReactions.splice(i-1,1);
+                       listOfPTsReactions.splice(i-1,1);
+                     listOfPOs.splice(i-1,1);
+                       listOfPTs.splice(i-1,1);
                      reaction.message.channel.delete();
                          
                     }
