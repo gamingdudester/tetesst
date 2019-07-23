@@ -26,7 +26,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
        {
         console.log(reaction.emoji.name);
                  var isaplayerone = false;
-                 if(listOfPOs[i].id == user.id)
+                 if(listOfPOs[i-1].id == user.id)
                  {
                     isaplayerone = true;
                  }
@@ -85,10 +85,10 @@ client.on('messageReactionAdd', ( reaction,user) => {
              
                
               
-                 if(listOfPTsReactions[i] == "1" && listOfPOsReactions[i] == "1")
+                 if(listOfPTsReactions[i-1] == "1" && listOfPOsReactions[i-1] == "1")
                     {
-                         reaction.message.channel.send("We have a winner. The winner is player " + listOfPOsReactions[i]);
-                                client.channels.get(process.env.gameresultschannel).send (listOfPOs[i] + " just beat the gay fellow,  " + listOfPTs[i]);
+                         reaction.message.channel.send("We have a winner. The winner is player " + listOfPOsReactions[i-1]);
+                                client.channels.get(process.env.gameresultschannel).send (listOfPOs[i-1] + " just beat the gay fellow,  " + listOfPTs[i-1]);
                          listOfRPSRooms.splice(i-1,1);
                       listOfPOsReactions.splice(i-1,1);
                        listOfPTsReactions.splice(i-1,1);
@@ -101,15 +101,15 @@ client.on('messageReactionAdd', ( reaction,user) => {
                          
                     }
         
-                        if(listOfPTsReactions[i] == "2" && listOfPOsReactions[i] == "2")
+                        if(listOfPTsReactions[i-1] == "2" && listOfPOsReactions[i-1] == "2")
                             {
-                         reaction.message.channel.send("We have a winner. The winner is player " + listOfPTsReactions[i]);
-                                client.channels.get(process.env.gameresultschannel).send (listOfPTs[i] + " just beat the gay fellow,  " + listOfPOs[i]);
-                            listOfRPSRooms.splice(i,1);
-                              listOfPOsReactions.splice(i,1);
-                            listOfPTsReactions.splice(i,1);
-                              listOfPOs.splice(i,1);
-                       listOfPTs.splice(i,1);
+                         reaction.message.channel.send("We have a winner. The winner is player " + listOfPTsReactions[i-1]);
+                                client.channels.get(process.env.gameresultschannel).send (listOfPTs[i-1] + " just beat the gay fellow,  " + listOfPOs[i-1]);
+                            listOfRPSRooms.splice(i-1,1);
+                              listOfPOsReactions.splice(i-1,1);
+                            listOfPTsReactions.splice(i-1,1);
+                              listOfPOs.splice(i-1,1);
+                       listOfPTs.splice(i-1,1);
                              reaction.message.channel.delete();
                             }//
        }
