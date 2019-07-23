@@ -455,11 +455,11 @@ if(command == "rps")
  if(command == "clearRPS")
  {
      
-                      listOfRPSRooms = [];
-                      listOfPOsReactions = [];
-                       listOfPTsReactions = [];
-                     listOfPOs = [];
-                       listOfPTs = [];
+                      listOfRPSRooms.length = 0;
+                      listOfPOsReactions.length = 0;
+                       listOfPTsReactions.length = 0;
+                     listOfPOs.length = 0;
+                       listOfPTs.length = 0;
  }
   function compare (a,b)
   {
