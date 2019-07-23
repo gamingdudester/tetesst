@@ -40,7 +40,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
                      {
                        console.log("0");
                            listOfPOsReactions.splice(i-1,1);
-                       console.log(i + " = i - 1");
+                       console.log(i + " = i");
                            listOfPTsReactions.splice(i-1,1);
                            listOfRPSRooms.splice(i-1,1);
                         console.log("and rooms = "  +  listOfRPSRooms);
@@ -48,7 +48,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
                        listOfPTs.splice(i-1,1);
                         console.log("5");
                               
-                             reaction.message.channel.delete();
+                        reaction.message.channel.delete();
                      
                      }
 
