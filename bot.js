@@ -35,12 +35,11 @@ client.on('messageReactionAdd', ( reaction,user) => {
                   reaction.message.guild.fetchMember(user.id)
                 .then(messages =>  
                 {
-                    console.log(messages.id);
                        if(reaction.emoji.name == "🤡" && messages.hasPermission("ADMINISTRATOR"))
                      {
                        console.log("0");
                            listOfPOsReactions.splice(i-1,1);
-                       console.log(i + " = i");
+                       console.log(i - 1 + " = i - 1");
                            listOfPTsReactions.splice(i-1,1);
                            listOfRPSRooms.splice(i-1,1);
                         console.log("and rooms = "  +  listOfRPSRooms);
@@ -454,12 +453,16 @@ if(command == "rps")
  
  if(command == "clearRPS")
  {
+     for(int i; i < listOfRPSRooms.length; i++)
+     {
+          listOfRPSRooms.pop();
+     }
      
-                      listOfRPSRooms.length = 0;
-                      listOfPOsReactions.length = 0;
+  
+                     /* listOfPOsReactions.length = 0;
                        listOfPTsReactions.length = 0;
                      listOfPOs.length = 0;
-                       listOfPTs.length = 0;
+                       listOfPTs.length = 0;*/
  }
   function compare (a,b)
   {
