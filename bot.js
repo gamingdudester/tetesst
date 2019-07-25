@@ -84,9 +84,13 @@ client.on('messageReactionAdd', async (reaction,user) => {
               
                  if(listOfPTsReactions[ib] == "1" && listOfPOsReactions[ib] == "1")
                     {
-                         reaction.message.channel.send("We have a winner. The winner is player " + listOfPOsReactions[ib]);
-                                client.channels.get(process.env.gameresultschannel).send (listOfPOs[ib] + " just beat the gay fellow,  " + listOfPTs[ib]);
-                            listOfRPSRooms.splice(ib,1);
+                         reaction.message.channel.send("We have a winner.");
+                                
+                     
+                      var messagetoedit = client.channels.get(process.env.gameresultschannel).send ("Lorem Ipsum, milady").then ((msg)=>{
+                         msg.edit(listOfPOs[ib] + " just beat the gay fellow,  " + listOfPTs[ib]);
+                     }
+                     listOfRPSRooms.splice(ib,1);
                          listOfPOsReactions.splice(ib,1);
                           listOfPTsReactions.splice(ib,1);
                         listOfPOs.splice(ib,1);
@@ -97,9 +101,13 @@ client.on('messageReactionAdd', async (reaction,user) => {
         
                         if(listOfPTsReactions[ib] == "2" && listOfPOsReactions[ib] == "2")
                             {
-                         reaction.message.channel.send("We have a winner. The winner is player " + listOfPTsReactions[ib]);
-                                client.channels.get(process.env.gameresultschannel).send (listOfPTs[ib] + " just beat the gay fellow,  " + listOfPOs[ib]);
-                            listOfRPSRooms.splice(ib,1);
+                         reaction.message.channel.send("We have a winner.");
+                             
+                        var messagetoedit = client.channels.get(process.env.gameresultschannel).send ("Lorem Ipsum, milady").then ((msg)=>{
+                               msg.edit(listOfPTs[ib] + " just beat the gay fellow,  " + listOfPOs[ib]);
+                         }
+                             
+                             listOfRPSRooms.splice(ib,1);
                               listOfPOsReactions.splice(ib,1);
                             listOfPTsReactions.splice(ib,1);
                               listOfPOs.splice(ib,1);
@@ -185,7 +193,9 @@ client.on("message", async message => {
     {
     //log messages
    try{
-   client.channels.find("name", message.guild.id.toString()).send(message.guild.name + ","+ message.channel.name + ","  + message.author.username + ": " + message.content + " ::::");
+   client.channels.find("name", message.guild.id.toString()).send("edit").then ((msg) => {
+        msg.edit(message.guild.name + ","+ message.channel.name + ","  + message.author.username + ": " + message.content + " ::::");
+   };
      
      }
      catch{console.log("error logging message. did you forget to add the channel in frostbot database?");}
