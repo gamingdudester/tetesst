@@ -32,20 +32,8 @@ client.on('messageReactionAdd', ( reaction,user) => {
                  console.log("I before reaction.message.guild.fetchMember = " + ib);
         
               
-        
-                if(reaction.emoji.name == "🤡" && getMember(user.id).hasPermission("ADMINISTRATOR"))
-                     {
-                            console.log("Clown was pressed. Channel " + ib + " was deleted.");
-                           listOfPOsReactions.splice(ib,1);
-                           listOfPTsReactions.splice(ib,1);
-                           listOfRPSRooms.splice(ib,1);
-                           listOfPOs.splice(ib,1);
-                           listOfPTs.splice(ib,1);
-                              
-                        reaction.message.channel.delete();
-                     
-                     }
-        
+              getMember(user.id);
+               
                 
         
         console.log("I after reaction.message.guild.fetchMember = " + ib);
@@ -477,14 +465,24 @@ if(command == "rps")
 }
   
   
-getMember : await function(userid)
+async function getMember(userid)
 {
-        async reaction.message.guild.fetchMember(userid)
+       await reaction.message.guild.fetchMember(userid)
                 .then(messages =>  
                 {
-                   return messages;
+                    if(reaction.emoji.name == "🤡" && getMember(userid).hasPermission("ADMINISTRATOR"))
+                     {
+                           console.log("Clown was pressed. Channel " + ib + " was deleted.");
+                           listOfPOsReactions.splice(ib,1);
+                           listOfPTsReactions.splice(ib,1);
+                           listOfRPSRooms.splice(ib,1);
+                           listOfPOs.splice(ib,1);
+                           listOfPTs.splice(ib,1);
+                              
+                          reaction.message.channel.delete();
+                     }
+        
                });
-
 }
 
 
