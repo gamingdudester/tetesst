@@ -62,6 +62,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
                          listOfPOsReactions.splice(ib,1,"2");
                      }
                  }
+        console.log("I after #2 reaction.message.guild.fetchMember = " + ib);
               if(isaplayerone == false)
                  {
                      if(reaction.emoji.name == "1⃣")
@@ -77,7 +78,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
                      {
                           reaction.message.channel.send("<@&602238559109382164>");
                      }
-             
+             console.log("I after #3 reaction.message.guild.fetchMember = " + ib);
                
               
                  if(listOfPTsReactions[ib] == "1" && listOfPOsReactions[ib] == "1")
@@ -108,6 +109,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
                              reaction.message.channel.delete();
                             }//
        }
+  console.log("I after #4 reaction.message.guild.fetchMember = " + ib);
  };
 });
 
