@@ -21,10 +21,10 @@ client.on('messageReactionAdd', ( reaction,user) => {
  
  for(var i = 0; i < listOfRPSRooms.length; i++)
  {
-  
        if(reaction.message.channel.id == listOfRPSRooms[i].id) 
        {
-        console.log("Reaction was just sent. The current I is in this channel is: " + i);
+        
+               console.log("Reaction was just sent. The current I is in this channel is: " + i);
                  var isaplayerone = false;
                  if(listOfPOs[i].id == user.id)
                  {
