@@ -35,7 +35,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
                  reaction.message.guild.fetchMember(user.id)
                 .then(messages =>  
                 {
-                   console.log("I after reaction.message.guild.fetchMember = " + ib);
+                   console.log("I in reaction.message.guild.fetchMember = " + ib);
                        if(reaction.emoji.name == "🤡" && messages.hasPermission("ADMINISTRATOR"))
                      {
                             console.log("Clown was pressed. Channel " + ib + " was deleted.");
@@ -50,7 +50,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
                      }
 
                });
-              
+               console.log("I after reaction.message.guild.fetchMember = " + ib);
                  if(isaplayerone == true)
                  {
                      if(reaction.emoji.name == "1⃣")
