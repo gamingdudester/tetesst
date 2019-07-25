@@ -19,7 +19,7 @@ client.on("ready", () => {
 client.on('messageReactionAdd', ( reaction,user) => {
   if(user.bot) return;
  
- for(int i = 0; i < listOfRPSRooms.length; i++)
+ for(var i = 0; i < listOfRPSRooms.length; i++)
  {
   
        if(reaction.message.channel.id == listOfRPSRooms[i].id) 
