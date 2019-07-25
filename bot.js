@@ -30,11 +30,12 @@ client.on('messageReactionAdd', ( reaction,user) => {
                  {
                     isaplayerone = true;
                  }
-                 
+                 console.log("I is still " + i);
         
                   reaction.message.guild.fetchMember(user.id)
                 .then(messages =>  
                 {
+                   console.log("I is still " + i);
                        if(reaction.emoji.name == "🤡" && messages.hasPermission("ADMINISTRATOR"))
                      {
                            listOfPOsReactions.splice(i,1);
