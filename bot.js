@@ -423,11 +423,11 @@ if(command == "rps")
 
           messages.send("https://rpsgame.org/room?id=" + makeid(15));
   
-          var reactM = messages.send("Push 1 to declare P1 the winner. Push 2 to declare P2 the winner. Both players must agree. If both players do not agree, you may summon a mod by pressing 🍆 to sort the dispute.")
+          var reactM = await messages.send("Push 1 to declare P1 the winner. Push 2 to declare P2 the winner. Both players must agree. If both players do not agree, you may summon a mod by pressing 🍆 to sort the dispute.")
           .then(message => {
-            await message.react('1⃣');
-            await message.react('2⃣');
-            await message.react('🍆');
+            message.react('1⃣');
+            message.react('2⃣');
+            message.react('🍆');
            
            
            
