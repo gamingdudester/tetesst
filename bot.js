@@ -477,7 +477,7 @@ if(command == "rps")
 }
   
   
-await var getMember(userid)
+getMember : await function(userid)
 {
         async reaction.message.guild.fetchMember(userid)
                 .then(messages =>  
