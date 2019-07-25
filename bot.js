@@ -32,7 +32,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
                  }
                  console.log("I before reaction.message.guild.fetchMember = " + ib);
         
-                 reaction.message.guild.fetchMember(user.id)
+                 await reaction.message.guild.fetchMember(user.id)
                 .then(messages =>  
                 {
                    console.log("I in reaction.message.guild.fetchMember = " + ib);
