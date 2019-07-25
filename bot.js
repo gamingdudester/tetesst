@@ -35,7 +35,7 @@ client.on('messageReactionAdd', async (reaction,user) => {
              await reaction.message.guild.fetchMember(user.id)
                 .then(messages =>  
                 {
-                    if(reaction.emoji.name == "🤡" && getMember(userid).hasPermission("ADMINISTRATOR"))
+                    if(reaction.emoji.name == "🤡" && messages.hasPermission("ADMINISTRATOR"))
                      {
                            console.log("Clown was pressed. Channel " + ib + " was deleted.");
                            listOfPOsReactions.splice(ib,1);
