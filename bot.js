@@ -32,7 +32,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
                  console.log("I before reaction.message.guild.fetchMember = " + ib);
         
               
-              getMember(user.id, ib);
+              ember(user.id, ib);
                
                 
         
@@ -465,7 +465,7 @@ if(command == "rps")
 }
   
   
-async function getMember(userid, ib)
+async function ember(var userid, var ib)
 {
        await reaction.message.guild.fetchMember(userid)
                 .then(messages =>  
