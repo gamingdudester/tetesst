@@ -30,20 +30,20 @@ client.on('messageReactionAdd', ( reaction,user) => {
                  {
                     isaplayerone = true;
                  }
-                 console.log("I is still " + ib);
+                 console.log("I before reaction.message.guild.fetchMember = " + ib);
         
                  reaction.message.guild.fetchMember(user.id)
                 .then(messages =>  
                 {
-                   console.log("I is still " + ib);
+                   console.log("I after reaction.message.guild.fetchMember = " + ib);
                        if(reaction.emoji.name == "🤡" && messages.hasPermission("ADMINISTRATOR"))
                      {
+                            console.log("Clown was pressed. Channel " + ib + " was deleted.");
                            listOfPOsReactions.splice(ib,1);
                            listOfPTsReactions.splice(ib,1);
                            listOfRPSRooms.splice(ib,1);
                            listOfPOs.splice(ib,1);
                            listOfPTs.splice(ib,1);
-                            console.log("Clown was pressed. Channel " + ib + " was deleted.");
                               
                         reaction.message.channel.delete();
                      
