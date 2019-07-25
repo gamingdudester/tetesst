@@ -364,7 +364,11 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
    message.channel.send("Clearing rooms.");
      for(var i = 0; i < listOfRPSRooms.length; i++)
      {
-          listOfRPSRooms.pop();
+          listOfRPSRooms = [];
+          listOfPOs = [];
+          listOfPTs = [];
+          listOfPOsReactions = [];
+          listOfPTsReactions = [];
      }
     
  }
