@@ -53,7 +53,6 @@ client.on('messageReactionAdd', ( reaction,user) => {
               
                  if(isaplayerone == true)
                  {
-                  console.log(reaction.emoji.name+"");
                      if(reaction.emoji.name == "1⃣")
                      {
                          listOfPOsReactions.splice(ib,1,"1");
