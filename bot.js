@@ -15,7 +15,7 @@ client.on("ready", () => {
   // This event will run if the bot starts, and logs in, successfully.
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
 });
-client.on('messageReactionAdd', ( reaction,user) => {
+client.on('messageReactionAdd', async (reaction,user) => {
   if(user.bot) return;
  
  for(var ib = 0; ib < listOfRPSRooms.length; ib++)
@@ -32,7 +32,22 @@ client.on('messageReactionAdd', ( reaction,user) => {
                  console.log("I before reaction.message.guild.fetchMember = " + ib);
         
               
-              ember(user.id, ib);
+             await reaction.message.guild.fetchMember(user.id)
+                .then(messages =>  
+                {
+                    if(reaction.emoji.name == "🤡" && getMember(userid).hasPermission("ADMINISTRATOR"))
+                     {
+                           console.log("Clown was pressed. Channel " + ib + " was deleted.");
+                           listOfPOsReactions.splice(ib,1);
+                           listOfPTsReactions.splice(ib,1);
+                           listOfRPSRooms.splice(ib,1);
+                           listOfPOs.splice(ib,1);
+                           listOfPTs.splice(ib,1);
+                              
+                          reaction.message.channel.delete();
+                     }
+        
+               });
                
                 
         
@@ -465,24 +480,9 @@ if(command == "rps")
 }
   
   
-async function ember(var userid, var ib)
+async function ember(userid, ib)
 {
-       await reaction.message.guild.fetchMember(userid)
-                .then(messages =>  
-                {
-                    if(reaction.emoji.name == "🤡" && getMember(userid).hasPermission("ADMINISTRATOR"))
-                     {
-                           console.log("Clown was pressed. Channel " + ib + " was deleted.");
-                           listOfPOsReactions.splice(ib,1);
-                           listOfPTsReactions.splice(ib,1);
-                           listOfRPSRooms.splice(ib,1);
-                           listOfPOs.splice(ib,1);
-                           listOfPTs.splice(ib,1);
-                              
-                          reaction.message.channel.delete();
-                     }
-        
-               });
+       
 }
 
 
