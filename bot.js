@@ -37,12 +37,10 @@ client.on('messageReactionAdd', ( reaction,user) => {
                 {
                        if(reaction.emoji.name == "🤡" && messages.hasPermission("ADMINISTRATOR"))
                      {
-                       console.log("0");
                            listOfPOsReactions.splice(i,1);
-                       console.log(i - 1 + " = i - 1");
+                       console.log(i  + " = i");
                            listOfPTsReactions.splice(i,1);
                            listOfRPSRooms.splice(i,1);
-                        console.log("and rooms = "  +  listOfRPSRooms);
                        listOfPOs.splice(i,1);
                        listOfPTs.splice(i,1);
                         console.log("5");
