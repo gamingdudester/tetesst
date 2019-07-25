@@ -415,7 +415,7 @@ if(command == "rps")
       id: usertwo,
       allow: ['READ_MESSAGES']
     }])
-      .then(messages => 
+      .then(async messages => 
        { 
           listOfRPSRooms.push(messages);
           message.channel.send(""+ listOfRPSRooms);
