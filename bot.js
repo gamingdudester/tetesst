@@ -403,7 +403,7 @@ if(command == "rps")
  listOfPOs.push(nameone);
  listOfPTs.push(nametwo);
  
- message.guild.createChannel(nameone.username + " and " + nametwo.username + "s game", 'text', [{
+ await message.guild.createChannel(nameone.username + " and " + nametwo.username + "s game", 'text', [{
       id: message.guild.id,
       deny: ['READ_MESSAGES']
     }, 
@@ -423,7 +423,7 @@ if(command == "rps")
 
           messages.send("https://rpsgame.org/room?id=" + makeid(15));
   
-          var reactM = await messages.send("Push 1 to declare P1 the winner. Push 2 to declare P2 the winner. Both players must agree. If both players do not agree, you may summon a mod by pressing 🍆 to sort the dispute.")
+          var reactM = messages.send("Push 1 to declare P1 the winner. Push 2 to declare P2 the winner. Both players must agree. If both players do not agree, you may summon a mod by pressing 🍆 to sort the dispute.")
           .then(message => {
             message.react('1⃣');
             message.react('2⃣');
