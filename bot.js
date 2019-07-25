@@ -40,9 +40,9 @@ client.on('messageReactionAdd', ( reaction,user) => {
                            listOfPOsReactions.splice(i,1);
                            listOfPTsReactions.splice(i,1);
                            listOfRPSRooms.splice(i,1);
-                       listOfPOs.splice(i,1);
-                       listOfPTs.splice(i,1);
-                        console.log("Clown was pressed. Channel " + i + " was deleted.");
+                           listOfPOs.splice(i,1);
+                           listOfPTs.splice(i,1);
+                            console.log("Clown was pressed. Channel " + i + " was deleted.");
                               
                         reaction.message.channel.delete();
                      
