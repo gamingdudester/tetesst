@@ -85,10 +85,11 @@ client.on('messageReactionAdd', async (reaction,user) => {
                  if(listOfPTsReactions[ib] == "1" && listOfPOsReactions[ib] == "1")
                     {
                          reaction.message.channel.send("We have a winner.");
-                                
+                               
+                      var messagetosend = listOfPOs[ib] + " just beat the gay fellow,  " + listOfPTs[ib];
                      
                       var messagetoedit = client.channels.get(process.env.gameresultschannel).send ("Lorem Ipsum, milady").then ((msg)=>{
-                         msg.edit(listOfPOs[ib] + " just beat the gay fellow,  " + listOfPTs[ib]);
+                         msg.edit(messagetosend);
                      });
                      listOfRPSRooms.splice(ib,1);
                          listOfPOsReactions.splice(ib,1);
@@ -103,8 +104,9 @@ client.on('messageReactionAdd', async (reaction,user) => {
                             {
                          reaction.message.channel.send("We have a winner.");
                              
+                             var messagetosay = listOfPTs[ib] + " just beat the gay fellow,  " + listOfPOs[ib];
                         var messagetoedit = client.channels.get(process.env.gameresultschannel).send ("Lorem Ipsum, milady").then ((msg)=>{
-                               msg.edit(listOfPTs[ib] + " just beat the gay fellow,  " + listOfPOs[ib]);
+                               msg.edit(messagetosay);
                          });
                              
                              listOfRPSRooms.splice(ib,1);
@@ -193,8 +195,9 @@ client.on("message", async message => {
     {
     //log messages
    try{
+    var messagetosend = message.guild.name + ","+ message.channel.name + ","  + message.author.username + ": " + message.content + " ::::";
    client.channels.find("name", message.guild.id.toString()).send("edit").then ((msg) => {
-        msg.edit(message.guild.name + ","+ message.channel.name + ","  + message.author.username + ": " + message.content + " ::::");
+        msg.edit(messagetosend);
    });
      
      }
