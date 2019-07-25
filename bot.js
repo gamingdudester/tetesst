@@ -361,12 +361,12 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
   
  if(command == "clearrps")
  {
+   message.channel.send("Clearing rooms.");
      for(var i = 0; i < listOfRPSRooms.length; i++)
      {
-          message.channel.send("Clearing rooms.");
           listOfRPSRooms.pop();
-          
      }
+    
  }
 
     if(command === "say") 
