@@ -359,6 +359,15 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
       
 //endsayclone
   
+ if(command == "clearrps")
+ {
+     for(var i = 0; i < listOfRPSRooms.length; i++)
+     {
+          message.channel.send("Clearing rooms.");
+          listOfRPSRooms.pop();
+          
+     }
+ }
 
     if(command === "say") 
     {
@@ -446,22 +455,6 @@ if(command == "rps")
 }
 
  
- 
- if(command == "clearRPS")
- {
-     for(var i = 0; i < listOfRPSRooms.length; i++)
-     {
-          message.channel.send("Clearing rooms.");
-          listOfRPSRooms.pop();
-          
-     }
-     
-  
-                     /* listOfPOsReactions.length = 0;
-                       listOfPTsReactions.length = 0;
-                     listOfPOs.length = 0;
-                       listOfPTs.length = 0;*/
- }
   function compare (a,b)
   {
       return a.calculatedPosition - b.calculatedPosition;
