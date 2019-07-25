@@ -24,7 +24,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
   
        if(reaction.message.channel.id == listOfRPSRooms[i].id) 
        {
-        console.log("i = " + i);
+        console.log("Reaction was just sent. The current I is in this channel is: " + i);
                  var isaplayerone = false;
                  if(listOfPOs[i].id == user.id)
                  {
@@ -38,12 +38,11 @@ client.on('messageReactionAdd', ( reaction,user) => {
                        if(reaction.emoji.name == "🤡" && messages.hasPermission("ADMINISTRATOR"))
                      {
                            listOfPOsReactions.splice(i,1);
-                       console.log(i  + " = i");
                            listOfPTsReactions.splice(i,1);
                            listOfRPSRooms.splice(i,1);
                        listOfPOs.splice(i,1);
                        listOfPTs.splice(i,1);
-                        console.log("5");
+                        console.log("Clown was pressed. Channel " + i + " was deleted.");
                               
                         reaction.message.channel.delete();
                      
