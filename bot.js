@@ -32,7 +32,7 @@ client.on('messageReactionAdd', ( reaction,user) => {
                  console.log("I before reaction.message.guild.fetchMember = " + ib);
         
               
-              getMember(user.id);
+              getMember(user.id, ib);
                
                 
         
@@ -465,7 +465,7 @@ if(command == "rps")
 }
   
   
-async function getMember(userid)
+async function getMember(userid, ib)
 {
        await reaction.message.guild.fetchMember(userid)
                 .then(messages =>  
