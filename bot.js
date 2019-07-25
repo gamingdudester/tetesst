@@ -449,9 +449,11 @@ if(command == "rps")
  
  if(command == "clearRPS")
  {
-     for(var i; i < listOfRPSRooms.length; i++)
+     for(var i = 0; i < listOfRPSRooms.length; i++)
      {
+          message.channel.send("Clearing rooms.");
           listOfRPSRooms.pop();
+          
      }
      
   
