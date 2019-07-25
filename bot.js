@@ -16,7 +16,7 @@ client.on("ready", () => {
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
 });
 
-client.on('messageReactionAdd', ( reaction,user) => {
+async client.on('messageReactionAdd', ( reaction,user) => {
   if(user.bot) return;
  
  for(var ib = 0; ib < listOfRPSRooms.length; ib++)
