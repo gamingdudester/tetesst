@@ -15,8 +15,7 @@ client.on("ready", () => {
   // This event will run if the bot starts, and logs in, successfully.
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
 });
-
-async client.on('messageReactionAdd', ( reaction,user) => {
+client.on('messageReactionAdd', ( reaction,user) => {
   if(user.bot) return;
  
  for(var ib = 0; ib < listOfRPSRooms.length; ib++)
@@ -32,11 +31,9 @@ async client.on('messageReactionAdd', ( reaction,user) => {
                  }
                  console.log("I before reaction.message.guild.fetchMember = " + ib);
         
-                 await reaction.message.guild.fetchMember(user.id)
-                .then(messages =>  
-                {
-                   console.log("I in reaction.message.guild.fetchMember = " + ib);
-                       if(reaction.emoji.name == "🤡" && messages.hasPermission("ADMINISTRATOR"))
+              
+        
+                if(reaction.emoji.name == "🤡" && getMember(user.id).hasPermission("ADMINISTRATOR"))
                      {
                             console.log("Clown was pressed. Channel " + ib + " was deleted.");
                            listOfPOsReactions.splice(ib,1);
@@ -48,9 +45,10 @@ async client.on('messageReactionAdd', ( reaction,user) => {
                         reaction.message.channel.delete();
                      
                      }
-
-               });
-               console.log("I after reaction.message.guild.fetchMember = " + ib);
+        
+                
+        
+        console.log("I after reaction.message.guild.fetchMember = " + ib);
                  if(isaplayerone == true)
                  {
                      if(reaction.emoji.name == "1⃣")
@@ -85,16 +83,13 @@ async client.on('messageReactionAdd', ( reaction,user) => {
                     {
                          reaction.message.channel.send("We have a winner. The winner is player " + listOfPOsReactions[ib]);
                                 client.channels.get(process.env.gameresultschannel).send (listOfPOs[ib] + " just beat the gay fellow,  " + listOfPTs[ib]);
-                         listOfRPSRooms.splice(ib,1);
-                      listOfPOsReactions.splice(ib,1);
-                       listOfPTsReactions.splice(ib,1);
-                     listOfPOs.splice(ib,1);
-                       listOfPTs.splice(ib,1);
-                     reaction.message.channel.delete();
-                     
-                     
-                     
-                         
+                            listOfRPSRooms.splice(ib,1);
+                         listOfPOsReactions.splice(ib,1);
+                          listOfPTsReactions.splice(ib,1);
+                        listOfPOs.splice(ib,1);
+                          listOfPTs.splice(ib,1);
+                        reaction.message.channel.delete();
+
                     }
         
                         if(listOfPTsReactions[ib] == "2" && listOfPOsReactions[ib] == "2")
@@ -482,7 +477,15 @@ if(command == "rps")
 }
   
   
+await var getMember(userid)
+{
+        async reaction.message.guild.fetchMember(userid)
+                .then(messages =>  
+                {
+                   return messages;
+               });
 
+}
 
 
 
