@@ -19,7 +19,7 @@ client.on("ready", () => {
 client.on('messageReactionAdd', ( reaction,user) => {
   if(user.bot) return;
  
- for(i = 0; i < listOfRPSRooms.length; i++)
+ for(int i = 0; i < listOfRPSRooms.length; i++)
  {
   
        if(reaction.message.channel.id == listOfRPSRooms[i].id) 
@@ -77,7 +77,6 @@ client.on('messageReactionAdd', ( reaction,user) => {
                if(reaction.emoji.name == "🍆")
                      {
                           reaction.message.channel.send("<@&602238559109382164>");
-                          
                      }
              
                
