@@ -450,7 +450,7 @@ if(command == "rps")
  
  if(command == "clearRPS")
  {
-     for(int i; i < listOfRPSRooms.length; i++)
+     for(var i; i < listOfRPSRooms.length; i++)
      {
           listOfRPSRooms.pop();
      }
