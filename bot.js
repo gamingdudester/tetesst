@@ -7,7 +7,8 @@ var listOfPOs = [];
 var listOfPTs = [];
 var listOfPOsReactions = [];
 var listOfPTsReactions = [];
-
+var keywords = ["Banana", "Orange", "Apple", "Mango"];
+var keycomebacks = ["Banana", "Orange", "Apple", "Mango"];
 
 client.on("ready", () => {
   client.user.setActivity(`smash with ${client.users.size} people`, { type: 'PLAYING' });
@@ -492,7 +493,97 @@ if(command == "rps")
  */
    
 }
-
+ if(command === "keyword") 
+  {
+     // if (nommand.includes(','))
+      //{
+     if (~message.content.indexOf(";"))
+     {
+        var numberof = 0;
+        client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 100 })
+              .then(messages => 
+              { 
+               
+                messages.forEach(function(element) 
+                {
+                  if(element.content != null)
+                  {
+                   numberof = numberof + 1;
+                  }
+                });
+          
+               if(numberof < 100)
+                  {
+                   const messagenocommand = message.content.slice(commandPrefix.length + command.length).trim();
+                    const localArgs = messagenocommand.split(";");
+                     client.channels.get(process.env.databaseChannel).send(localArgs[0] + ";");
+                     client.channels.get(process.env.databaseChannelComeback).send(localArgs[1] + ";");
+                     message.channel.send("Ok, got it.");
+                    
+                    client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 100 })
+              .then(messages => 
+              { 
+                var key = "";
+                messages.forEach(function(element) 
+                {
+                  key = key + element; 
+                });
+                keywords = key.split(";");
+            })
+            .catch(console.log("broke"));
+    client.channels.get(process.env.databaseChannelComeback).fetchMessages({ limit: 100 })
+              .then(messages => 
+              { 
+                var come = "";
+                messages.forEach(function(element) 
+                {
+                  come = come + element; 
+                });
+                keycomebacks = come.split(";");
+            })
+            .catch(console.log("broke"));
+    
+    for (i = 0; i < keywords.length; i++) 
+      {
+        if (message.content.replace(" ","").toLowerCase() == keywords[i].replace(" ","").toLowerCase())
+        {
+            message.channel.send(keycomebacks[i]);
+        }
+      }
+                    
+                  }
+          if(numberof > 99)
+                  {
+                     message.channel.send("Too many keywords currently.");
+                  }
+            })
+            .catch(console.log("broke"));
+       
+            
+       
+     }
+  }
+  if(command === "deletekey") 
+  {
+    var finalmessageid;
+    var finalmessageid2;
+     await client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 1})
+        .then(messages => {
+       messages.forEach(function(element) 
+                {
+                  element.delete();
+                });})
+        .catch();
+     await client.channels.get(process.env.databaseChannelComeback).fetchMessages({ limit: 1})
+        .then(messages => {
+       messages.forEach(function(element) 
+                {
+                   element.delete();
+                });})
+        .catch();
+    
+  }
+  
  
   function compare (a,b)
   {
