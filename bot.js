@@ -304,7 +304,7 @@ client.on("message", async message => {
   }
   if(command == "purge")
   {if (!message.member.hasPermission("MANAGE_MESSAGES")) {
-       message.channel.send("You aren't able to use this command.");
+       message.channel.send("You aren't able to use this command."); 
         return;
 }
     message.channel.fetchMessages({limit:parseInt(args[0])})
@@ -597,11 +597,7 @@ if(command == "rps")
         }
       }
                     
-                  }
-          if(numberof > 99)
-                  {
-                     message.channel.send("Too many keywords currently.");
-                  }
+     }
             })
             .catch(console.log("broke"));
        
