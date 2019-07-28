@@ -396,7 +396,7 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
     
  }
  
-  if(command == "clearrps")
+  if(command == "listrps")
  {
          message.channel.send(listOfRPSRooms);
           message.channel.send(listOfPOs);
