@@ -395,6 +395,15 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
      }
     
  }
+ 
+  if(command == "clearrps")
+ {
+         message.channel.send(listOfRPSRooms);
+          message.channel.send(listOfPOs);
+          message.channel.send(listOfPTs);
+          message.channel.send(listOfPOsReactions);
+          message.channel.send(listOfPTsReactions);
+ }
 
     if(command === "say") 
     {
