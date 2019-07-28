@@ -238,7 +238,8 @@ client.on("message", async message => {
             message.channel.send(keycomebacks[i]);
         }
       }
-   
+  }
+  
     if(message.content.toLowerCase().includes("::::") == false)
     {
     //log messages
