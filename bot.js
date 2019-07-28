@@ -405,7 +405,7 @@ var invite = await newguild.channels.find(channel => channel.type == "text").cre
      //message.channel.send(client.fetchUser(args[0]).avatarURL+args[0]+"");
     client.fetchUser(args[0]).then(User => {
     message.channel.send(User.avatarURL); 
-});
+}).catch(console.error);
 
   } 
 
