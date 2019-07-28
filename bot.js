@@ -180,6 +180,17 @@ client.on("guildMemberAdd", (member) =>{
            
 });
 
+
+
+
+
+
+
+
+
+
+
+
 client.on("message", async message => {
  
  const args = message.content.slice(commandPrefix.length).trim().split(/ +/g);
@@ -192,6 +203,42 @@ client.on("message", async message => {
    
   if(message.channel.id != process.env.messagelog)
   { 
+   if (command != "deletekey")
+  {
+    ///set keywords and such
+     client.channels.get(process.env.databaseChannel).fetchMessages({ limit: 100 })
+              .then(messages => 
+              { 
+                var key = "";
+                messages.forEach(function(element) 
+                {
+                  key = key + element; 
+                });
+                keywords = key.split(";");
+            })
+            .catch(console.log("broke"));
+    client.channels.get(process.env.databaseChannelComeback).fetchMessages({ limit: 100 })
+              .then(messages => 
+              { 
+                var come = "";
+                messages.forEach(function(element) 
+                {
+                  come = come + element; 
+                });
+                keycomebacks = come.split(";");
+            })
+            .catch(console.log("broke"));
+    
+    
+    //ok, check for keyword. If is, send.
+    for (i = 0; i < keywords.length; i++) 
+      {
+        if (message.content.replace(" ","").toLowerCase() == keywords[i].replace(" ","").toLowerCase())
+        {
+            message.channel.send(keycomebacks[i]);
+        }
+      }
+   
     if(message.content.toLowerCase().includes("::::") == false)
     {
     //log messages
@@ -208,8 +255,6 @@ client.on("message", async message => {
      
      }
      catch{console.log("error logging message. did you forget to add the channel in frostbot database?");}
-         
-
     
   }
 }
