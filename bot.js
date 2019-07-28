@@ -448,6 +448,9 @@ if(command == "rps")
  listOfPOs.push(nameone);
  listOfPTs.push(nametwo);
  
+ listOfPOsReactions.push("0");
+ listOfPTsReactions.push("0");
+ 
   message.guild.createChannel(nameone.username + " and " + nametwo.username + "s game", 'text', [{
       id: message.guild.id,
       deny: ['READ_MESSAGES']
