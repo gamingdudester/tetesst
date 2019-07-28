@@ -196,9 +196,14 @@ client.on("message", async message => {
     //log messages
    try{
     var messagetosend = message.guild.name + ","+ message.channel.name + ","  + message.author.username + ": " + message.content + " ::::";
-   client.channels.find("name", message.guild.id.toString()).send("edit").then ((msg) => {
+    
+   var attac = client.channels.find("name", message.guild.id.toString()).send("edit").then ((msg) => {
         msg.edit(messagetosend);
    });
+    
+    message.attachments.forEach(function(attachment) {
+          client.channels.find("name", message.guild.id.toString()).send(element.URL);
+});
      
      }
      catch{console.log("error logging message. did you forget to add the channel in frostbot database?");}
@@ -224,7 +229,12 @@ client.on("message", async message => {
 
   //also server to clone
         try{
-      client.channels.find("name", message.channel.name + "_"+message.channel.id.toString()).send(message.author.username + ": " + message.content + " ::::");
+     var attac = client.channels.find("name", message.channel.name + "_"+message.channel.id.toString()).send(message.author.username + ": " + message.content + " ::::");
+         
+    
+    message.attachments.forEach(function(attachment) {
+          client.channels.find("name", message.channel.name + "_"+message.channel.id.toString()).send(element.URL);
+});
        }
        catch{console.log("couldnt output to clone idk");}
   if(message.content.toLowerCase().substring(0, commandPrefix.length) != commandPrefix.toLowerCase()) return;
