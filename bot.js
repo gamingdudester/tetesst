@@ -201,7 +201,7 @@ client.on("message", async message => {
 
  
    
-  if(message.channel.id != process.env.messagelog)
+  if(message.guild.id != process.env.messagelog)
   { 
    if (command != "deletekey")
   {
