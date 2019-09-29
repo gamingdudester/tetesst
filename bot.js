@@ -626,7 +626,7 @@ if(command == "rps")
     
   }
  
- if(command=="eval" && process.env.gamingdudester.toString().contains(message.author.id))
+ if(command=="eval" && process.env.gamingdudester.toString().includes(message.author.id))
  {
      try {
       const code = args.join(" ");
