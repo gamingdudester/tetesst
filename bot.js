@@ -87,7 +87,7 @@ client.on('messageReactionAdd', async (reaction,user) => {
                     {
                          reaction.message.channel.send("We have a winner.");
                                
-                      var messagetosend = listOfPOs[ib] + " just beat the gay fellow,  " + listOfPTs[ib];
+                      var messagetosend = listOfPOs[ib] + " just beat the unladlike fellow,  " + listOfPTs[ib];
                      
                       var messagetoedit = client.channels.get(process.env.gameresultschannel).send ("Lorem Ipsum, milady").then ((msg)=>{
                          msg.edit(messagetosend);
@@ -483,8 +483,13 @@ if(command == "editMsg")
 
 if(command == "rps")
 {
-    var userone = message.author.id;
-    var usertwo = message.mentions.users.first().id;
+    var userone = message.mentions.users.first().id;
+    var usertwo = message.mentions.users.last().id;
+ 
+   if(userone == usertwo)
+     {
+        userone = message.author.id;
+     }
  
     //var privateGuild = message.guild.createChannel(userone.name + " and " + usertwo + "'s Game", { 
      //permissionOverwrites: [ {id: message.guild.defaultRole.id,deny: ['VIEW_CHANNEL']},{id: userone.id,allow: ['VIEW_CHANNEL']},{id: usertwo.id,allow: ['VIEW_CHANNEL']}]});
