@@ -105,7 +105,7 @@ client.on('messageReactionAdd', async (reaction,user) => {
                             {
                          reaction.message.channel.send("We have a winner.");
                              
-                             var messagetosay = listOfPTs[ib] + " just beat the gay fellow,  " + listOfPOs[ib];
+                             var messagetosay = listOfPTs[ib] + " just beat the fellow,  " + listOfPOs[ib];
                         var messagetoedit = client.channels.get(process.env.gameresultschannel).send ("Lorem Ipsum, milady").then ((msg)=>{
                                msg.edit(messagetosay);
                          });
