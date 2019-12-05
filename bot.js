@@ -480,6 +480,25 @@ if(command == "editMsg")
 {
     
 }
+ 
+ if(command == "emoji")
+{
+  var rmessage = message.content;
+  var emojise = rmessage.split(';');
+  var i = 0;
+
+  emojise.forEach(function(boop)
+  {
+   client.emojis.forEach(function(bep)
+   {
+    if(boop.replace(":","")==bep.name.replace(":",""))
+    {
+     message.channel.send("https://cdn.discordapp.com/emojis/"+bep.id+".png?v=1");
+    }
+   });
+   i++;
+  });
+}
 
 if(command == "rps")
 {
