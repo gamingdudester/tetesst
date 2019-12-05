@@ -483,11 +483,9 @@ if(command == "editMsg")
  
  if(command == "emoji")
 {
-  var rmessage = message.content;
-  var emojise = rmessage.split(';');
   var i = 0;
 
-  emojise.forEach(function(boop)
+  args.forEach(function(boop)
   {
    client.emojis.forEach(function(bep)
    {
