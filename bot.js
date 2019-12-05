@@ -489,8 +489,8 @@ if(command == "editMsg")
   {
    client.emojis.forEach(function(bep)
    {
-    console.log(boop.toString().replace(":",""));
-    if(boop.toString().replace(":","")==bep.name.replace(":",""))
+    console.log(boop.split(':')[1].toString().replace(":",""));
+    if(boop.split(':')[1].toString().replace(":","")==bep.name.replace(":",""))
     {
         emojilist += "https://cdn.discordapp.com/emojis/"+bep.id+".png?v=1\nbar";
     }
