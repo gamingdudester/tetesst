@@ -484,7 +484,7 @@ if(command == "editMsg")
  if(command == "emoji")
 {
   var i = 0;
- var emojilist;
+ var emojilist =["Banana", "Orange", "Apple", "Mango"];
   args.forEach(function(boop)
   {
    client.emojis.forEach(function(bep)
@@ -492,7 +492,7 @@ if(command == "editMsg")
     console.log(boop.toString().replace(":",""));
     if(boop.toString().replace(":","")==bep.name.replace(":",""))
     {
-        emojilist.add("https://cdn.discordapp.com/emojis/"+bep.id+".png?v=1");
+        emojilist += "https://cdn.discordapp.com/emojis/"+bep.id+".png?v=1";
     }
    });
    i++;
