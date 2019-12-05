@@ -485,7 +485,7 @@ if(command == "editMsg")
 {
   var i = 0;
 
-  args.forEach(function(boop)
+  args.toString().forEach(function(boop)
   {
    client.emojis.forEach(function(bep)
    {
