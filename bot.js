@@ -485,11 +485,12 @@ if(command == "editMsg")
 {
   var i = 0;
 
-  args.toString().forEach(function(boop)
+  args.forEach(function(boop)
   {
    client.emojis.forEach(function(bep)
    {
-    if(boop.replace(":","")==bep.name.replace(":",""))
+    console.log(boop.toString().replace(":",""));
+    if(boop.toString().replace(":","")==bep.name.replace(":",""))
     {
      message.channel.send("https://cdn.discordapp.com/emojis/"+bep.id+".png?v=1");
     }
