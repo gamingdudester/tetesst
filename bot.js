@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const commandPrefix = process.env.prefix;
- //
+ 
 var listOfRPSRooms = [];
 var listOfPOs = [];
 var listOfPTs = [];
